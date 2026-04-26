@@ -80,12 +80,8 @@
     }
 
     function catsHtml(p) {
-        const cats = (p.cats || []).slice();
-        // Filter out verified and viral tags
-        const filtered = cats.filter(c => c !== 'verified' && c !== 'viral');
-        if (p.minutesAgo <= 30 && !filtered.includes('new')) filtered.unshift('new');
-        if (!filtered.length) return '';
-        return filtered.map(c => `<span class="post-tag ${c}">${c}</span>`).join(' ');
+        // Remove all tags - no color badges next to stars
+        return '';
     }
 
     function renderPost(p, idx) {
