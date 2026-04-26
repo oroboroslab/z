@@ -47,6 +47,54 @@
         return d.innerHTML;
     }
 
+    // === video link detection (paste any of these → embed inline) ===
+    const VIDEO_PROVIDERS = [
+        { name: 'youtube', re: /(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/, embed: id => 'https://www.youtube.com/embed/' + id, thumb: id => 'https://img.youtube.com/vi/' + id + '/hqdefault.jpg' },
+        { name: 'vimeo',   re: /vimeo\.com\/(\d+)/,                                       embed: id => 'https://player.vimeo.com/video/' + id, thumb: null },
+        { name: 'x',       re: /(?:twitter\.com|x\.com)\/[^/]+\/status\/(\d+)/,           embed: id => 'https://platform.twitter.com/embed/Tweet.html?id=' + id, thumb: null },
+        { name: 'tiktok',  re: /tiktok\.com\/(?:[^/]+\/video|embed\/v2)\/(\d+)/,          embed: id => 'https://www.tiktok.com/embed/v2/' + id, thumb: null }
+    ];
+    function detectVideo(url) {
+        if (!url) return null;
+        for (const p of VIDEO_PROVIDERS) {
+            const m = url.match(p.re);
+            if (m) return { provider: p.name, id: m[1], embed: p.embed(m[1]), thumb: p.thumb ? p.thumb(m[1]) : null };
+        }
+        return null;
+    }
+    function videoHtml(p) {
+        const v = detectVideo(p.videoUrl);
+        if (!v) return '';
+        if (v.thumb) {
+            return `<div class="post-video has-thumb" data-embed="${v.embed}" style="background-image:url('${v.thumb}');"><div class="post-play">▶</div><span class="post-media-tag">VIDEO · ${v.provider.toUpperCase()}</span></div>`;
+        }
+        return `<div class="post-video"><iframe src="${v.embed}" loading="lazy" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe><span class="post-media-tag">VIDEO · ${v.provider.toUpperCase()}</span></div>`;
+    }
+    function sourceLinkHtml(p) {
+        if (!p.link) return '';
+        let host = p.link;
+        try { host = new URL(p.link).hostname.replace(/^www\./, ''); } catch (_) {}
+        return `<a class="post-source-link" href="${p.link}" target="_blank" rel="noopener noreferrer">Read full story at ${escapeHtml(host)} <span class="arrow">↗</span></a>`;
+    }
+
+    // === user submissions persistence (survive live-feed refresh) ===
+    const USER_KEY = 'worldfeed-user-stories';
+    function loadUserStories() {
+        try { return JSON.parse(localStorage.getItem(USER_KEY) || '[]'); }
+        catch (_) { return []; }
+    }
+    function saveUserStories(arr) {
+        try { localStorage.setItem(USER_KEY, JSON.stringify(arr.slice(0, 100))); }
+        catch (_) {}
+    }
+    let userStories = loadUserStories();
+    function mergeFeeds(liveItems) {
+        // age user posts based on stored postedAt timestamp
+        const now = Date.now();
+        const aged = userStories.map(s => ({ ...s, minutesAgo: Math.max(0, Math.round((now - (s.postedAt || now)) / 60000)) }));
+        return rankFeed([...aged, ...(liveItems || [])]);
+    }
+
     function starsHtml(t) {
         let h = '<span class="stars" aria-label="' + t + ' of 5">';
         for (let i = 1; i <= 5; i++) {
@@ -92,19 +140,29 @@
         const postLink = p.link ? p.link : '#';
         const linkAttr = p.link ? `href="${p.link}" target="_blank" rel="noopener noreferrer"` : '';
 
+        const userClass = p.isUser ? ' is-user' : '';
+        const userTag = p.isUser ? '<span class="post-user-tag">USER POST</span>' : '';
+        const video = videoHtml(p);
+        const media = video ? '' : mediaHtml(p);
+        const srcLink = sourceLinkHtml(p);
+        const titleHtml = p.link
+            ? `<h3 class="post-title"><a class="post-title-link" href="${p.link}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.title)}</a></h3>`
+            : `<h3 class="post-title">${escapeHtml(p.title)}</h3>`;
+
         return `
-        <article class="post" data-tier="${p.tier}" data-type="${p.type}" data-min="${p.minutesAgo}" data-cats="${(p.cats||[]).join(',')}" data-idx="${idx}">
-            <a ${linkAttr} class="post-link-wrapper">
-                <div class="post-head">
-                    ${starsHtml(p.tier)}
-                    ${catsHtml(p)}
-                    <span class="post-meta">${escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
-                </div>
-                <h3 class="post-title">${escapeHtml(p.title)}</h3>
-                <p class="post-body">${escapeHtml(p.body)}</p>
-                ${mediaHtml(p)}
-                <div class="post-sources">${sourcesLine}</div>
-            </a>
+        <article class="post${userClass}" data-tier="${p.tier}" data-type="${p.type}" data-min="${p.minutesAgo}" data-cats="${(p.cats||[]).join(',')}" data-idx="${idx}">
+            <div class="post-head">
+                ${starsHtml(p.tier)}
+                ${catsHtml(p)}
+                ${userTag}
+                <span class="post-meta">${escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
+            </div>
+            ${titleHtml}
+            <p class="post-body">${escapeHtml(p.body)}</p>
+            ${video}
+            ${media}
+            <div class="post-sources">${sourcesLine}</div>
+            ${srcLink}
             <div class="post-actions">
                 <button class="post-action" data-act="verify">✓ Verify</button>
                 <button class="post-action" data-act="amplify">↗ Amplify</button>
@@ -123,7 +181,7 @@
         });
     }
 
-    let allPosts = rankFeed(SEED);
+    let allPosts = mergeFeeds(SEED);
     let renderedCount = 0;
     const PAGE = 8;
     const feed = document.getElementById('feed');
@@ -240,10 +298,21 @@
     }, { rootMargin: '400px' });
     observer.observe(loader);
 
-    // Post action handling
+    // Click handling: video thumb → iframe swap (must run before <a> nav)
     feed.addEventListener('click', e => {
+        const vid = e.target.closest('.post-video.has-thumb');
+        if (vid) {
+            e.preventDefault();
+            e.stopPropagation();
+            const embed = vid.dataset.embed + (vid.dataset.embed.includes('?') ? '&' : '?') + 'autoplay=1';
+            const tag = vid.querySelector('.post-media-tag');
+            const tagHtml = tag ? tag.outerHTML : '';
+            vid.outerHTML = `<div class="post-video"><iframe src="${embed}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>${tagHtml}</div>`;
+            return;
+        }
         const btn = e.target.closest('.post-action');
         if (!btn) return;
+        e.preventDefault();
         e.stopPropagation();
         btn.classList.toggle('active');
         const act = btn.dataset.act;
@@ -263,18 +332,39 @@
         const title = document.getElementById('postTitle').value.trim();
         const body = document.getElementById('postBody').value.trim();
         const type = document.getElementById('postType').value;
-        const sources = document.getElementById('postSources').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const videoUrl = (document.getElementById('postVideo')?.value || '').trim();
+        const sourcesRaw = document.getElementById('postSources').value.split('\n').map(s => s.trim()).filter(Boolean);
         if (!title || !body) {
             alert('Headline and body required.');
             return;
         }
-        const tier = sources.length >= 5 ? 5 : sources.length >= 3 ? 4 : sources.length >= 2 ? 3 : sources.length === 1 ? 2 : 0;
-        SEED.unshift({ tier, title, body, sources, type, minutesAgo: 0, location: 'submitted' });
-        allPosts = rankFeed(SEED);
+        // first http(s) line in sources becomes the "Read full story" link
+        const firstUrl = sourcesRaw.find(s => /^https?:\/\//i.test(s)) || '';
+        const tier = sourcesRaw.length >= 5 ? 5 : sourcesRaw.length >= 3 ? 4 : sourcesRaw.length >= 2 ? 3 : sourcesRaw.length === 1 ? 2 : 0;
+        const story = {
+            id: 'u' + Date.now(),
+            tier,
+            cats: ['new'],
+            title,
+            body,
+            sources: sourcesRaw,
+            type: videoUrl ? 'video' : type,
+            location: 'community',
+            link: firstUrl,
+            videoUrl,
+            isUser: true,
+            postedAt: Date.now(),
+            minutesAgo: 0
+        };
+        userStories.unshift(story);
+        saveUserStories(userStories);
+        const liveOnly = allPosts.filter(p => !p.isUser);
+        allPosts = mergeFeeds(liveOnly);
         modal.classList.remove('show');
         document.getElementById('postTitle').value = '';
         document.getElementById('postBody').value = '';
         document.getElementById('postSources').value = '';
+        if (document.getElementById('postVideo')) document.getElementById('postVideo').value = '';
         paint(true);
     });
 
@@ -287,7 +377,7 @@
             .then(r => r.ok ? r.json() : null)
             .then(j => {
                 if (!j || !Array.isArray(j.items) || j.items.length === 0) return;
-                allPosts = rankFeed(j.items);
+                allPosts = mergeFeeds(j.items);
                 paint(true);
                 if (isInitial) console.log('WorldFeed live · ' + j.items.length + ' items · updated ' + j.updatedAt);
             })
