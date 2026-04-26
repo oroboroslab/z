@@ -133,27 +133,20 @@
             100% { transform: translate3d(-26px, 18px, 0); opacity: 1; }
         }
 
-        /* brand: WORLD + FEED, two fonts, same size, flat white */
+        /* brand: WORLDFEED single word, flat white */
         .brand-text {
             display: flex;
-            align-items: baseline;
+            align-items: center;
             justify-content: center;
-            gap: 4px;
             padding: 4px 0 2px;
             line-height: 1;
             color: #ffffff;
         }
-        .brand-text .w-mark {
+        .brand-text .brand-name {
             font-family: 'Archivo', sans-serif;
             font-weight: 900;
-            font-size: 26px;
-            letter-spacing: -0.5px;
-        }
-        .brand-text .f-mark {
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            font-size: 26px;
-            letter-spacing: 1px;
+            font-size: 24px;
+            letter-spacing: 2px;
         }
 
         /* alliance logos: restore their original color */
@@ -385,7 +378,7 @@
     <aside class="side">
         <a class="brand" href="./">
             <div class="brand-text">
-                <span class="w-mark">WORLD</span><span class="f-mark">FEED</span>
+                <span class="brand-name">WORLDFEED</span>
             </div>
             <div class="brand-tag">NO ALGORITHM · NO TRACKING</div>
         </a>
