@@ -81,9 +81,11 @@
 
     function catsHtml(p) {
         const cats = (p.cats || []).slice();
-        if (p.minutesAgo <= 30 && !cats.includes('new')) cats.unshift('new');
-        if (!cats.length) return '';
-        return cats.map(c => `<span class="post-tag ${c}">${c}</span>`).join(' ');
+        // Filter out verified and viral tags
+        const filtered = cats.filter(c => c !== 'verified' && c !== 'viral');
+        if (p.minutesAgo <= 30 && !filtered.includes('new')) filtered.unshift('new');
+        if (!filtered.length) return '';
+        return filtered.map(c => `<span class="post-tag ${c}">${c}</span>`).join(' ');
     }
 
     function renderPost(p, idx) {
