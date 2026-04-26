@@ -357,9 +357,14 @@ a:hover { color: var(--hi); }
     text-decoration: none;
     color: inherit;
     transition: opacity 0.2s ease;
+    position: relative;
+    z-index: 1;
 }
 .post-link-wrapper:hover {
     opacity: 0.9;
+}
+.post-link-wrapper:hover .post-title {
+    color: var(--hi);
 }
 
 .post-title {
