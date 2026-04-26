@@ -4,18 +4,26 @@
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 
 const SOURCES = [
-  { name: 'BBC',         url: 'https://feeds.bbci.co.uk/news/world/rss.xml',          tier: 5 },
-  { name: 'NPR',         url: 'https://feeds.npr.org/1004/rss.xml',                   tier: 5 },
-  { name: 'Al Jazeera',  url: 'https://www.aljazeera.com/xml/rss/all.xml',            tier: 5 },
-  { name: 'Reuters TR',  url: 'https://www.reutersagency.com/feed/?best-topics=world&post_type=best',  tier: 5 },
-  { name: 'CBS News',    url: 'https://www.cbsnews.com/latest/rss/world',             tier: 5 },
-  { name: 'CNN World',   url: 'http://rss.cnn.com/rss/edition_world.rss',             tier: 4 },
-  { name: 'Guardian',    url: 'https://www.theguardian.com/world/rss',                tier: 5 },
-  { name: 'NYT World',   url: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml', tier: 5 },
-  { name: 'NASA',        url: 'https://www.nasa.gov/news-release/feed/',              tier: 5 },
-  { name: 'Sci News',    url: 'https://www.sciencedaily.com/rss/top/science.xml',     tier: 5 },
-  { name: 'AP Top',      url: 'https://feedx.net/rss/ap.xml',                         tier: 5 },
-  { name: 'Bloomberg Tech', url: 'https://feeds.bloomberg.com/technology/news.rss',   tier: 4 }
+  // Text wires
+  { name: 'BBC',           url: 'https://feeds.bbci.co.uk/news/world/rss.xml',                tier: 5, kind: 'text' },
+  { name: 'NPR',           url: 'https://feeds.npr.org/1004/rss.xml',                         tier: 5, kind: 'text' },
+  { name: 'Al Jazeera',    url: 'https://www.aljazeera.com/xml/rss/all.xml',                  tier: 5, kind: 'text' },
+  { name: 'CBS News',      url: 'https://www.cbsnews.com/latest/rss/world',                   tier: 5, kind: 'text' },
+  { name: 'CNN World',     url: 'http://rss.cnn.com/rss/edition_world.rss',                   tier: 4, kind: 'text' },
+  { name: 'Guardian',      url: 'https://www.theguardian.com/world/rss',                      tier: 5, kind: 'text' },
+  { name: 'NYT World',     url: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml',     tier: 5, kind: 'text' },
+  { name: 'NASA',          url: 'https://www.nasa.gov/news-release/feed/',                    tier: 5, kind: 'text' },
+  { name: 'Sci News',      url: 'https://www.sciencedaily.com/rss/top/science.xml',           tier: 5, kind: 'text' },
+  { name: 'Bloomberg Tech',url: 'https://feeds.bloomberg.com/technology/news.rss',            tier: 4, kind: 'text' },
+  // Video — YouTube channel RSS for the majors
+  { name: 'BBC News (video)',     url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UC16niRr50-MSBwiO3YDb3RA', tier: 5, kind: 'video' },
+  { name: 'CNN (video)',          url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCupvZG-5ko_eiXAupbDfxWw', tier: 4, kind: 'video' },
+  { name: 'Al Jazeera (video)',   url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCNye-wNBqNL5ZzHSJj3l8Bg', tier: 5, kind: 'video' },
+  { name: 'Reuters (video)',      url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UChqUTb7kYRX8-EiaN3XFrSQ', tier: 5, kind: 'video' },
+  { name: 'DW (video)',           url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg', tier: 4, kind: 'video' },
+  { name: 'AP (video)',           url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UC52X5wxOL_s5yw0dQk7NtgA', tier: 5, kind: 'video' },
+  { name: 'NBC News (video)',     url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCeY0bbntWzzVIaj2z3QigXg', tier: 4, kind: 'video' },
+  { name: 'Sky News (video)',     url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCoMdktPbSTixAyNGwb-UYkQ', tier: 4, kind: 'video' }
 ];
 
 const KEYWORDS_VIRAL = /\b(breaking|exclusive|massive|crisis|protest|attack|shooting|killed|war|record|historic|wins?|elected|resigns?|launches?|crashes?|leaks?)\b/i;
@@ -58,7 +66,8 @@ function parseRSS(xml, src) {
       source: src.name,
       tier: src.tier,
       imageUrl: img,
-      videoUrl: vid
+      videoUrl: vid,
+      sourceKind: src.kind || 'text'
     });
   }
   return items;
@@ -153,6 +162,52 @@ function classifyType(item) {
   return 'story';
 }
 
+// Fetch full article text via jina.ai/r/ (free, no key, returns markdown)
+async function fetchFullText(url, timeoutMs = 14000) {
+  if (!url || !/^https?:/.test(url)) return '';
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), timeoutMs);
+    const res = await fetch('https://r.jina.ai/' + url, {
+      signal: ctrl.signal,
+      headers: { 'User-Agent': 'WorldFeed-bot/1.0', 'X-Return-Format': 'markdown' }
+    });
+    clearTimeout(t);
+    if (!res.ok) return '';
+    let md = await res.text();
+    // strip jina's leading metadata lines so we get just the article body
+    md = md.replace(/^Title:[^\n]*\n/m, '')
+           .replace(/^URL Source:[^\n]*\n/m, '')
+           .replace(/^Markdown Content:\s*\n?/m, '')
+           .replace(/^Warning:[^\n]*\n/gm, '')
+           .replace(/!\[\]\([^)]*\)/g, '')
+           .replace(/\[!\[[^\]]*\]\([^)]*\)\]\([^)]*\)/g, '')
+           .trim();
+    // reject only the unmistakable bot challenges (not generic UI words)
+    const head = md.slice(0, 500);
+    const blockers = /(Just a moment\.\.\.|Are you a robot|We've detected unusual activity|Verify you are human|Cloudflare Ray ID|Access Denied)/i;
+    if (blockers.test(head)) return '';
+    if (md.length < 120) return '';
+    return md.slice(0, 4000);
+  } catch (_) {
+    return '';
+  }
+}
+
+// limited concurrency runner (jina free tier is friendly to small bursts)
+async function withConcurrency(items, limit, fn) {
+  const out = new Array(items.length);
+  let i = 0;
+  await Promise.all(Array.from({ length: limit }, async () => {
+    while (i < items.length) {
+      const idx = i++;
+      try { out[idx] = await fn(items[idx], idx); }
+      catch (_) { out[idx] = items[idx]; }
+    }
+  }));
+  return out;
+}
+
 async function main() {
   const all = [];
   await Promise.all(SOURCES.map(async (s) => {
@@ -176,22 +231,34 @@ async function main() {
     return db - da;
   });
 
+  // Fetch full article text for the top text items (videos don't need it)
+  const top = unique.slice(0, 60);
+  const textTop = top.filter(i => i.sourceKind !== 'video');
+  console.log(`Fetching full content for ${textTop.length} text items via jina…`);
+  await withConcurrency(textTop, 4, async (it) => {
+    const full = await fetchFullText(it.link);
+    if (full && full.length > (it.body || '').length) it.fullContent = full;
+    return it;
+  });
+
   const now = Date.now();
-  const items = unique.slice(0, 60).map((it) => {
+  const items = top.map((it) => {
     const pubMs = it.pub ? new Date(it.pub).getTime() : now;
     const minutesAgo = Math.max(0, Math.round((now - pubMs) / 60000));
     return {
       tier: it.tier,
       cats: categorize(it, minutesAgo),
       title: it.title,
-      body: it.body,
+      body: it.fullContent || it.body,
+      summary: it.body, // keep RSS summary separately
       sources: [it.source],
       type: classifyType(it),
       minutesAgo,
       location: 'wire',
       imageUrl: it.imageUrl || '',
       videoUrl: it.videoUrl || '',
-      link: it.link || ''
+      link: it.link || '',
+      hasFullText: !!it.fullContent
     };
   });
 

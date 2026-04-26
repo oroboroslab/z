@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-26T18:27:15.471Z",
-  "sourcesTried": 12,
+  "updatedAt": "2026-04-26T18:46:55.120Z",
+  "sourcesTried": 18,
   "itemCount": 60,
   "items": [
     {
@@ -10,6 +10,7 @@
       ],
       "title": "4/26: Sunday Morning",
       "body": "Hosted by Jane Pauley. Featured: America's adversarial relationship with Cuba; singer-songwriter Kacey Musgraves; Rep. Jim Clyburn; reviving a Welsh soccer town; tree lovers; artist Jenny Saville; and rescuing Venus fly traps.",
+      "summary": "Hosted by Jane Pauley. Featured: America's adversarial relationship with Cuba; singer-songwriter Kacey Musgraves; Rep. Jim Clyburn; reviving a Welsh soccer town; tree lovers; artist Jenny Saville; and rescuing Venus fly traps.",
       "sources": [
         "CBS News"
       ],
@@ -18,7 +19,67 @@
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/video/042626-sunday-morning/"
+      "link": "https://www.cbsnews.com/video/042626-sunday-morning/",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "Video shows deadly highway bombing in Colombia",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "CNN (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 12,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/FSSgDC2OR-Y/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/FSSgDC2OR-Y",
+      "link": "https://www.youtube.com/shorts/FSSgDC2OR-Y",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "new",
+        "viral"
+      ],
+      "title": "What to know about the shooting suspect in White House Correspondents dinner",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "AP (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 16,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/Gr-igw-SC98/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=Gr-igw-SC98",
+      "link": "https://www.youtube.com/watch?v=Gr-igw-SC98",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new",
+        "viral"
+      ],
+      "title": "Washington residents react to shooting at White House Correspondents' dinner",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "NBC News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 20,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/YijQG_OK7y4/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/YijQG_OK7y4",
+      "link": "https://www.youtube.com/shorts/YijQG_OK7y4",
+      "hasFullText": false
     },
     {
       "tier": 5,
@@ -27,15 +88,56 @@
       ],
       "title": "Israel and Hezbollah Trade Strikes in Lebanon, as Iran Talks Remain on Hold",
       "body": "Cease-fires in Lebanon and Iran are on shaky ground, with military attacks flaring and direct talks between Washington and Tehran to end their war stalled.",
+      "summary": "Cease-fires in Lebanon and Iran are on shaky ground, with military attacks flaring and direct talks between Washington and Tehran to end their war stalled.",
       "sources": [
         "NYT World"
       ],
       "type": "image",
-      "minutesAgo": 2,
+      "minutesAgo": 21,
       "location": "wire",
       "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26-iran-us-fgzw/26-iran-us-fgzw-mediumSquareAt3X.jpg",
       "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html"
+      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new",
+        "viral"
+      ],
+      "title": "Inside the room: How Trump dinner shooting unfolded",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Sky News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 28,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/Ays_xvNMYDM/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=Ays_xvNMYDM",
+      "link": "https://www.youtube.com/watch?v=Ays_xvNMYDM",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "Meet the Press Full Episode — April 26",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "NBC News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 32,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/-LEhCTzMpJs/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=-LEhCTzMpJs",
+      "link": "https://www.youtube.com/watch?v=-LEhCTzMpJs",
+      "hasFullText": false
     },
     {
       "tier": 5,
@@ -44,15 +146,55 @@
       ],
       "title": "Iran's foreign minister returns to Pakistan after U.S. envoys' trip canceled",
       "body": "Iranian Foreign Minister Abbas Araghchi returned to Islamabad on Sunday, where he is expected to participate in talks focused on ending the war with the U.S., Iranian state media reported.",
+      "summary": "Iranian Foreign Minister Abbas Araghchi returned to Islamabad on Sunday, where he is expected to participate in talks focused on ending the war with the U.S., Iranian state media reported.",
       "sources": [
         "CBS News"
       ],
       "type": "story",
-      "minutesAgo": 12,
+      "minutesAgo": 32,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/live-updates/us-iran-war-trump-strait-of-hormuz-hezbollah-lebanon-israel-ceasefire/"
+      "link": "https://www.cbsnews.com/live-updates/us-iran-war-trump-strait-of-hormuz-hezbollah-lebanon-israel-ceasefire/",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "new"
+      ],
+      "title": "Epstein survivors, activists pay tribute to Virginia Giuffre",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Reuters (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 43,
+      "location": "wire",
+      "imageUrl": "https://i1.ytimg.com/vi/8G02IxXGABY/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=8G02IxXGABY",
+      "link": "https://www.youtube.com/watch?v=8G02IxXGABY",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "new"
+      ],
+      "title": "Ukraine marks 40 years since Chornobyl nuclear disaster",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Reuters (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 43,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/UOTPSWpNu6c/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=UOTPSWpNu6c",
+      "link": "https://www.youtube.com/watch?v=UOTPSWpNu6c",
+      "hasFullText": false
     },
     {
       "tier": 5,
@@ -61,15 +203,75 @@
       ],
       "title": "Accused shooter was targeting Trump and US officials, authorities say",
       "body": "President Donald Trump says suspect wrote an anti-Christian declaration and is 'sick guy'.",
+      "summary": "President Donald Trump says suspect wrote an anti-Christian declaration and is 'sick guy'.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 24,
+      "minutesAgo": 44,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/trump-his-administration-likely-targets-at-media-dinner-us-official?traffic_source=rss"
+      "link": "https://www.aljazeera.com/news/2026/4/26/trump-his-administration-likely-targets-at-media-dinner-us-official?traffic_source=rss",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "new",
+        "viral"
+      ],
+      "title": "Gaza area votes in first municipal election since 2006 amid war devastation",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Al Jazeera (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 46,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/Wm1y07FbLr0/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=Wm1y07FbLr0",
+      "link": "https://www.youtube.com/watch?v=Wm1y07FbLr0",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "The mayor’s psychologist | DW News",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "DW (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 46,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/ohnNZTDj1Uc/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/ohnNZTDj1Uc",
+      "link": "https://www.youtube.com/shorts/ohnNZTDj1Uc",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "How did a shooter get so close to Trump again?",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "DW (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 47,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/VhodqpzK60k/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/VhodqpzK60k",
+      "link": "https://www.youtube.com/shorts/VhodqpzK60k",
+      "hasFullText": false
     },
     {
       "tier": 5,
@@ -78,15 +280,17 @@
       ],
       "title": "Israel’s President, Putting Off Decision on Pardon for Netanyahu, Will Push for Plea Deal",
       "body": "President Isaac Herzog of Israel has decided not to issue a pardon to Prime Minister Benjamin Netanyahu in his corruption case at this time, and instead will seek mediation, officials say.",
+      "summary": "President Isaac Herzog of Israel has decided not to issue a pardon to Prime Minister Benjamin Netanyahu in his corruption case at this time, and instead will seek mediation, officials say.",
       "sources": [
         "NYT World"
       ],
       "type": "image",
-      "minutesAgo": 30,
+      "minutesAgo": 50,
       "location": "wire",
       "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-israel-pardon-wfjv/26int-israel-pardon-wfjv-mediumSquareAt3X.jpg",
       "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/israel-netanyahu-pardon-herzog.html"
+      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/israel-netanyahu-pardon-herzog.html",
+      "hasFullText": false
     },
     {
       "tier": 5,
@@ -95,15 +299,36 @@
       ],
       "title": "First trial of Assad-era Syrian official starts in Damascus",
       "body": "Syria begun its first public trial of former Assad-era officials, with ex-security chief Atef Najib appearing in court.",
+      "summary": "Syria begun its first public trial of former Assad-era officials, with ex-security chief Atef Najib appearing in court.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 38,
+      "minutesAgo": 57,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/first-trial-of-assad-era-syrian-official-starts-in-damascus?traffic_source=rss"
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/first-trial-of-assad-era-syrian-official-starts-in-damascus?traffic_source=rss",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "new"
+      ],
+      "title": "First trial of Assad-era Syrian official starts in Damascus | AJ#shorts",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Al Jazeera (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 60,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/BysFW1KL_pA/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/BysFW1KL_pA",
+      "link": "https://www.youtube.com/shorts/BysFW1KL_pA",
+      "hasFullText": false
     },
     {
       "tier": 5,
@@ -112,118 +337,278 @@
       ],
       "title": "Transcript: Sam Vinograd and AT Smith on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
       "body": "The following is the transcript of the interview with CBS News national security contributor Sam Vinograd and CBS News law enforcement analyst AT Smith that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
+      "summary": "The following is the transcript of the interview with CBS News national security contributor Sam Vinograd and CBS News law enforcement analyst AT Smith that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
       "sources": [
         "CBS News"
       ],
       "type": "story",
-      "minutesAgo": 41,
+      "minutesAgo": 60,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/sam-vinograd-at-smith-face-the-nation-transcript-04-26-2026/"
+      "link": "https://www.cbsnews.com/news/sam-vinograd-at-smith-face-the-nation-transcript-04-26-2026/",
+      "hasFullText": false
     },
     {
       "tier": 5,
-      "cats": [
-        "new"
-      ],
+      "cats": [],
       "title": "Weijia Jiang on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
       "body": "The following is the transcript of the interview with White House Correspondents' Association President and senior CBS News correspondent Weijia Jiang that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
+      "summary": "The following is the transcript of the interview with White House Correspondents' Association President and senior CBS News correspondent Weijia Jiang that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
       "sources": [
         "CBS News"
       ],
       "type": "story",
-      "minutesAgo": 41,
+      "minutesAgo": 61,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/weijia-jiang-on-face-the-nation-with-margaret-brennan-april-26-2026/"
+      "link": "https://www.cbsnews.com/news/weijia-jiang-on-face-the-nation-with-margaret-brennan-april-26-2026/",
+      "hasFullText": false
     },
     {
       "tier": 5,
-      "cats": [
-        "new"
+      "cats": [],
+      "title": "What's driving attacks against govt and Russian forces in Mali? | Inside Story",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Al Jazeera (video)"
       ],
+      "type": "video",
+      "minutesAgo": 62,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/6rnmMcwhIuc/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=6rnmMcwhIuc",
+      "link": "https://www.youtube.com/watch?v=6rnmMcwhIuc",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [],
       "title": "Transcript: Sir Christian Turner, U.K. ambassador to the U.S., on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
       "body": "The following is the transcript of the interview with Sir Christian Turner, U.K. ambassador to the U.S., that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
+      "summary": "The following is the transcript of the interview with Sir Christian Turner, U.K. ambassador to the U.S., that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
       "sources": [
         "CBS News"
       ],
       "type": "story",
-      "minutesAgo": 42,
+      "minutesAgo": 62,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/christian-turner-british-ambassador-to-the-us-face-the-nation-transcript-04-26-2026/"
+      "link": "https://www.cbsnews.com/news/christian-turner-british-ambassador-to-the-us-face-the-nation-transcript-04-26-2026/",
+      "hasFullText": false
     },
     {
       "tier": 5,
-      "cats": [
-        "new"
-      ],
+      "cats": [],
       "title": "Transcript: Chevron CEO Mike Wirth on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
       "body": "The following is the transcript of the interview with Chevron CEO Mike Wirth that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
+      "summary": "The following is the transcript of the interview with Chevron CEO Mike Wirth that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
       "sources": [
         "CBS News"
       ],
       "type": "story",
-      "minutesAgo": 45,
+      "minutesAgo": 65,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/mike-wirth-chevron-ceo-face-the-nation-transcript-04-26-2026/"
+      "link": "https://www.cbsnews.com/news/mike-wirth-chevron-ceo-face-the-nation-transcript-04-26-2026/",
+      "hasFullText": false
     },
     {
       "tier": 5,
       "cats": [
-        "new",
         "viral"
       ],
       "title": "Iran and U.S. Sink Into Awkward Limbo of ‘No War, No Peace’",
       "body": "Each side is betting it can last longer than the other, analysts say. But there are risks in a stalemate without a deal.",
+      "summary": "Each side is betting it can last longer than the other, analysts say. But there are risks in a stalemate without a deal.",
       "sources": [
         "NYT World"
       ],
       "type": "image",
-      "minutesAgo": 46,
+      "minutesAgo": 66,
       "location": "wire",
       "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-iran-strategy-assess-01-qwjh/26int-iran-strategy-assess-01-qwjh-mediumSquareAt3X.jpg",
       "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iran-united-states-israel-war-truce.html"
+      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iran-united-states-israel-war-truce.html",
+      "hasFullText": false
     },
     {
       "tier": 5,
-      "cats": [
-        "new"
-      ],
+      "cats": [],
       "title": "Transcript: Rep. Jamie Raskin on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
       "body": "The following is the transcript of the interview with Rep. Jamie Raskin, Democrat of Maryland, that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
+      "summary": "The following is the transcript of the interview with Rep. Jamie Raskin, Democrat of Maryland, that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
       "sources": [
         "CBS News"
       ],
       "type": "story",
-      "minutesAgo": 47,
+      "minutesAgo": 67,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/news/jamie-raskin-maryland-democrat-face-the-nation-transcript-04-26-2026/"
+      "link": "https://www.cbsnews.com/news/jamie-raskin-maryland-democrat-face-the-nation-transcript-04-26-2026/",
+      "hasFullText": false
     },
     {
       "tier": 5,
-      "cats": [
-        "new"
-      ],
+      "cats": [],
       "title": "Thai police arrest Indonesian wanted for $10m cyberfraud",
       "body": "The 33-year-old Indonesian taken into custody at luxury resort on island of Phuket after FBI tip-off.",
+      "summary": "The 33-year-old Indonesian taken into custody at luxury resort on island of Phuket after FBI tip-off.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 49,
+      "minutesAgo": 69,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/thai-police-arrest-indonesian-wanted-for-10m-cyberfraud?traffic_source=rss"
+      "link": "https://www.aljazeera.com/news/2026/4/26/thai-police-arrest-indonesian-wanted-for-10m-cyberfraud?traffic_source=rss",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [],
+      "title": "A young widow’s ‘surprising’ experience with grief",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "CNN (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 75,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/yNhQiKGwvCo/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/yNhQiKGwvCo",
+      "link": "https://www.youtube.com/shorts/yNhQiKGwvCo",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [],
+      "title": "How EU is pivoting away from ‘toxic’ Trump & closer to China | Fareed's Take",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "CNN (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 75,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/YWZACdqdFcc/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=YWZACdqdFcc",
+      "link": "https://www.youtube.com/watch?v=YWZACdqdFcc",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [],
+      "title": "'You fight your way to the negotiating table': Analyst on US-Iran diplomacy",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Al Jazeera (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 78,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/O8t97Bp9GUo/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=O8t97Bp9GUo",
+      "link": "https://www.youtube.com/watch?v=O8t97Bp9GUo",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [],
+      "title": "Gazans mourn after weekend of Israeli attacks",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "DW (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 79,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/I8fnsOhXFBs/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/I8fnsOhXFBs",
+      "link": "https://www.youtube.com/shorts/I8fnsOhXFBs",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "viral"
+      ],
+      "title": "Law enforcement respond after shooting incident at White House Correspondents' dinner",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "AP (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 87,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/7mXMJgn2UrM/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/7mXMJgn2UrM",
+      "link": "https://www.youtube.com/shorts/7mXMJgn2UrM",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [],
+      "title": "'It was textbook from the moment you hear the shots' says ex-agent on secret service's response",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Sky News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 98,
+      "location": "wire",
+      "imageUrl": "https://i1.ytimg.com/vi/dNC4kHyiRDA/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=dNC4kHyiRDA",
+      "link": "https://www.youtube.com/watch?v=dNC4kHyiRDA",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "viral"
+      ],
+      "title": "Performer close to Trump during shooting describes what happened",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "CNN (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 102,
+      "location": "wire",
+      "imageUrl": "https://i1.ytimg.com/vi/Dwo9hLk-CJ0/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/Dwo9hLk-CJ0",
+      "link": "https://www.youtube.com/shorts/Dwo9hLk-CJ0",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [],
+      "title": "Hope in Gaza as 300 couples get married at one time. #BBCNews",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "BBC News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 106,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/gNDk6HDf_Hs/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/gNDk6HDf_Hs",
+      "link": "https://www.youtube.com/shorts/gNDk6HDf_Hs",
+      "hasFullText": false
     },
     {
       "tier": 5,
@@ -232,75 +617,231 @@
       ],
       "title": "Iran shifts economic focus to essentials during war uncertainty",
       "body": "The government is partly reversing a currency decision for basic items and tapping into the country's sovereign fund.",
+      "summary": "The government is partly reversing a currency decision for basic items and tapping into the country's sovereign fund.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 87,
+      "minutesAgo": 107,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/iran-shifts-economic-focus-to-essentials-amid-war-uncertainty?traffic_source=rss"
+      "link": "https://www.aljazeera.com/news/2026/4/26/iran-shifts-economic-focus-to-essentials-amid-war-uncertainty?traffic_source=rss",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "viral"
+      ],
+      "title": "War on Iran: How the Strait of Hormuz crisis boosts Russia’s economic leverage",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Al Jazeera (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 109,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/iEFUiodr7dk/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=iEFUiodr7dk",
+      "link": "https://www.youtube.com/watch?v=iEFUiodr7dk",
+      "hasFullText": false
     },
     {
       "tier": 5,
       "cats": [],
       "title": "Abbas loyalists sweep Palestinian elections, including some seats in Gaza",
       "body": "Voter turnout in Gaza remained low due to the ongoing impact of the genocide.",
+      "summary": "Voter turnout in Gaza remained low due to the ongoing impact of the genocide.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 97,
+      "minutesAgo": 116,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/abbas-loyalists-sweep-palestine-elections-in-occupied-west-bank-gaza-city?traffic_source=rss"
+      "link": "https://www.aljazeera.com/news/2026/4/26/abbas-loyalists-sweep-palestine-elections-in-occupied-west-bank-gaza-city?traffic_source=rss",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "viral"
+      ],
+      "title": "White House Correspondents' Dinner shooting: What we know so far | BBC News",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "BBC News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 122,
+      "location": "wire",
+      "imageUrl": "https://i1.ytimg.com/vi/Pu-0xly1l8w/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=Pu-0xly1l8w",
+      "link": "https://www.youtube.com/watch?v=Pu-0xly1l8w",
+      "hasFullText": false
     },
     {
       "tier": 4,
       "cats": [],
       "title": "Canadian Province of Manitoba Says It Will Ban Social Media, AI For Youth",
       "body": "The Canadian province of Manitoba plans to prohibit young people from accessing social media and artificial intelligence chatbots, its leader said.",
+      "summary": "The Canadian province of Manitoba plans to prohibit young people from accessing social media and artificial intelligence chatbots, its leader said.",
       "sources": [
         "Bloomberg Tech"
       ],
       "type": "image",
-      "minutesAgo": 109,
+      "minutesAgo": 128,
       "location": "wire",
       "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iUdwIsdOoAZw/v0/1200x-1.jpg",
       "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/canadian-province-of-manitoba-says-it-will-ban-social-media-ai-for-youth"
+      "link": "https://www.bloomberg.com/news/articles/2026-04-26/canadian-province-of-manitoba-says-it-will-ban-social-media-ai-for-youth",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [],
+      "title": "North Korea's Kim Jong Un meets with speaker of Russian state duma",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "AP (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 132,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/E97ZKLAw_8c/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=E97ZKLAw_8c",
+      "link": "https://www.youtube.com/watch?v=E97ZKLAw_8c",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "viral"
+      ],
+      "title": "'No one checked my ID', says BBC correspondent at DC hotel shooting. #BBCNews",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "BBC News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 166,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/wZpd5y6PVpI/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/wZpd5y6PVpI",
+      "link": "https://www.youtube.com/shorts/wZpd5y6PVpI",
+      "hasFullText": false
     },
     {
       "tier": 4,
       "cats": [],
       "title": "Italy Decides to Extradite Chinese Man Wanted by US for Hacking",
       "body": "The Italian government decided to extradite a Chinese man wanted by the US on hacking charges, people familiar with the matter said on Sunday.",
+      "summary": "The Italian government decided to extradite a Chinese man wanted by the US on hacking charges, people familiar with the matter said on Sunday.",
       "sources": [
         "Bloomberg Tech"
       ],
       "type": "image",
-      "minutesAgo": 147,
+      "minutesAgo": 167,
       "location": "wire",
       "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i5cOuOcodPoY/v1/1200x-1.jpg",
       "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/italy-decides-to-extradite-chinese-man-wanted-by-us-for-hacking"
+      "link": "https://www.bloomberg.com/news/articles/2026-04-26/italy-decides-to-extradite-chinese-man-wanted-by-us-for-hacking",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [],
+      "title": "Sultan of Oman meets with Iran's Foreign Minister Abbas Araghchi",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "AP (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 167,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/ui8e9SxoMes/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=ui8e9SxoMes",
+      "link": "https://www.youtube.com/watch?v=ui8e9SxoMes",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "viral"
+      ],
+      "title": "DC mayor says 'no reason to believe' anyone else involved in dinner shooting incident",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "AP (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 176,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/VDbyUbTymXU/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/VDbyUbTymXU",
+      "link": "https://www.youtube.com/shorts/VDbyUbTymXU",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "viral"
+      ],
+      "title": "How the US-Israel war, sanctions and blockade are pushing Iran’s economy to the brink",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Al Jazeera (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 177,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/IztQJIkIiak/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=IztQJIkIiak",
+      "link": "https://www.youtube.com/watch?v=IztQJIkIiak",
+      "hasFullText": false
     },
     {
       "tier": 5,
       "cats": [],
       "title": "New footage shows moment of deadly bus bombing in Colombia",
       "body": "Newly released dashcam video shows the moment that a bomb-laden bus exploded in Colombia.",
+      "summary": "Newly released dashcam video shows the moment that a bomb-laden bus exploded in Colombia.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "video",
-      "minutesAgo": 169,
+      "minutesAgo": 189,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/new-footage-shows-moment-of-deadly-bus-bombing-in-colombia?traffic_source=rss"
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/new-footage-shows-moment-of-deadly-bus-bombing-in-colombia?traffic_source=rss",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [],
+      "title": "New footage shows moment of deadly bus bombing in Colombia | AJ #shorts",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Al Jazeera (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 192,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/ghyxF88SwxU/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/ghyxF88SwxU",
+      "link": "https://www.youtube.com/shorts/ghyxF88SwxU",
+      "hasFullText": false
     },
     {
       "tier": 5,
@@ -309,642 +850,246 @@
       ],
       "title": "‘State of war’: Why Israel has escalated attacks in Gaza",
       "body": "Israel escalates attacks and expands control in Gaza Strip, sidelining the new US-backed technocratic administration.",
+      "summary": "Israel escalates attacks and expands control in Gaza Strip, sidelining the new US-backed technocratic administration.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 175,
+      "minutesAgo": 195,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/state-of-war-why-israel-has-escalated-attacks-in-gaza?traffic_source=rss"
+      "link": "https://www.aljazeera.com/news/2026/4/26/state-of-war-why-israel-has-escalated-attacks-in-gaza?traffic_source=rss",
+      "hasFullText": false
     },
     {
       "tier": 5,
       "cats": [],
       "title": "4/26: Face The Nation",
       "body": "This week on \"Face the Nation with Margaret Brennan,\" acting Attorney General Todd Blanche and White House Correspondents' Association President and CBS News correspondent Weijia Jiang join after gunshots rang out at the annual dinner. Plus, U.K. Ambassador to the U.K., Sir Christian Turner, joins.",
+      "summary": "This week on \"Face the Nation with Margaret Brennan,\" acting Attorney General Todd Blanche and White House Correspondents' Association President and CBS News correspondent Weijia Jiang join after gunshots rang out at the annual dinner. Plus, U.K. Ambassador to the U.K., Sir Christian Turner, joins.",
       "sources": [
         "CBS News"
       ],
       "type": "story",
-      "minutesAgo": 177,
+      "minutesAgo": 197,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.cbsnews.com/video/042626-face-the-nation/"
+      "link": "https://www.cbsnews.com/video/042626-face-the-nation/",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "viral"
+      ],
+      "title": "WHCD shooting: What the person closest to Trump saw",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "CNN (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 202,
+      "location": "wire",
+      "imageUrl": "https://i1.ytimg.com/vi/pZEAhzaqh5Y/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=pZEAhzaqh5Y",
+      "link": "https://www.youtube.com/watch?v=pZEAhzaqh5Y",
+      "hasFullText": false
     },
     {
       "tier": 5,
       "cats": [],
       "title": "Will Yamal, Salah and Ekitike miss the World Cup 2026 due to injury?",
       "body": "From Spanish prodigy Lamine Yamal to Egypt's Mohamed Salah and Brazil's trio, these 10 players could be out of action.",
+      "summary": "From Spanish prodigy Lamine Yamal to Egypt's Mohamed Salah and Brazil's trio, these 10 players could be out of action.",
       "sources": [
         "Al Jazeera"
       ],
       "type": "story",
-      "minutesAgo": 188,
+      "minutesAgo": 207,
       "location": "wire",
       "imageUrl": "",
       "videoUrl": "",
-      "link": "https://www.aljazeera.com/sports/2026/4/26/will-yamal-salah-and-ekitike-miss-the-world-cup-2026-due-to-injury?traffic_source=rss"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Apple’s Cook Gives Ternus a Pipeline of 10 Major New Product Categories",
-      "body": "Also: John Ternus talks AI and services with employees.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 267,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iyesLe.Ky1rk/v0/1200x-1.jpg",
-      "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/newsletters/2026-04-26/new-apple-ceo-john-ternus-first-major-product-is-the-foldable-iphone-road-map-mofu521p"
+      "link": "https://www.aljazeera.com/sports/2026/4/26/will-yamal-salah-and-ekitike-miss-the-world-cup-2026-due-to-injury?traffic_source=rss",
+      "hasFullText": false
     },
     {
       "tier": 5,
       "cats": [],
-      "title": "Mezcal worm in a bottle DNA test reveals a surprise",
-      "body": "The famous mezcal “worm” has long puzzled scientists, but DNA testing has finally cracked the case. Researchers found that all sampled larvae were actually agave redworm moth caterpillars—not a mix of species as once believed. While the discovery clears up a long-standing mystery, it also raises concerns about sustaina",
+      "title": "Trump says being president a 'dangerous profession'",
+      "body": "",
+      "summary": "",
       "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 293,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260426012250.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "How China is responding to the stalling of talks between the U.S. and Iran",
-      "body": "NPR's Ayesha Rascoe speaks to Zongyuan Zoe Liu, a senior fellow at the Council on Foreign Relations, about how China views the current crisis in the Middle East",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 378,
-      "location": "wire",
-      "imageUrl": "https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5797410",
-      "videoUrl": "",
-      "link": "https://www.npr.org/2026/04/26/nx-s1-5797410/how-china-is-responding-to-the-stalling-of-talks-between-the-u-s-and-iran"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Musk Vies to Turn X Into Super App With Banking Tool Near Launch",
-      "body": "More than three years after acquiring Twitter, Elon Musk says he’s nearing his long-stated goal of turning it into an “everything app” with a new financial services tool that he pledged to launch for the public this month.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 387,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i8X8D2rAxBII/v1/1200x-1.jpg",
-      "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/musk-vies-to-turn-x-into-super-app-with-banking-tool-near-launch"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "U.S. Mint Buys Drug Cartel Gold and Sells It as ‘American’",
-      "body": "As prices for the precious metal soar, the industry’s guardrails have broken down.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 390,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/08/world/00Gold-Scrolly-05/00Gold-Scrolly-05-mediumSquareAt3X.jpg",
-      "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/americas/us-mint-gold-drug-cartel-colombia.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Blood vessels found in T. rex bones are rewriting dinosaur science",
-      "body": "Dinosaur DNA may still be out of reach, but scientists are uncovering something almost as exciting—ancient blood vessels hidden inside fossilized bones. In a massive Tyrannosaurus rex nicknamed Scotty, researchers discovered a network of preserved vessels within a rib that once fractured and began healing 66 million ye",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 402,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260426012259.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Trump doubts shooter motivated by Iran war as peace talks on hold",
-      "body": "A shooting incident at the White House Correspondent's Dinner took focus away from the war in Iran, as Iran's foreign minister planned to return to Islamabad, the site of previous peace talks.",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 407,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb6%2F1a%2F15437da0469f85df6799247d9c0d%2Fap26114554323690.jpg",
-      "videoUrl": "",
-      "link": "https://www.npr.org/2026/04/26/nx-s1-5800054/iran-talks-on-hold-shooting-talks-pakistan"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "DNA research just rewrote the origin of human species",
-      "body": "Scientists have uncovered a surprising new picture of human origins that challenges the long-held idea of a single ancestral population in Africa. By analyzing genetic data from diverse modern African groups—especially the highly distinct Nama people—and comparing it with fossil evidence, researchers found that early h",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 454,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260426012255.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "40 Years After the Meltdown, War Layers Another Disaster on Chernobyl",
-      "body": "Ideas have been floated for how the contaminated zone could bring economic benefits to Ukraine. But for the foreseeable future, it will be an army-controlled security belt.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 475,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-ukraine-chernobyl-01-jzqb-promo/26int-ukraine-chernobyl-01-jzqb-mediumSquareAt3X.jpg",
-      "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/europe/chernobyl-anniversary.html"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "China Formalizes Labor Rules for Gig Workers on Online Platforms",
-      "body": "China formalized its first comprehensive policy framework for “new employment groups,” including delivery riders and livestreamers, signaling a shift from ad-hoc regulation to normalization of the platform economy.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 480,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i1m9lIu9m_xo/v1/1200x-1.jpg",
-      "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/china-formalizes-labor-rules-for-gig-workers-on-online-platforms"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Islamabad Reopens After U.S.-Iran Talks Fail to Materialize",
-      "body": "Officials had locked the city down, anticipating talks between U.S. and Iranian delegations. But they didn’t happen. “What did I close my business for?” one business owner asked.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 502,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-islamabad-talks-hbkt/26int-islamabad-talks-hbkt-mediumSquareAt3X.jpg",
-      "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/asia/islamabad-talks-iran-us.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "King Charles U.S. visit comes at tense moment in transatlantic relationship",
-      "body": "King Charles and Queen Camilla arrive Monday for a four day U.S. state visit. Some hope the royal touch can heal the transatlantic rift that's emerged under Trump.",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 507,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4743x3369+0+0/resize/4743x3369!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F55%2Ff7%2F1aac66724cac9bbd775ec7f906ee%2Fap25260728844739.jpg",
-      "videoUrl": "",
-      "link": "https://www.npr.org/2026/04/26/nx-s1-5788696/king-queen-state-trump"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "What Happened After The New York Times Found a Cartel Mine on a Colombian Military Base",
-      "body": "Officers denied that an illegal, large-scale gold operation was underway within earshot of their posts. But we had seen it with our own eyes.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "story",
-      "minutesAgo": 517,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/americas/colombia-cartel-illegal-gold-mining-military-base.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Armed groups launch coordinated attacks across Mali",
-      "body": "Witnesses report clashes in the centre and north, in what has been described as the largest jihadist attack in years.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 571,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0f56/live/2e2451f0-40b0-11f1-9cb2-cda518707cb6.jpg",
-      "videoUrl": "",
-      "link": "https://www.bbc.com/news/articles/clyx7nnrkqdo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Fish oil may be hurting your brain, new study finds",
-      "body": "Fish oil has long been praised as brain-boosting, but new research suggests the story may be more complicated. Scientists found that in people with repeated mild head injuries, a key omega-3 fatty acid in fish oil—EPA—may actually interfere with the brain’s ability to repair itself. Instead of helping recovery, it appe",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "document",
-      "minutesAgo": 749,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260426012303.htm"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "DeepSeek V4 Delay Shows Shift to China Chips, CCTV Account Says",
-      "body": "DeepSeek’s delayed release of its V4 model points to a strategic shift toward deeper integration with China’s domestic chip ecosystem, according to Yuyuantantian, a social media account affiliated with the government-controlled China Central Television.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 818,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i2XL7tuBUVqo/v0/1200x-1.jpg",
-      "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/deepseek-v4-delay-shows-shift-to-china-chips-cctv-account-says"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "I was in the room with Trump and heard the low thudding sound of gunfire",
-      "body": "The BBC's Gary O'Donoghue describes the moment he and others dived for cover as shots rang out at the venue.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 844,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8e11/live/92ee8830-416e-11f1-b55d-0f258dce1735.jpg",
-      "videoUrl": "",
-      "link": "https://www.bbc.com/news/articles/c62j23wzeqeo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "How Nieves González’s Painting of Lily Allen Made Her Famous",
-      "body": "Nieves González, a 29-year-old painter, once worked in relative obscurity in Andalusia. Her picture of the British singer Lily Allen changed that.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 866,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-spain-aritst-profile-promo-tghf/26int-spain-aritst-profile-promo-tghf-mediumSquareAt3X.jpg",
-      "videoUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/europe/nieves-gonzalez-lily-allen-artist-west-end-girl-spain.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Aggressive “hulk” lizards are wiping out millions of years of evolution",
-      "body": "For ages, wall lizards coexisted in three distinct color types, each with its own strategy for survival. Now, a powerful green variant is taking over. These dominant “Hulk” lizards are outcompeting the others, causing yellow and orange morphs to vanish. It’s a dramatic reminder that evolution can flip the script much f",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 913,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260424233212.htm"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Beijing Warns EU After China Firms Included in Russia Sanctions",
-      "body": "China said it will take necessary measures after the European Union added Chinese entities to its latest Russia sanctions package, warning that all consequences would be borne by the EU.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 961,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iKSZsNO58p8w/v1/1200x-1.jpg",
-      "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/beijing-warns-eu-after-china-firms-included-in-russia-sanctions"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Netanyahu orders army to 'vigorously attack' Hezbollah in Lebanon",
-      "body": "The Israeli PM's directive comes as six people were killed by strikes in Lebanon despite a ceasefire being extended by three weeks.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1073,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cd6d/live/d70bb7a0-4104-11f1-b55d-0f258dce1735.jpg",
-      "videoUrl": "",
-      "link": "https://www.bbc.com/news/articles/c5yv1nvd4gjo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "In a rare interview, a leader of the world's largest right-wing group talks to NPR",
-      "body": "The second-in-command of the RSS, a Hindu nationalist organization in India, rarely speaks to the Western press. Here's what he said about his group's controversial history.",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 1242,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7038x4692+0+0/resize/7038x4692!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb8%2Fff%2F612a5c7a4e16b826ac0a79eee724%2Fgettyimages-2238298862.jpg",
-      "videoUrl": "",
-      "link": "https://www.npr.org/2026/04/25/nx-s1-5795781/india-rss-rashtriya-swayamsevak-sangh-interview-hindu-nationalist"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Trump cancels US envoys' trip to Pakistan for talks on Iran war",
-      "body": "Iran had earlier said there were no plans for a direct meeting with a US delegation led by Steve Witkoff and Jared Kushner.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1253,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e627/live/9720af10-4140-11f1-b164-67ef9684bbf6.jpg",
-      "videoUrl": "",
-      "link": "https://www.bbc.com/news/articles/c4g6nyvl29po?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Militants and separatists launch coordinated attacks across Mali",
-      "body": "<p>Al-Qaida-linked group JNIM claims responsibility for strikes on airport in capital, Bamako and four other cities</p><p>Islamic militants and separatists attacked several locations in Mali’s capital and other cities on Saturday in one of the largest coordinated attacks in the country in recent years.</p><p>The al-Qai",
-      "sources": [
-        "Guardian"
-      ],
-      "type": "image",
-      "minutesAgo": 1325,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/082ceb589732191afe763335e5f85e6ab8d5be20/272_0_4165_3333/master/4165.jpg?width=140&quality=85&auto=format&fit=max&s=08ca1dd2a7b437d35e2143812df7d6a3",
-      "videoUrl": "",
-      "link": "https://www.theguardian.com/world/2026/apr/25/militants-and-separatists-launch-coordinated-attacks-across-mali"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Orbán steps down from Hungarian parliament after landslide defeat",
-      "body": "The outgoing prime minister will not take up his seat after leading his party back into opposition.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1385,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c5c7/live/a81e7d00-40d8-11f1-b316-3766e147ab87.jpg",
-      "videoUrl": "",
-      "link": "https://www.bbc.com/news/articles/cd9v1wll8qqo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Mexico says US agents killed in crash weren't permitted to operate there",
-      "body": "The two Americans who reportedly worked for the CIA died in a car crash after a Mexican-led operation to destroy a drug lab.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1486,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/aab8/live/9afb0050-40c2-11f1-9af5-0bf991029b02.jpg",
-      "videoUrl": "",
-      "link": "https://www.bbc.com/news/articles/cx2491we011o?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Rights groups critical as Venezuela prisoner release scheme 'coming to an end'",
-      "body": "More than 500 political prisoners are thought to still be in jail, despite the releases since the amnesty law was brought in.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1490,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4b26/live/fc256be0-40c2-11f1-ac78-2112837ce2aa.jpg",
-      "videoUrl": "",
-      "link": "https://www.bbc.com/news/articles/c0kr62z7z6lo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Palestinians in West Bank and some in Gaza vote in local elections",
-      "body": "Local elections have been held in the occupied West Bank and in one Gazan city, though Hamas and other groups are not taking part.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1525,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0fc6/live/17495f90-4072-11f1-83f8-e39ccdeebf3b.jpg",
-      "videoUrl": "",
-      "link": "https://www.bbc.com/news/articles/cn4vej3x0wxo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Harvard scientists link gut bacteria to depression through hidden inflammation trigger",
-      "body": "A gut bacterium may be quietly fueling depression through an unexpected chemical twist. Researchers found that when Morganella morganii interacts with a common pollutant, it produces a molecule that triggers inflammation—something strongly linked to depression. This finding helps explain how gut microbes can influence ",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 1608,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260425091216.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Mali reeling after coordinated attacks hit multiple cities",
-      "body": "Gunfire and explosions rocked Mali's capital and other key cities in one of the most significant coordinated attacks in years, as armed groups exploited worsening insecurity in the Sahel region.",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 1650,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4200x2801+0+0/resize/4200x2801!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa9%2F91%2F02ab8c124341accb9def0ec8fd15%2Fgettyimages-2272666948.jpg",
-      "videoUrl": "",
-      "link": "https://www.npr.org/2026/04/25/nx-s1-5799439/mali-hit-by-wave-of-coordinated-attacks-from-armed-groups"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "This exotic particle could finally explain why matter has mass",
-      "body": "A major physics experiment has uncovered evidence for a strange new form of matter, where a fleeting particle gets trapped inside a nucleus. This exotic state may reveal how mass is generated, suggesting that particles can weigh less when surrounded by dense nuclear matter. The findings support long-standing theories a",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 1660,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260424233214.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Gravitational waves may have created dark matter in the early universe",
-      "body": "In the chaotic first moments after the Big Bang, ripples in spacetime may have done more than just echo through the cosmos—they could have helped create dark matter itself. New research suggests that faint, ancient gravitational waves might have transformed into particles that eventually became the invisible substance ",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 1691,
-      "location": "wire",
-      "imageUrl": "",
-      "videoUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260424233217.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "What counts as the woods? Judge axes Nova Scotia’s ban that defied ‘commonsense definitions’",
-      "body": "<p>The court sided with a Canadian hiker who deliberately challenged the order imposed to curb spread of wildfires</p><p>As wildfires raged across Nova Scotia last summer, the <a href=\"https://www.theguardian.com/world/canada\">Canadian</a> province made a simple plea to residents: stay away from the woods.</p><p>As the",
-      "sources": [
-        "Guardian"
-      ],
-      "type": "image",
-      "minutesAgo": 1706,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/6c3c8a2e594b8e6ceaf7fd148e6d38a75956c270/380_0_4718_3773/master/4718.jpg?width=140&quality=85&auto=format&fit=max&s=c15a3dfb022d4b92b2a47a6f73471e08",
-      "videoUrl": "",
-      "link": "https://www.theguardian.com/world/2026/apr/25/canada-nova-scotia-wildfire-woods-ban"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Private-Sector Sleuthing Becomes Big Business for US Tech Startup",
-      "body": "Trump’s economic crackdown on China’s US interests is creating opportunities for a Utah-based intelligence firm",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 1707,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iUzewphjoTns/v1/1200x-1.jpg",
-      "videoUrl": "",
-      "link": "https://www.bloomberg.com/news/features/2026-04-25/private-sector-sleuthing-becomes-big-business-for-us-tech-startup"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "‘Astonishing’ discovery could help save children from deadly disfiguring condition",
-      "body": "<p>A previously unknown species of bacteria found in patients with noma could be key to creating treatments for the neglected tropical disease</p><p>The “astonishing” discovery of a new bacterium could open the door to better ways to prevent, detect and treat a fatal and disfiguring childhood disease, researchers hope.",
-      "sources": [
-        "Guardian"
-      ],
-      "type": "image",
-      "minutesAgo": 2007,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/e8156517a54fa1b3b8e7629e6c28b0792f291a7a/248_0_2504_2004/master/2504.jpg?width=140&quality=85&auto=format&fit=max&s=579e2320140c1f419daf8ba90d40fecc",
-      "videoUrl": "",
-      "link": "https://www.theguardian.com/global-development/2026/apr/25/discovery-children-fatal-disfiguring-disease-noma-unknown-bacteria"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Iran's foreign minister leaves Pakistan, then Trump cancels U.S. delegation's travel",
-      "body": "After arriving on Friday, Iran's Abbas Araghchi has left Islamabad, prompting President Trump to announce that his envoys Steve Witkoff and Jared Kushner will no longer travel there Saturday for peace talks",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 2152,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x667+0+0/resize/1024x667!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F59%2F81%2F2aefffa943098ef4ebd300415fdb%2Fgettyimages-2272187995.jpg",
-      "videoUrl": "",
-      "link": "https://www.npr.org/2026/04/25/nx-s1-5799372/iran-middle-east-updates"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Altman apologizes after OpenAI failed to alert police before fatal Canada shooting",
-      "body": "<p>OpenAI said the company had identified an account using abuse-detection efforts, but determined at the time it didn’t meet threshold for legal referral</p><p>The head of OpenAI has written a letter apologizing that his company didn’t alert law enforcement about the online behavior of a person who shot and killed eig",
-      "sources": [
-        "Guardian"
-      ],
-      "type": "image",
-      "minutesAgo": 2414,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/84e2422ff0338b70902f2c0aa6c24a6605329822/479_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=57e96ffc92096faa977f541805b4601c",
-      "videoUrl": "",
-      "link": "https://www.theguardian.com/us-news/2026/apr/25/altman-apologizes-after-openai-failed-to-alert-police-before-fatal-canada-shooting"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "US military kills two more people in strike on alleged drug boat in Pacific",
-      "body": "<p>Small boat destroyed in video posted on social media as US campaign has killed at least 178 people since September</p><p>The US military <a href=\"https://x.com/Southcom/status/2047843084956750278\">announced</a> on Friday that it killed two people in an attack on a boat in the eastern Pacific, part of a series of dea",
-      "sources": [
-        "Guardian"
+        "AP (video)"
       ],
       "type": "video",
-      "minutesAgo": 2424,
+      "minutesAgo": 210,
       "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/e7a45331e955e87b2925d3667c2446a9db64293c/225_0_1048_839/master/1048.jpg?width=140&quality=85&auto=format&fit=max&s=418bd7d8ff169804cc5eb9f7e05632de",
-      "videoUrl": "https://x.com/Southcom/status/2047843084956750278",
-      "link": "https://www.theguardian.com/us-news/2026/apr/24/us-military-strike-boat-pacific"
+      "imageUrl": "https://i3.ytimg.com/vi/vtR7r1c3g3I/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/vtR7r1c3g3I",
+      "link": "https://www.youtube.com/shorts/vtR7r1c3g3I",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [
+        "viral"
+      ],
+      "title": "Philippines’ ‘sea nomads’ navigate fuel price surge driven by the war on Iran",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Al Jazeera (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 213,
+      "location": "wire",
+      "imageUrl": "https://i1.ytimg.com/vi/XfWJXRt3Ffg/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=XfWJXRt3Ffg",
+      "link": "https://www.youtube.com/watch?v=XfWJXRt3Ffg",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [],
+      "title": "World Penguin Day: tracking a 12,000 km migration | DW News",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "DW (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 227,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/2Xk8pdyB-Q0/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/2Xk8pdyB-Q0",
+      "link": "https://www.youtube.com/shorts/2Xk8pdyB-Q0",
+      "hasFullText": false
     },
     {
       "tier": 5,
       "cats": [],
-      "title": "Vessels seized by the U.S. this week were part of a global 'shadow fleet'",
-      "body": "NPR's Juana Summers speaks with Elisabeth Braw, senior fellow at the Atlantic Council, about shadow vessels, after the U.S. military's seizure of two Iranian-linked oil tankers.",
+      "title": "AP bureau chief describes what happened at the White House Correspondents' dinner",
+      "body": "",
+      "summary": "",
       "sources": [
-        "NPR"
+        "AP (video)"
       ],
-      "type": "image",
-      "minutesAgo": 2748,
+      "type": "video",
+      "minutesAgo": 234,
       "location": "wire",
-      "imageUrl": "https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5795895",
-      "videoUrl": "",
-      "link": "https://www.npr.org/2026/04/24/nx-s1-5795895/vessels-seized-by-the-u-s-this-week-were-part-of-a-global-shadow-fleet"
+      "imageUrl": "https://i4.ytimg.com/vi/WJm8uWgLqRU/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/WJm8uWgLqRU",
+      "link": "https://www.youtube.com/shorts/WJm8uWgLqRU",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "viral"
+      ],
+      "title": "Trump says shooting would 'never have happened' if ballroom was built",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "Sky News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 249,
+      "location": "wire",
+      "imageUrl": "https://i4.ytimg.com/vi/kRJFRNC5Em8/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=kRJFRNC5Em8",
+      "link": "https://www.youtube.com/watch?v=kRJFRNC5Em8",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "viral"
+      ],
+      "title": "Ro Khanna believes Trump won't secure congressional authorization for Iran war: Full interview",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "NBC News (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 273,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/vb_2iS6yhus/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=vb_2iS6yhus",
+      "link": "https://www.youtube.com/watch?v=vb_2iS6yhus",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [],
+      "title": "Blanche says it appears suspect was targeting Trump admin. members",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "CNN (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 284,
+      "location": "wire",
+      "imageUrl": "https://i2.ytimg.com/vi/EXjp6ujckaA/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/EXjp6ujckaA",
+      "link": "https://www.youtube.com/shorts/EXjp6ujckaA",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [],
+      "title": "How Baltic volunteers are preparing for a conflict with Russia | Focus on europe",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "DW (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 286,
+      "location": "wire",
+      "imageUrl": "https://i1.ytimg.com/vi/lseVbN_KSCc/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=lseVbN_KSCc",
+      "link": "https://www.youtube.com/watch?v=lseVbN_KSCc",
+      "hasFullText": false
+    },
+    {
+      "tier": 4,
+      "cats": [],
+      "title": "Chernobyl flashback?",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "DW (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 286,
+      "location": "wire",
+      "imageUrl": "https://i3.ytimg.com/vi/ZknJSjcZvfY/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/ZknJSjcZvfY",
+      "link": "https://www.youtube.com/shorts/ZknJSjcZvfY",
+      "hasFullText": false
+    },
+    {
+      "tier": 5,
+      "cats": [],
+      "title": "AP sees inside Chernobyl Nuclear Power Plant 40 years after disaster",
+      "body": "",
+      "summary": "",
+      "sources": [
+        "AP (video)"
+      ],
+      "type": "video",
+      "minutesAgo": 286,
+      "location": "wire",
+      "imageUrl": "https://i1.ytimg.com/vi/PIWK_ptRL88/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/shorts/PIWK_ptRL88",
+      "link": "https://www.youtube.com/shorts/PIWK_ptRL88",
+      "hasFullText": false
     }
   ]
 }

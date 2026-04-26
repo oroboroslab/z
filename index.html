@@ -158,6 +158,97 @@
         }
         .post-title-link:hover { background-size: 100% 1px; }
 
+        /* === full inline body (replaces the doc preview / truncated body) === */
+        .post-body-full {
+            font-family: 'Inter', sans-serif;
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin: 12px 0;
+        }
+        .post-body-full p { margin: 0 0 12px; }
+        .post-body-full p:last-child { margin-bottom: 0; }
+        .post-body-full a { color: #22d3ee; border-bottom: 1px solid rgba(34,211,238,0.3); text-decoration: none; }
+        .post-body-full a:hover { border-bottom-color: #22d3ee; }
+        .post-body-full strong { color: #fff; font-weight: 700; }
+        .post-inline-img {
+            display: block;
+            max-width: 100%;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .post-expand-btn {
+            display: inline-block;
+            margin-top: 8px;
+            background: transparent;
+            border: 1px solid rgba(34,211,238,0.4);
+            color: #22d3ee;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 7px 14px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+        .post-expand-btn:hover { background: rgba(34,211,238,0.08); }
+
+        /* === account badge in sidebar === */
+        .account-badge {
+            margin: 6px 12px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .account-badge .acc-dot {
+            width: 7px; height: 7px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(74,222,128,0.5);
+            display: inline-block;
+        }
+        .account-badge .acc-logout {
+            margin-left: auto;
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.4);
+            font-size: 11px;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .account-badge .acc-logout:hover { color: #f87171; }
+        .account-badge .acc-login-trigger {
+            background: transparent;
+            border: 1px dashed rgba(34,211,238,0.4);
+            color: #22d3ee;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 7px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background .2s ease;
+        }
+        .account-badge .acc-login-trigger:hover { background: rgba(34,211,238,0.08); }
+
+        /* image upload field in modal */
+        .modal input[type="file"] {
+            background: transparent !important;
+            padding: 8px 0 !important;
+            border: none !important;
+            color: rgba(255,255,255,0.7) !important;
+        }
+
         /* === floating Oroboros → Kaiju AGI === */
         .kaiju-fab {
             position: fixed;
@@ -557,7 +648,7 @@
             <div class="brand-text">
                 <span class="world-part">WORLD</span><span class="feed-part">FEED</span>
             </div>
-            <div class="brand-tag">NO ALGORITHM · NO TRACKING</div>
+            <div class="brand-tag">NO ALGORITHM · NO TRACKING · FREE ACCOUNT TO POST</div>
         </a>
         <a class="nav-item nav-link-out" href="kaiju.html" style="text-decoration:none;color:inherit;display:flex"><span class="nav-icon">◈</span> Kaiju AGI</a>
         <div class="nav-item active" data-view="latest"><span class="nav-icon">⌬</span> Latest</div>
@@ -571,6 +662,7 @@
         <div class="nav-item" data-view="saved"><span class="nav-icon">◇</span> Saved</div>
         <div class="nav-item" data-view="about"><span class="nav-icon">?</span> About</div>
         <button class="submit-cta" id="submitBtn">+ Broadcast</button>
+        <div class="account-badge" id="accountBadge"></div>
         <div class="side-foot">
             No algorithm.<br>No tracking.<br>No shadowbans.<br><br>
             <a href="docs/WORLD_FEED_SPEC.txt">Spec</a> · <a href="#" id="aboutLink">About</a> · <a href="LICENSE">MIT</a>
@@ -657,6 +749,8 @@
         <input type="text" id="postTitle" placeholder="What is this about?">
         <label for="postBody">Body</label>
         <textarea id="postBody" placeholder="Tell the story. Paste image URLs to embed them inline."></textarea>
+        <label for="postImage">Image (optional — upload from your device, max 800KB)</label>
+        <input type="file" id="postImage" accept="image/*">
         <label for="postVideo">Video URL (optional — paste YouTube, Vimeo, X, or TikTok link)</label>
         <input type="text" id="postVideo" placeholder="https://youtube.com/watch?v=… or https://x.com/user/status/…">
         <label for="postSources">Sources (one per line — links, outlets, primary documents)</label>
@@ -664,6 +758,22 @@
         <div class="modal-actions">
             <button class="btn-secondary" id="cancelSubmit">Cancel</button>
             <button class="btn-primary" id="confirmSubmit">Broadcast</button>
+        </div>
+    </div>
+</div>
+
+<!-- LOGIN MODAL (free account; client-side until backend) -->
+<div class="modal-back" id="loginModal">
+    <div class="modal" style="max-width:440px;">
+        <h2>Sign in to WorldFeed</h2>
+        <p class="modal-sub">Free account. Required to broadcast. Your details stay on this device until the platform's server goes live.</p>
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername" placeholder="@yourhandle" autocomplete="username">
+        <label for="loginEmail">Email <span style="text-transform:none;letter-spacing:0;color:rgba(255,255,255,0.35);font-weight:400">— optional, for recovery once server is live</span></label>
+        <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email">
+        <div class="modal-actions">
+            <button class="btn-secondary" id="cancelLogin">Cancel</button>
+            <button class="btn-primary" id="confirmLogin">Sign in</button>
         </div>
     </div>
 </div>

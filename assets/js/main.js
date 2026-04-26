@@ -88,6 +88,18 @@
         catch (_) {}
     }
     let userStories = loadUserStories();
+
+    // === simple client-side account (no backend yet — replace when IP/server lands) ===
+    const ACCOUNT_KEY = 'worldfeed-account';
+    function getAccount() {
+        try { return JSON.parse(localStorage.getItem(ACCOUNT_KEY) || 'null'); }
+        catch (_) { return null; }
+    }
+    function setAccount(acc) {
+        if (acc) localStorage.setItem(ACCOUNT_KEY, JSON.stringify(acc));
+        else localStorage.removeItem(ACCOUNT_KEY);
+    }
+    function isLoggedIn() { return !!getAccount(); }
     function mergeFeeds(liveItems) {
         // age user posts based on stored postedAt timestamp
         const now = Date.now();
@@ -105,26 +117,36 @@
 
     function mediaHtml(p) {
         const type = p.type;
-        if (type === 'document') {
-            const txt = (p.body || '').slice(0, 480);
-            const more = (p.body || '').length > 480 ? '…' : '';
-            return `
-            <div class="post-doc">
-                <span class="post-media-tag">DOCUMENT</span>
-                <div class="post-doc-text">${escapeHtml(txt)}${more}</div>
-                ${p.link ? `<a class="post-doc-link" href="${p.link}" target="_blank" rel="noopener noreferrer">READ FULL DOCUMENT →</a>` : ''}
-            </div>`;
-        }
         if (p.imageUrl) {
             const tag = type === 'video' ? 'VIDEO' : 'IMAGE';
             const overlay = type === 'video' ? '<div class="post-play">▶</div>' : '';
             const safeUrl = String(p.imageUrl).replace(/"/g, '%22');
             return `<div class="post-media has-img" style="background-image:url('${safeUrl}'); background-size:cover; background-position:center;"><span class="post-media-tag">${tag}</span>${overlay}</div>`;
         }
-        if (type === 'video') return '<div class="post-media"><span class="post-media-tag">VIDEO</span>▶ Footage</div>';
-        if (type === 'image') return '<div class="post-media"><span class="post-media-tag">IMAGE</span>📷 Photo</div>';
-        if (type === 'livestream') return '<div class="post-media"><span class="post-media-tag">LIVE</span>● Real-time broadcast</div>';
         return '';
+    }
+
+    // Render the article body. Convert markdown image refs ![](url) → inline images.
+    // Headers and links are stripped down to plain prose to match the feed style.
+    function bodyHtml(p) {
+        const raw = String(p.body || '');
+        if (!raw.trim()) return '';
+        const isLong = raw.length > 600;
+        const visible = isLong && !p.expanded ? raw.slice(0, 600) + '…' : raw;
+        // light markdown: paragraph breaks, inline images, bold/italic
+        let html = escapeHtml(visible)
+            .replace(/!\[([^\]]*)\]\((https?:[^)\s]+)\)/g, '<img class="post-inline-img" alt="$1" src="$2" loading="lazy">')
+            .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+            .replace(/^#{1,6}\s*(.+)$/gm, '<strong>$1</strong>')
+            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+            .replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em>$1</em>')
+            .replace(/\n{2,}/g, '</p><p>')
+            .replace(/\n/g, '<br>');
+        html = '<p>' + html + '</p>';
+        const expandBtn = isLong
+            ? `<button class="post-expand-btn" data-idx="${p.__idx}">${p.expanded ? '⌃ Show less' : '⌄ Read full story'}</button>`
+            : '';
+        return `<div class="post-body-full">${html}${expandBtn}</div>`;
     }
 
     function catsHtml(p) {
@@ -149,6 +171,7 @@
             ? `<h3 class="post-title"><a class="post-title-link" href="${p.link}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.title)}</a></h3>`
             : `<h3 class="post-title">${escapeHtml(p.title)}</h3>`;
 
+        p.__idx = idx;
         return `
         <article class="post${userClass}" data-tier="${p.tier}" data-type="${p.type}" data-min="${p.minutesAgo}" data-cats="${(p.cats||[]).join(',')}" data-idx="${idx}">
             <div class="post-head">
@@ -158,9 +181,9 @@
                 <span class="post-meta">${escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
             </div>
             ${titleHtml}
-            <p class="post-body">${escapeHtml(p.body)}</p>
             ${video}
             ${media}
+            ${bodyHtml(p)}
             <div class="post-sources">${sourcesLine}</div>
             ${srcLink}
             <div class="post-actions">
@@ -298,7 +321,7 @@
     }, { rootMargin: '400px' });
     observer.observe(loader);
 
-    // Click handling: video thumb → iframe swap (must run before <a> nav)
+    // Click handling: video thumb → iframe swap; expand body; post actions
     feed.addEventListener('click', e => {
         const vid = e.target.closest('.post-video.has-thumb');
         if (vid) {
@@ -308,6 +331,18 @@
             const tag = vid.querySelector('.post-media-tag');
             const tagHtml = tag ? tag.outerHTML : '';
             vid.outerHTML = `<div class="post-video"><iframe src="${embed}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen loading="lazy"></iframe>${tagHtml}</div>`;
+            return;
+        }
+        const exp = e.target.closest('.post-expand-btn');
+        if (exp) {
+            e.preventDefault();
+            e.stopPropagation();
+            const idx = parseInt(exp.dataset.idx, 10);
+            const post = allPosts[idx];
+            if (post) {
+                post.expanded = !post.expanded;
+                paint(true);
+            }
             return;
         }
         const btn = e.target.closest('.post-action');
@@ -323,22 +358,84 @@
         }
     });
 
-    // Submit modal
+    // === Submit modal — login required ===
     const modal = document.getElementById('submitModal');
-    document.getElementById('submitBtn').addEventListener('click', () => modal.classList.add('show'));
-    document.getElementById('cancelSubmit').addEventListener('click', () => modal.classList.remove('show'));
-    modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('show'); });
-    document.getElementById('confirmSubmit').addEventListener('click', () => {
-        const title = document.getElementById('postTitle').value.trim();
-        const body = document.getElementById('postBody').value.trim();
-        const type = document.getElementById('postType').value;
-        const videoUrl = (document.getElementById('postVideo')?.value || '').trim();
-        const sourcesRaw = document.getElementById('postSources').value.split('\n').map(s => s.trim()).filter(Boolean);
-        if (!title || !body) {
-            alert('Headline and body required.');
+    const loginModal = document.getElementById('loginModal');
+    const submitBtn = document.getElementById('submitBtn');
+    const accountBadge = document.getElementById('accountBadge');
+
+    function refreshAccountUI() {
+        const acc = getAccount();
+        if (accountBadge) {
+            if (acc) {
+                accountBadge.innerHTML = '<span class="acc-dot"></span>@' + escapeHtml(acc.username) + ' <button class="acc-logout" id="logoutBtn">logout</button>';
+                const lb = document.getElementById('logoutBtn');
+                if (lb) lb.addEventListener('click', (e) => { e.stopPropagation(); setAccount(null); refreshAccountUI(); });
+            } else {
+                accountBadge.innerHTML = '<button class="acc-login-trigger" id="loginTrigger">Sign in to post</button>';
+                const lt = document.getElementById('loginTrigger');
+                if (lt) lt.addEventListener('click', () => loginModal && loginModal.classList.add('show'));
+            }
+        }
+    }
+    refreshAccountUI();
+
+    submitBtn.addEventListener('click', () => {
+        if (!isLoggedIn() && loginModal) {
+            loginModal.classList.add('show');
             return;
         }
-        // first http(s) line in sources becomes the "Read full story" link
+        modal.classList.add('show');
+    });
+    document.getElementById('cancelSubmit').addEventListener('click', () => modal.classList.remove('show'));
+    modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('show'); });
+
+    // === Login modal handlers ===
+    if (loginModal) {
+        const close = () => loginModal.classList.remove('show');
+        const cancelLogin = document.getElementById('cancelLogin');
+        const confirmLogin = document.getElementById('confirmLogin');
+        if (cancelLogin) cancelLogin.addEventListener('click', close);
+        loginModal.addEventListener('click', e => { if (e.target === loginModal) close(); });
+        if (confirmLogin) confirmLogin.addEventListener('click', () => {
+            const username = (document.getElementById('loginUsername').value || '').trim().replace(/^@/, '');
+            const email = (document.getElementById('loginEmail').value || '').trim();
+            if (!username || username.length < 2) { alert('Choose a username (min 2 chars).'); return; }
+            setAccount({ username, email, since: Date.now() });
+            refreshAccountUI();
+            close();
+            modal.classList.add('show'); // proceed to broadcast
+        });
+    }
+
+    // === Image upload helper (file → data URL) ===
+    function readImageFile(file) {
+        return new Promise((resolve, reject) => {
+            if (!file) return resolve('');
+            if (file.size > 800 * 1024) return reject(new Error('Image too large (max 800KB).'));
+            const r = new FileReader();
+            r.onload = () => resolve(r.result);
+            r.onerror = () => reject(new Error('Failed to read image.'));
+            r.readAsDataURL(file);
+        });
+    }
+    document.getElementById('confirmSubmit').addEventListener('click', async () => {
+        if (!isLoggedIn()) { loginModal && loginModal.classList.add('show'); return; }
+        const acc = getAccount();
+        const title = document.getElementById('postTitle').value.trim();
+        const body  = document.getElementById('postBody').value.trim();
+        const type  = document.getElementById('postType').value;
+        const videoUrl = (document.getElementById('postVideo')?.value || '').trim();
+        const sourcesRaw = document.getElementById('postSources').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const fileInput = document.getElementById('postImage');
+        if (!title || !body) { alert('Headline and body required.'); return; }
+
+        let imageDataUrl = '';
+        if (fileInput && fileInput.files && fileInput.files[0]) {
+            try { imageDataUrl = await readImageFile(fileInput.files[0]); }
+            catch (err) { alert(err.message); return; }
+        }
+
         const firstUrl = sourcesRaw.find(s => /^https?:\/\//i.test(s)) || '';
         const tier = sourcesRaw.length >= 5 ? 5 : sourcesRaw.length >= 3 ? 4 : sourcesRaw.length >= 2 ? 3 : sourcesRaw.length === 1 ? 2 : 0;
         const story = {
@@ -347,12 +444,14 @@
             cats: ['new'],
             title,
             body,
-            sources: sourcesRaw,
-            type: videoUrl ? 'video' : type,
-            location: 'community',
+            sources: ['@' + acc.username, ...sourcesRaw],
+            type: videoUrl ? 'video' : (imageDataUrl ? 'image' : type),
+            location: '@' + acc.username,
             link: firstUrl,
             videoUrl,
+            imageUrl: imageDataUrl,
             isUser: true,
+            author: acc.username,
             postedAt: Date.now(),
             minutesAgo: 0
         };
@@ -360,11 +459,13 @@
         saveUserStories(userStories);
         const liveOnly = allPosts.filter(p => !p.isUser);
         allPosts = mergeFeeds(liveOnly);
+
         modal.classList.remove('show');
         document.getElementById('postTitle').value = '';
         document.getElementById('postBody').value = '';
         document.getElementById('postSources').value = '';
         if (document.getElementById('postVideo')) document.getElementById('postVideo').value = '';
+        if (fileInput) fileInput.value = '';
         paint(true);
     });
 
