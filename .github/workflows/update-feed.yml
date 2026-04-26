@@ -1,0 +1,38 @@
+ name: Update news feed                                                                                       
+                                                            
+  on:
+    schedule:
+      - cron: '5 * * * *'   # every hour at :05
+    workflow_dispatch:                                                                                         
+   
+  permissions:                                                                                                 
+    contents: write                                         
+
+  concurrency:
+    group: update-feed
+    cancel-in-progress: false
+
+  jobs:
+    refresh:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+                                                                                                               
+        - uses: actions/setup-node@v4
+          with:                                                                                                
+            node-version: '20'                              
+
+        - name: Build feed.json from RSS sources
+          run: node scripts/build-feed.mjs
+                                                                                                               
+        - name: Commit if changed
+          run: |                                                                                               
+            git config user.name  "worldfeed-bot"           
+            git config user.email "bot@worldfeed.local"
+            git add data/feed.json
+            if git diff --cached --quiet; then
+              echo "No feed changes."
+            else                                                                                               
+              git commit -m "auto: refresh feed $(date -u +%Y-%m-%dT%H:%MZ)"
+              git push                                                                                         
+            fi  
