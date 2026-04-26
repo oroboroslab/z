@@ -35,6 +35,53 @@
         .chip { background: rgba(10, 12, 18, 0.45) !important; backdrop-filter: blur(10px) saturate(1.2) !important; -webkit-backdrop-filter: blur(10px) saturate(1.2) !important; }
         .modal { background: rgba(10, 12, 18, 0.70) !important; backdrop-filter: blur(28px) saturate(1.4) !important; -webkit-backdrop-filter: blur(28px) saturate(1.4) !important; }
         .post-media { background: rgba(10, 12, 18, 0.35) !important; }
+        .post-media.has-img { background-color: #000 !important; }
+        .post-play {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: rgba(0,0,0,0.65);
+            border: 2px solid rgba(255,255,255,0.7);
+            color: #fff; font-size: 22px;
+            display: flex; align-items: center; justify-content: center;
+            backdrop-filter: blur(6px);
+        }
+
+        /* === document preview pane === */
+        .post-doc {
+            margin: 14px 0;
+            border: 1px solid rgba(255,255,255,0.10);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0.012) 100%);
+            padding: 22px 22px 18px;
+            border-radius: 4px;
+            position: relative;
+            backdrop-filter: blur(8px);
+        }
+        .post-doc .post-media-tag { position: static; display: inline-block; margin-bottom: 10px; }
+        .post-doc-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.78);
+            margin: 8px 0 14px;
+            white-space: normal;
+            border-left: 2px solid rgba(34,211,238,0.4);
+            padding-left: 14px;
+        }
+        .post-doc-link {
+            display: inline-block;
+            font-family: 'Archivo', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #22d3ee;
+            text-decoration: none;
+            margin-top: 6px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid transparent;
+            transition: border-color .2s ease;
+        }
+        .post-doc-link:hover { border-bottom-color: #22d3ee; }
 
         /* holographic sliding sheen — cyan→violet, slow, subtle */
         .rail-card::after {

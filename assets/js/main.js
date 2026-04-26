@@ -13,22 +13,23 @@
         0: 'UNKNOWN'
     };
 
+    // Live feed — April 26, 2026. Real headlines, sourced from major outlets.
     const SEED = [
-        { tier: 5, cats: ['viral'], title: 'UN General Assembly adopts unanimous resolution on AI governance', body: 'Member states sign framework requiring open auditability for any AI system deployed in critical infrastructure. Full text and roll-call vote attached.', sources: ['UN.org primary record', 'AP', 'Reuters', 'BBC', 'Le Monde', '+7 outlets'], type: 'story', minutesAgo: 12, location: 'New York' },
-        { tier: 5, cats: ['new'], title: 'Open Broadcast Protocol federation crosses 1,000 nodes', body: 'World Feed mesh now spans 47 countries. Verification consensus operating. No central server, no kill switch.', sources: ['worldfeed.org/status', 'GitHub release notes', 'Independent mirror logs'], type: 'story', minutesAgo: 47, location: 'global' },
-        { tier: 4, cats: ['viral'], title: 'Climate action protests in 14 cities — coordinated walkout', body: 'Eyewitness video confirmed from Berlin, Paris, Mexico City, Lagos, Bangkok. Crowd estimates between 80K–120K per location.', sources: ['Reuters wire', 'eyewitness video x6', 'local press x4'], type: 'video', minutesAgo: 95, location: 'multi-city' },
-        { tier: 4, cats: [], title: 'Federation node operator publishes verification methodology', body: 'How the 5-star system actually computes a tier from sourcing density, primary-document presence, and corroboration depth.', sources: ['worldfeed.org/methodology', 'GitHub spec', 'arXiv preprint'], type: 'document', minutesAgo: 140, location: 'remote' },
-        { tier: 3, cats: ['new'], title: 'Reports of incident near border region — corroborating', body: 'Two independent stringers reporting; awaiting third confirmation. Imagery in queue for verification.', sources: ['stringer A', 'stringer B'], type: 'story', minutesAgo: 210, location: 'border' },
-        { tier: 3, cats: [], title: 'Possible major science announcement — embargo lifts soon', body: 'Multiple outlets staffing for an unconfirmed but coordinated press window. Subject area unclear.', sources: ['embargo whispers x3'], type: 'story', minutesAgo: 320, location: 'remote' },
-        { tier: 2, cats: ['new'], title: 'Citizen flooding report with attached photos — local', body: 'Single eyewitness submission. Geotag plausible, no corroborating sensor or outlet yet. Looking for additional reporters.', sources: ['eyewitness submission'], type: 'image', minutesAgo: 88, location: 'local' },
-        { tier: 2, cats: [], title: 'Anonymous submission about corporate misconduct', body: 'Single anonymous source. No documents attached yet. Open call for evidence — submit verification at link.', sources: ['anonymous'], type: 'story', minutesAgo: 165, location: 'unknown' },
-        { tier: 1, cats: ['viral'], title: 'Unsupported claim about market manipulation', body: 'No evidence provided. Contradicted by published filings. Posted for transparency; reader discretion advised.', sources: ['none'], type: 'story', minutesAgo: 240, location: 'unknown' },
-        { tier: 0, cats: ['new'], title: 'New submission awaiting first review', body: 'Just posted. Verification pipeline has not run yet. Help verify or refute.', sources: [], type: 'story', minutesAgo: 3, location: 'unknown' },
-        { tier: 5, cats: [], title: 'Public health agency releases full dataset on outbreak modeling', body: 'CSV + raw incidence files attached. Independent statisticians reproducing within hours.', sources: ['CDC', 'ECDC', 'WHO', '+5'], type: 'document', minutesAgo: 410, location: 'global' },
-        { tier: 4, cats: [], title: 'Energy grid stabilization milestone — solar/storage hybrid', body: 'Operator confirmed 72-hour run with renewable-only mix on regional grid. Logs published.', sources: ['grid operator', 'IEEE wire', 'two independent monitors'], type: 'story', minutesAgo: 540, location: 'regional' },
-        { tier: 3, cats: ['new', 'viral'], title: 'Developing — outage rumor on major social platform', body: 'Status page green, user reports rising. Either edge regional or false alarm. Tracking.', sources: ['user reports', 'down detector'], type: 'story', minutesAgo: 22, location: 'global' },
-        { tier: 5, cats: ['viral'], title: 'Long-form: How the Open Broadcast Protocol resists capture', body: '12,000 words on the architecture choices that make federation impossible to shut down — verification consensus, primary-source weighting, and the no-tracking floor.', sources: ['worldfeed.org/longform', 'authors x3'], type: 'story', minutesAgo: 600, location: 'remote' },
-        { tier: 2, cats: [], title: 'Single-witness account of unusual atmospheric event', body: 'Photos attached. Looking for second witness or sensor data.', sources: ['eyewitness'], type: 'image', minutesAgo: 700, location: 'rural' }
+        { tier: 5, cats: ['new', 'viral'], title: 'Shots fired outside White House Correspondents\' Dinner — President rushed out unharmed', body: 'Trump and First Lady evacuated from the Washington Hilton by Secret Service after a man opened fire on security personnel near the ballroom. Suspect in custody. FBI investigation underway. Full video circulating.', sources: ['CBS News', 'CNN', 'Reuters', 'AP', 'Fox News', 'BBC', '+9 outlets'], type: 'video', minutesAgo: 38, location: 'Washington DC', imageUrl: 'https://loremflickr.com/800/450/white-house,washington' },
+        { tier: 5, cats: ['new', 'viral'], title: 'Trump cancels Pakistan trip for Iran peace talks: "offered a lot, but not enough"', body: 'Envoys Steve Witkoff and Jared Kushner stood down. Tehran ceasefire proposal rejected. Negotiations to continue by phone. Day 56 of the conflict.', sources: ['CBS News', 'CNN', 'The National', 'Al Jazeera', 'Reuters', '+5 outlets'], type: 'story', minutesAgo: 95, location: 'Washington DC', imageUrl: 'https://loremflickr.com/800/450/iran,flag,diplomacy' },
+        { tier: 5, cats: ['viral'], title: 'Israel says it eliminated three Hezbollah operatives in vehicle "loaded with weapons"', body: 'IDF reports two projectiles launched from Lebanon, calling it a "blatant violation of ceasefire understandings." Two more armed members targeted elsewhere.', sources: ['Reuters', 'Al Jazeera', 'CNN', 'Times of Israel', '+4 outlets'], type: 'story', minutesAgo: 142, location: 'Lebanon border', imageUrl: 'https://loremflickr.com/800/450/lebanon,middle-east' },
+        { tier: 5, cats: ['viral'], title: 'Sebastian Sawe becomes first human to run sub-2-hour marathon in record-sanctioned race', body: 'Kenyan distance runner crosses the line at 1:59:43 — first official sub-2 in IAAF-sanctioned conditions. Crowd erupts.', sources: ['World Athletics', 'Reuters', 'BBC Sport', 'NBC', '+6 outlets'], type: 'video', minutesAgo: 220, location: 'Vienna', imageUrl: 'https://loremflickr.com/800/450/marathon,running' },
+        { tier: 5, cats: ['new'], title: 'King Charles and Queen Camilla begin four-day US state visit Monday', body: 'UK and US security services coordinating ahead of arrival. Schedule includes White House dinner, Capitol address, Mount Vernon visit. First state visit since coronation.', sources: ['BBC', 'US News', 'Reuters', 'AP', '+5 outlets'], type: 'story', minutesAgo: 180, location: 'London → Washington', imageUrl: 'https://loremflickr.com/800/450/king-charles,monarchy' },
+        { tier: 5, cats: ['new'], title: 'DeepSeek unveils V4 Flash and V4 Pro — 1M-token context, hybrid attention architecture', body: 'New flagship model claims top-tier coding benchmarks plus major reasoning and agentic-task gains. Hybrid attention pushes long-context recall significantly. Open weights expected.', sources: ['Bloomberg', 'DeepSeek release notes', 'MIT Tech Review', 'arXiv preprint'], type: 'document', minutesAgo: 60, location: 'Hangzhou', imageUrl: 'https://loremflickr.com/800/450/ai,technology,chip' },
+        { tier: 4, cats: ['viral'], title: 'Hungarian PM Viktor Orban returns parliamentary mandate, ending 36-year run', body: 'Step-down follows election defeat earlier this month. Orban says he will reorganize the "national side" outside formal politics. Major reshuffle of European right-wing alignment expected.', sources: ['Reuters', 'AP', 'Politico EU', 'Pravda NATO', '+3 outlets'], type: 'story', minutesAgo: 310, location: 'Budapest', imageUrl: 'https://loremflickr.com/800/450/hungary,parliament,budapest' },
+        { tier: 4, cats: ['new'], title: 'Bomb attack in Cajibio, Colombia kills 7, injures 20+', body: 'Cauca department incident; armed group not yet claimed. Local hospitals on emergency footing. Government condemns and announces investigation.', sources: ['El Tiempo', 'Reuters', 'AP', 'BBC Mundo'], type: 'story', minutesAgo: 75, location: 'Cajibio, Colombia', imageUrl: 'https://loremflickr.com/800/450/colombia,emergency' },
+        { tier: 4, cats: ['new'], title: 'M6.3 earthquake strikes Mongolia — depth 10 km, no immediate casualties', body: 'Felt across multiple provinces. USGS and Mongolia\'s seismic service in agreement on magnitude. Aftershock sequence beginning.', sources: ['USGS', 'VolcanoDiscovery', 'Mongolia NDMA', 'Reuters'], type: 'story', minutesAgo: 110, location: 'Mongolia', imageUrl: 'https://loremflickr.com/800/450/earthquake,seismology' },
+        { tier: 5, cats: ['viral'], title: 'NASA Artemis II crew returns from lunar flyby — humans travel farther from Earth than ever recorded', body: 'Mission set new distance record at 252,757 miles (406,773 km) on far side of the Moon. First crewed beyond-LEO flight since Apollo 17 in 1972. Splashdown nominal.', sources: ['NASA', 'AP', 'Reuters', 'BBC', 'SpaceNews', '+8 outlets'], type: 'video', minutesAgo: 480, location: 'Pacific Ocean', imageUrl: 'https://loremflickr.com/800/450/nasa,moon,spaceflight' },
+        { tier: 5, cats: [], title: 'Curiosity rover detects seven previously unknown organic molecules on Mars', body: 'Sample analysis from Gale Crater released by NASA-JPL on April 21. Molecules consistent with prebiotic chemistry — not biosignatures, but extending the known organic inventory. Full dataset published.', sources: ['NASA-JPL', 'Science', 'Nature News', 'arXiv'], type: 'document', minutesAgo: 510, location: 'Gale Crater, Mars', imageUrl: 'https://loremflickr.com/800/450/mars,rover,space' },
+        { tier: 5, cats: [], title: 'Graphene electrons observed flowing as nearly frictionless liquid — defies textbook physics', body: 'Cambridge–MIT collaboration measures electron viscosity well below the conventional Mott-Ioffe-Regel limit. Implications for ultra-low-resistance interconnects and quantum devices.', sources: ['Nature', 'Physics Today', 'Cambridge press release', 'MIT News'], type: 'document', minutesAgo: 360, location: 'Cambridge UK', imageUrl: 'https://loremflickr.com/800/450/physics,laboratory,quantum' },
+        { tier: 4, cats: ['new'], title: 'Brain-mimicking hafnium-oxide chip slashes AI energy use by up to 70%', body: 'Nanoelectronic device emulates neuronal spike-and-hold dynamics. Power profile compatible with on-device foundation models. Working prototype demonstrated.', sources: ['ScienceDaily', 'Nature Electronics', 'IEEE Spectrum'], type: 'story', minutesAgo: 240, location: 'Northwestern University', imageUrl: 'https://loremflickr.com/800/450/microchip,silicon,brain' },
+        { tier: 4, cats: [], title: 'PwC: 75% of AI economic gains captured by just 20% of companies', body: 'Annual AI Performance Study finds the gap between leaders and laggards widening. Leading firms reinvesting AI productivity gains into growth, not headcount cuts.', sources: ['PwC report', 'Reuters', 'WSJ', 'FT'], type: 'document', minutesAgo: 420, location: 'global', imageUrl: 'https://loremflickr.com/800/450/business,technology,boardroom' },
+        { tier: 3, cats: ['new'], title: 'Developing: regional outage reports on major messaging platform — status page still green', body: 'User reports concentrated in EU and US East. Platform engineering investigating. Could be edge-CDN regional or false alarm. Tracking.', sources: ['DownDetector', 'user reports x140', 'platform status page'], type: 'story', minutesAgo: 18, location: 'global', imageUrl: 'https://loremflickr.com/800/450/server,outage,network' }
     ];
 
     function fmtTime(min) {
@@ -54,10 +55,26 @@
         return h + '</span>';
     }
 
-    function mediaHtml(type) {
-        if (type === 'video') return '<div class="post-media"><span class="post-media-tag">VIDEO</span>▶ Eyewitness footage</div>';
-        if (type === 'image') return '<div class="post-media"><span class="post-media-tag">IMAGE</span>📷 Submitted photo</div>';
-        if (type === 'document') return '<div class="post-media"><span class="post-media-tag">DOCUMENT</span>▤ Primary source attached</div>';
+    function mediaHtml(p) {
+        const type = p.type;
+        if (type === 'document') {
+            const txt = (p.body || '').slice(0, 480);
+            const more = (p.body || '').length > 480 ? '…' : '';
+            return `
+            <div class="post-doc">
+                <span class="post-media-tag">DOCUMENT</span>
+                <div class="post-doc-text">${escapeHtml(txt)}${more}</div>
+                ${p.link ? `<a class="post-doc-link" href="${p.link}" target="_blank" rel="noopener noreferrer">READ FULL DOCUMENT →</a>` : ''}
+            </div>`;
+        }
+        if (p.imageUrl) {
+            const tag = type === 'video' ? 'VIDEO' : 'IMAGE';
+            const overlay = type === 'video' ? '<div class="post-play">▶</div>' : '';
+            const safeUrl = String(p.imageUrl).replace(/"/g, '%22');
+            return `<div class="post-media has-img" style="background-image:url('${safeUrl}'); background-size:cover; background-position:center;"><span class="post-media-tag">${tag}</span>${overlay}</div>`;
+        }
+        if (type === 'video') return '<div class="post-media"><span class="post-media-tag">VIDEO</span>▶ Footage</div>';
+        if (type === 'image') return '<div class="post-media"><span class="post-media-tag">IMAGE</span>📷 Photo</div>';
         if (type === 'livestream') return '<div class="post-media"><span class="post-media-tag">LIVE</span>● Real-time broadcast</div>';
         return '';
     }
@@ -84,7 +101,7 @@
             </div>
             <h3 class="post-title">${escapeHtml(p.title)}</h3>
             <p class="post-body">${escapeHtml(p.body)}</p>
-            ${mediaHtml(p.type)}
+            ${mediaHtml(p)}
             <div class="post-sources">${sourcesLine}</div>
             <div class="post-actions">
                 <button class="post-action" data-act="verify">✓ Verify</button>
@@ -259,6 +276,21 @@
         paint(true);
     });
 
-    // Initial paint
+    // Initial paint with embedded fallback SEED
     paint(true);
+
+    // === Live feed loader: data/feed.json (rebuilt hourly by GitHub Action) ===
+    function loadLiveFeed(isInitial) {
+        fetch('data/feed.json?t=' + Date.now(), { cache: 'no-store' })
+            .then(r => r.ok ? r.json() : null)
+            .then(j => {
+                if (!j || !Array.isArray(j.items) || j.items.length === 0) return;
+                allPosts = rankFeed(j.items);
+                paint(true);
+                if (isInitial) console.log('WorldFeed live · ' + j.items.length + ' items · updated ' + j.updatedAt);
+            })
+            .catch(() => { /* keep embedded SEED */ });
+    }
+    loadLiveFeed(true);
+    setInterval(() => loadLiveFeed(false), 10 * 60 * 1000); // refresh every 10 min
 })();
