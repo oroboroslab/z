@@ -14,21 +14,21 @@
     };
 
     const SEED = [
-        { tier: 5, title: 'UN General Assembly adopts unanimous resolution on AI governance', body: 'Member states sign framework requiring open auditability for any AI system deployed in critical infrastructure. Full text and roll-call vote attached.', sources: ['UN.org primary record', 'AP', 'Reuters', 'BBC', 'Le Monde', '+7 outlets'], type: 'story', minutesAgo: 12, location: 'New York' },
-        { tier: 5, title: 'Open Broadcast Protocol federation crosses 1,000 nodes', body: 'World Feed mesh now spans 47 countries. Verification consensus operating. No central server, no kill switch.', sources: ['worldfeed.org/status', 'GitHub release notes', 'Independent mirror logs'], type: 'story', minutesAgo: 47, location: 'global' },
-        { tier: 4, title: 'Climate action protests in 14 cities — coordinated walkout', body: 'Eyewitness video confirmed from Berlin, Paris, Mexico City, Lagos, Bangkok. Crowd estimates between 80K–120K per location.', sources: ['Reuters wire', 'eyewitness video x6', 'local press x4'], type: 'video', minutesAgo: 95, location: 'multi-city' },
-        { tier: 4, title: 'Federation node operator publishes verification methodology', body: 'How the 5-star system actually computes a tier from sourcing density, primary-document presence, and corroboration depth.', sources: ['worldfeed.org/methodology', 'GitHub spec', 'arXiv preprint'], type: 'document', minutesAgo: 140, location: 'remote' },
-        { tier: 3, title: 'Reports of incident near border region — corroborating', body: 'Two independent stringers reporting; awaiting third confirmation. Imagery in queue for verification.', sources: ['stringer A', 'stringer B'], type: 'story', minutesAgo: 210, location: 'border' },
-        { tier: 3, title: 'Possible major science announcement — embargo lifts soon', body: 'Multiple outlets staffing for an unconfirmed but coordinated press window. Subject area unclear.', sources: ['embargo whispers x3'], type: 'story', minutesAgo: 320, location: 'remote' },
-        { tier: 2, title: 'Citizen flooding report with attached photos — local', body: 'Single eyewitness submission. Geotag plausible, no corroborating sensor or outlet yet. Looking for additional reporters.', sources: ['eyewitness submission'], type: 'image', minutesAgo: 88, location: 'local' },
-        { tier: 2, title: 'Anonymous submission about corporate misconduct', body: 'Single anonymous source. No documents attached yet. Open call for evidence — submit verification at link.', sources: ['anonymous'], type: 'story', minutesAgo: 165, location: 'unknown' },
-        { tier: 1, title: 'Unsupported claim about market manipulation', body: 'No evidence provided. Contradicted by published filings. Posted for transparency; reader discretion advised.', sources: ['none'], type: 'story', minutesAgo: 240, location: 'unknown' },
-        { tier: 0, title: 'New submission awaiting first review', body: 'Just posted. Verification pipeline has not run yet. Help verify or refute.', sources: [], type: 'story', minutesAgo: 3, location: 'unknown' },
-        { tier: 5, title: 'Public health agency releases full dataset on outbreak modeling', body: 'CSV + raw incidence files attached. Independent statisticians reproducing within hours.', sources: ['CDC', 'ECDC', 'WHO', '+5'], type: 'document', minutesAgo: 410, location: 'global' },
-        { tier: 4, title: 'Energy grid stabilization milestone — solar/storage hybrid', body: 'Operator confirmed 72-hour run with renewable-only mix on regional grid. Logs published.', sources: ['grid operator', 'IEEE wire', 'two independent monitors'], type: 'story', minutesAgo: 540, location: 'regional' },
-        { tier: 3, title: 'Developing — outage rumor on major social platform', body: 'Status page green, user reports rising. Either edge regional or false alarm. Tracking.', sources: ['user reports', 'down detector'], type: 'story', minutesAgo: 22, location: 'global' },
-        { tier: 5, title: 'Long-form: How the Open Broadcast Protocol resists capture', body: '12,000 words on the architecture choices that make federation impossible to shut down — verification consensus, primary-source weighting, and the no-tracking floor.', sources: ['worldfeed.org/longform', 'authors x3'], type: 'story', minutesAgo: 600, location: 'remote' },
-        { tier: 2, title: 'Single-witness account of unusual atmospheric event', body: 'Photos attached. Looking for second witness or sensor data.', sources: ['eyewitness'], type: 'image', minutesAgo: 700, location: 'rural' }
+        { tier: 5, cats: ['viral'], title: 'UN General Assembly adopts unanimous resolution on AI governance', body: 'Member states sign framework requiring open auditability for any AI system deployed in critical infrastructure. Full text and roll-call vote attached.', sources: ['UN.org primary record', 'AP', 'Reuters', 'BBC', 'Le Monde', '+7 outlets'], type: 'story', minutesAgo: 12, location: 'New York' },
+        { tier: 5, cats: ['new'], title: 'Open Broadcast Protocol federation crosses 1,000 nodes', body: 'World Feed mesh now spans 47 countries. Verification consensus operating. No central server, no kill switch.', sources: ['worldfeed.org/status', 'GitHub release notes', 'Independent mirror logs'], type: 'story', minutesAgo: 47, location: 'global' },
+        { tier: 4, cats: ['viral'], title: 'Climate action protests in 14 cities — coordinated walkout', body: 'Eyewitness video confirmed from Berlin, Paris, Mexico City, Lagos, Bangkok. Crowd estimates between 80K–120K per location.', sources: ['Reuters wire', 'eyewitness video x6', 'local press x4'], type: 'video', minutesAgo: 95, location: 'multi-city' },
+        { tier: 4, cats: [], title: 'Federation node operator publishes verification methodology', body: 'How the 5-star system actually computes a tier from sourcing density, primary-document presence, and corroboration depth.', sources: ['worldfeed.org/methodology', 'GitHub spec', 'arXiv preprint'], type: 'document', minutesAgo: 140, location: 'remote' },
+        { tier: 3, cats: ['new'], title: 'Reports of incident near border region — corroborating', body: 'Two independent stringers reporting; awaiting third confirmation. Imagery in queue for verification.', sources: ['stringer A', 'stringer B'], type: 'story', minutesAgo: 210, location: 'border' },
+        { tier: 3, cats: [], title: 'Possible major science announcement — embargo lifts soon', body: 'Multiple outlets staffing for an unconfirmed but coordinated press window. Subject area unclear.', sources: ['embargo whispers x3'], type: 'story', minutesAgo: 320, location: 'remote' },
+        { tier: 2, cats: ['new'], title: 'Citizen flooding report with attached photos — local', body: 'Single eyewitness submission. Geotag plausible, no corroborating sensor or outlet yet. Looking for additional reporters.', sources: ['eyewitness submission'], type: 'image', minutesAgo: 88, location: 'local' },
+        { tier: 2, cats: [], title: 'Anonymous submission about corporate misconduct', body: 'Single anonymous source. No documents attached yet. Open call for evidence — submit verification at link.', sources: ['anonymous'], type: 'story', minutesAgo: 165, location: 'unknown' },
+        { tier: 1, cats: ['viral'], title: 'Unsupported claim about market manipulation', body: 'No evidence provided. Contradicted by published filings. Posted for transparency; reader discretion advised.', sources: ['none'], type: 'story', minutesAgo: 240, location: 'unknown' },
+        { tier: 0, cats: ['new'], title: 'New submission awaiting first review', body: 'Just posted. Verification pipeline has not run yet. Help verify or refute.', sources: [], type: 'story', minutesAgo: 3, location: 'unknown' },
+        { tier: 5, cats: [], title: 'Public health agency releases full dataset on outbreak modeling', body: 'CSV + raw incidence files attached. Independent statisticians reproducing within hours.', sources: ['CDC', 'ECDC', 'WHO', '+5'], type: 'document', minutesAgo: 410, location: 'global' },
+        { tier: 4, cats: [], title: 'Energy grid stabilization milestone — solar/storage hybrid', body: 'Operator confirmed 72-hour run with renewable-only mix on regional grid. Logs published.', sources: ['grid operator', 'IEEE wire', 'two independent monitors'], type: 'story', minutesAgo: 540, location: 'regional' },
+        { tier: 3, cats: ['new', 'viral'], title: 'Developing — outage rumor on major social platform', body: 'Status page green, user reports rising. Either edge regional or false alarm. Tracking.', sources: ['user reports', 'down detector'], type: 'story', minutesAgo: 22, location: 'global' },
+        { tier: 5, cats: ['viral'], title: 'Long-form: How the Open Broadcast Protocol resists capture', body: '12,000 words on the architecture choices that make federation impossible to shut down — verification consensus, primary-source weighting, and the no-tracking floor.', sources: ['worldfeed.org/longform', 'authors x3'], type: 'story', minutesAgo: 600, location: 'remote' },
+        { tier: 2, cats: [], title: 'Single-witness account of unusual atmospheric event', body: 'Photos attached. Looking for second witness or sensor data.', sources: ['eyewitness'], type: 'image', minutesAgo: 700, location: 'rural' }
     ];
 
     function fmtTime(min) {
@@ -62,16 +62,24 @@
         return '';
     }
 
+    function catsHtml(p) {
+        const cats = (p.cats || []).slice();
+        if (p.minutesAgo <= 30 && !cats.includes('new')) cats.unshift('new');
+        if (!cats.length) return '';
+        return cats.map(c => `<span class="post-tag ${c}">${c}</span>`).join(' ');
+    }
+
     function renderPost(p, idx) {
         const sourcesLine = p.sources && p.sources.length
             ? p.sources.map(s => '<span>● ' + escapeHtml(s) + '</span>').join('')
             : '<span style="color:var(--fg-dim)">no sources yet — open call for verification</span>';
 
         return `
-        <article class="post" data-tier="${p.tier}" data-type="${p.type}" data-min="${p.minutesAgo}" data-idx="${idx}">
+        <article class="post" data-tier="${p.tier}" data-type="${p.type}" data-min="${p.minutesAgo}" data-cats="${(p.cats||[]).join(',')}" data-idx="${idx}">
             <div class="post-head">
                 ${starsHtml(p.tier)}
                 <span class="tier-label tier-${p.tier}">${tierLabel[p.tier]}</span>
+                ${catsHtml(p)}
                 <span class="post-meta">${escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
             </div>
             <h3 class="post-title">${escapeHtml(p.title)}</h3>
@@ -114,6 +122,8 @@
             if (activeFilter === 'recent') return p.minutesAgo <= 60;
             if (activeFilter === 'video') return p.type === 'video' || p.type === 'livestream';
             if (activeFilter === 'local') return p.location === 'local';
+            if (activeFilter === 'new') return (p.cats || []).includes('new') || p.minutesAgo <= 30;
+            if (activeFilter === 'viral') return (p.cats || []).includes('viral');
             const n = parseInt(activeFilter, 10);
             if (!isNaN(n)) return p.tier === n;
             return true;
@@ -142,13 +152,19 @@
         loader.style.display = renderedCount >= list.length ? 'none' : '';
     }
 
-    // Filter chips
+    // Sort links: new / verified / viral. Click active link to clear back to all.
     filters.addEventListener('click', e => {
-        const chip = e.target.closest('.chip');
-        if (!chip) return;
-        filters.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        activeFilter = chip.dataset.filter;
+        const link = e.target.closest('.sort-link');
+        if (!link) return;
+        e.preventDefault();
+        const wasActive = link.classList.contains('active');
+        filters.querySelectorAll('.sort-link').forEach(l => l.classList.remove('active'));
+        if (wasActive) {
+            activeFilter = 'all';
+        } else {
+            link.classList.add('active');
+            activeFilter = link.dataset.filter;
+        }
         paint(true);
     });
 
@@ -159,17 +175,19 @@
             n.classList.add('active');
             const view = n.dataset.view;
             const titleMap = {
-                latest: 'Latest broadcasts',
-                verified: 'Verified — ★★★★★ only',
-                developing: 'Developing — ★★★ and below',
-                video: 'Video broadcasts',
-                docs: 'Document submissions',
-                federation: 'Federation status',
-                saved: 'Saved broadcasts',
-                about: 'About World Feed'
+                latest: 'WorldFeed — latest broadcasts',
+                new: 'WorldFeed — new',
+                verified: 'WorldFeed — verified ★★★★★',
+                viral: 'WorldFeed — viral',
+                developing: 'WorldFeed — developing',
+                video: 'WorldFeed — video',
+                docs: 'WorldFeed — documents',
+                federation: 'WorldFeed — federation status',
+                saved: 'WorldFeed — saved',
+                about: 'WorldFeed — about'
             };
-            feedTitle.textContent = titleMap[view] || 'Latest broadcasts';
-            const map = { latest: 'all', verified: '5', developing: '3', video: 'video', docs: 'docs', saved: 'saved', federation: 'federation', about: 'about' };
+            feedTitle.textContent = titleMap[view] || 'WorldFeed — latest broadcasts';
+            const map = { latest: 'all', new: 'new', verified: '5', viral: 'viral', developing: '3', video: 'video', docs: 'docs', saved: 'saved', federation: 'federation', about: 'about' };
             const next = map[view] || 'all';
             if (next === 'docs') {
                 allPosts = rankFeed(SEED.filter(p => p.type === 'document'));
@@ -181,8 +199,8 @@
                 allPosts = rankFeed(SEED);
                 activeFilter = next;
             }
-            // sync chip
-            filters.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c.dataset.filter === activeFilter));
+            // sync sort link active state
+            filters.querySelectorAll('.sort-link').forEach(l => l.classList.toggle('active', l.dataset.filter === activeFilter));
             paint(true);
         });
     });
