@@ -91,18 +91,23 @@
             ? p.sources.map(s => '<span>● ' + escapeHtml(s) + '</span>').join('')
             : '<span style="color:var(--fg-dim)">no sources yet — open call for verification</span>';
 
+        const postLink = p.link ? p.link : '#';
+        const linkAttr = p.link ? `href="${p.link}" target="_blank" rel="noopener noreferrer"` : '';
+
         return `
         <article class="post" data-tier="${p.tier}" data-type="${p.type}" data-min="${p.minutesAgo}" data-cats="${(p.cats||[]).join(',')}" data-idx="${idx}">
-            <div class="post-head">
-                ${starsHtml(p.tier)}
-                <span class="tier-label tier-${p.tier}">${tierLabel[p.tier]}</span>
-                ${catsHtml(p)}
-                <span class="post-meta">${escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
-            </div>
-            <h3 class="post-title">${escapeHtml(p.title)}</h3>
-            <p class="post-body">${escapeHtml(p.body)}</p>
-            ${mediaHtml(p)}
-            <div class="post-sources">${sourcesLine}</div>
+            <a ${linkAttr} class="post-link-wrapper">
+                <div class="post-head">
+                    ${starsHtml(p.tier)}
+                    <span class="tier-label tier-${p.tier}">${tierLabel[p.tier]}</span>
+                    ${catsHtml(p)}
+                    <span class="post-meta">${escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
+                </div>
+                <h3 class="post-title">${escapeHtml(p.title)}</h3>
+                <p class="post-body">${escapeHtml(p.body)}</p>
+                ${mediaHtml(p)}
+                <div class="post-sources">${sourcesLine}</div>
+            </a>
             <div class="post-actions">
                 <button class="post-action" data-act="verify">✓ Verify</button>
                 <button class="post-action" data-act="amplify">↗ Amplify</button>

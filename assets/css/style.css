@@ -352,6 +352,16 @@ a:hover { color: var(--hi); }
     letter-spacing: 0.5px;
 }
 
+.post-link-wrapper {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+.post-link-wrapper:hover {
+    opacity: 0.9;
+}
+
 .post-title {
     font-size: 16px;
     font-weight: 600;
