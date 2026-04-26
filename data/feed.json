@@ -1,877 +1,366 @@
 {
-  "updatedAt": "2026-04-26T13:31:06.375Z",
-  "sourcesTried": 12,
-  "itemCount": 60,
+  "updatedAt": "2026-04-26T15:50:55.039Z",
+  "itemCount": 20,
   "items": [
     {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "The long history of America's conflict with Cuba",
-      "body": "The small island nation, 90 miles from Florida, has played an outsized role in American foreign policy for nearly 70 years. As President Trump talks of \"taking Cuba,\" tensions between Washington and Havana have outlived even the late dictator Fidel Castro.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 10,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.cbsnews.com/news/the-long-history-of-americas-conflict-with-cuba/"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "Next: Cuba?",
-      "body": "The small island nation of Cuba, just 90 miles from Florida, has played an outsized role in America's foreign policy for close to 70 years. Now, the Trump administration is blocking nearly all oil shipments from reaching the island, worsening its humanitarian crisis, with the president threatening he will be \"taking Cu",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 11,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.cbsnews.com/video/next-cuba/"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "Transcript: Acting Attorney General Todd Blanche on \"Face the Nation with Margaret Brennan,\" April 26, 2026",
-      "body": "The following is the transcript of the interview with acting Attorney General Todd Blanche that aired on \"Face the Nation with Margaret Brennan\" on April 26, 2026.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 23,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.cbsnews.com/news/todd-blanche-acting-attorney-general-face-the-nation-transcript-04-26-2026/"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "new"
-      ],
-      "title": "Syria puts first Assad-era official on trial in Damascus",
-      "body": "Atef Najib, ex-head of political security in Deraa province, is charged with 'crimes against the Syrian people'.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 59,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/syria-puts-al-assad-era-officials-on?traffic_source=rss"
-    },
-    {
       "tier": 4,
-      "cats": [],
-      "title": "Musk Vies to Turn X Into Super App With Banking Tool Near Launch",
-      "body": "More than three years after acquiring Twitter, Elon Musk says he’s nearing his long-stated goal of turning it into an “everything app” with a new financial services tool that he pledged to launch for the public this month.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 91,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i8X8D2rAxBII/v1/1200x-1.jpg",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/musk-vies-to-turn-x-into-super-app-with-banking-tool-near-launch"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "U.S. Mint Buys Drug Cartel Gold and Sells It as ‘American’",
-      "body": "As prices for the precious metal soar, the industry’s guardrails have broken down.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 93,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/08/world/00Gold-Scrolly-05/00Gold-Scrolly-05-mediumSquareAt3X.jpg",
-      "link": "https://www.nytimes.com/2026/04/26/world/americas/us-mint-gold-drug-cartel-colombia.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Blood vessels found in T. rex bones are rewriting dinosaur science",
-      "body": "Dinosaur DNA may still be out of reach, but scientists are uncovering something almost as exciting—ancient blood vessels hidden inside fossilized bones. In a massive Tyrannosaurus rex nicknamed Scotty, researchers discovered a network of preserved vessels within a rib that once fractured and began healing 66 million ye",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 106,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260426012259.htm"
-    },
-    {
-      "tier": 5,
       "cats": [
-        "viral"
+        "new"
       ],
-      "title": "Trump doubts shooter motivated by Iran war as peace talks on hold",
-      "body": "A shooting incident at the White House Correspondent's Dinner took focus away from the war in Iran, as Iran's foreign minister planned to return to Islamabad, the site of previous peace talks.",
+      "title": "sample cultural studies paper",
+      "body": "Document from Human Studies. Full PDF available for download and analysis.",
       "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 111,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb6%2F1a%2F15437da0469f85df6799247d9c0d%2Fap26114554323690.jpg",
-      "link": "https://www.npr.org/2026/04/26/nx-s1-5800054/iran-talks-on-hold-shooting-talks-pakistan"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Sebastian Sawe breaks London marathon record with first run under two hours",
-      "body": "Kenyan athlete breaks Kelvin Kiptum’s previous world record of 2:00:35; Ethiopia's Assefa retains her women's crown.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 123,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.aljazeera.com/sports/2026/4/26/kenyas-sawe-is-worlds-first-man-to-run-a-sub-two-hour-marathon-in-london?traffic_source=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Timeline: Trump assassination attempts and security incidents",
-      "body": "Timeline reveals assassination attempts on Trump, including incidents during his presidency and campaign rallies.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 126,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/timeline-trump-assassination-attempts-and-security-incidents?traffic_source=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Northern Ireland homes evacuated after reports of car bomb explosion",
-      "body": "Police in Northern Ireland declared a security alert in the town of Dunmurry, on the outskirts of Belfast, after reports that a car bomb exploded near a police station.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 156,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.cbsnews.com/news/northern-ireland-car-bomb-explosion-reports-evacuated-homes/"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "DNA research just rewrote the origin of human species",
-      "body": "Scientists have uncovered a surprising new picture of human origins that challenges the long-held idea of a single ancestral population in Africa. By analyzing genetic data from diverse modern African groups—especially the highly distinct Nama people—and comparing it with fossil evidence, researchers found that early h",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 158,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260426012255.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Mali’s Defence Minister Sadio Camara killed during coordinated attacks",
-      "body": "Death of influential minister seen as a big blow for Mali's military government during fighting with armed groups.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 161,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/malis-defence-minister-sadio-camara-killed-amid-coordinated-attacks?traffic_source=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "What we know about the suspected ‘assassination attempt’ on Donald Trump",
-      "body": "A man armed is in custody after trying to rush the White House Correspondents' Dinner, which Trump was attending.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 161,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/what-we-know-about-the-suspected-assassination-attempt-on-donald-trump?traffic_source=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Trump cancels Kushner, Witkoff trip to Pakistan for Iran talks",
-      "body": "U.S. envoys Steve Witkoff and Jared Kushner were expected to head to Islamabad Saturday, but President Trump said later that his \"representatives\" would not be going.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 166,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.cbsnews.com/live-updates/us-iran-war-trump-strait-of-hormuz-hezbollah-lebanon-israel-ceasefire/"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "40 Years After the Meltdown, War Layers Another Disaster on Chernobyl",
-      "body": "Ideas have been floated for how the contaminated zone could bring economic benefits to Ukraine. But for the foreseeable future, it will be an army-controlled security belt.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 179,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-ukraine-chernobyl-01-jzqb-promo/26int-ukraine-chernobyl-01-jzqb-mediumSquareAt3X.jpg",
-      "link": "https://www.nytimes.com/2026/04/26/world/europe/chernobyl-anniversary.html"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "China Formalizes Labor Rules for Gig Workers on Online Platforms",
-      "body": "China formalized its first comprehensive policy framework for “new employment groups,” including delivery riders and livestreamers, signaling a shift from ad-hoc regulation to normalization of the platform economy.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 184,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i1m9lIu9m_xo/v1/1200x-1.jpg",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/china-formalizes-labor-rules-for-gig-workers-on-online-platforms"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "At least four people killed in Israeli attacks in Gaza despite ‘ceasefire’",
-      "body": "Israeli forces keep advancing further into western Gaza, slowly expanding the area of their control in the east.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 191,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.aljazeera.com/news/2026/4/26/israeli-attacks-kill-at-least-four-palestinians-in-gaza?traffic_source=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Israel destroys solar panels in south Lebanon",
-      "body": "Israel destroys solar panels in south Lebanon",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 193,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.aljazeera.com/video/newsfeed/2026/4/26/israel-destroys-solar-panels-in-south-lebanon?traffic_source=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Iranian Negotiators Set to Return to Pakistan to Try to Revive Truce Talks",
-      "body": "It was not clear whether President Trump would send his negotiators for a new round of discussions after abruptly calling off a trip by his top advisers on Saturday.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 202,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26-iran-us-fgzw/26-iran-us-fgzw-mediumSquareAt3X.jpg",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/iranian-negotiators-set-to-return-to-pakistan-to-try-to-revive-truce-talks.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Islamabad Reopens After U.S.-Iran Talks Fail to Materialize",
-      "body": "Officials had locked the city down, anticipating talks between U.S. and Iranian delegations. But they didn’t happen. “What did I close my business for?” one business owner asked.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 205,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-islamabad-talks-hbkt/26int-islamabad-talks-hbkt-mediumSquareAt3X.jpg",
-      "link": "https://www.nytimes.com/2026/04/26/world/asia/islamabad-talks-iran-us.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "King Charles U.S. visit comes at tense moment in transatlantic relationship",
-      "body": "King Charles and Queen Camilla arrive Monday for a four day U.S. state visit. Some hope the royal touch can heal the transatlantic rift that's emerged under Trump.",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 211,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4743x3369+0+0/resize/4743x3369!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F55%2Ff7%2F1aac66724cac9bbd775ec7f906ee%2Fap25260728844739.jpg",
-      "link": "https://www.npr.org/2026/04/26/nx-s1-5788696/king-queen-state-trump"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "What Happened After The New York Times Found a Cartel Mine on a Colombian Military Base",
-      "body": "Officers denied that an illegal, large-scale gold operation was underway within earshot of their posts. But we had seen it with our own eyes.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "story",
-      "minutesAgo": 220,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.nytimes.com/2026/04/26/world/americas/colombia-cartel-illegal-gold-mining-military-base.html"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Yemen’s landmine crisis endures despite truce and de-mining efforts",
-      "body": "Landmines in Yemen continue to kill and maim, even amid ceasefire efforts and ongoing de-mining initiatives.",
-      "sources": [
-        "Al Jazeera"
-      ],
-      "type": "story",
-      "minutesAgo": 227,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.aljazeera.com/features/2026/4/26/yemens-landmine-crisis-endures-despite-truce-and-de-mining-efforts?traffic_source=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Israel’s President, Putting Off Decision on Pardon for Netanyahu, Will Push for Plea Deal",
-      "body": "President Isaac Herzog of Israel has decided not to issue a pardon to Prime Minister Benjamin Netanyahu in his corruption case at this time, and instead will seek mediation, officials say.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 251,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-israel-pardon-wfjv/26int-israel-pardon-wfjv-mediumSquareAt3X.jpg",
-      "link": "https://www.nytimes.com/2026/04/26/world/middleeast/israel-netanyahu-pardon-herzog.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Armed groups launch coordinated attacks across Mali",
-      "body": "Witnesses report clashes in the centre and north, in what has been described as the largest jihadist attack in years.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 275,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0f56/live/2e2451f0-40b0-11f1-9cb2-cda518707cb6.jpg",
-      "link": "https://www.bbc.com/news/articles/clyx7nnrkqdo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Fish oil may be hurting your brain, new study finds",
-      "body": "Fish oil has long been praised as brain-boosting, but new research suggests the story may be more complicated. Scientists found that in people with repeated mild head injuries, a key omega-3 fatty acid in fish oil—EPA—may actually interfere with the brain’s ability to repair itself. Instead of helping recovery, it appe",
-      "sources": [
-        "Sci News"
+        "Q Drive Library",
+        "WorldFeed Network"
       ],
       "type": "document",
-      "minutesAgo": 453,
-      "location": "wire",
+      "minutesAgo": 135,
+      "location": "Human Studies",
       "imageUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260426012303.htm"
+      "link": "/pdf/sample-cultural-studies-paper.pdf",
+      "pdfPath": "/q/human-enrichment/cultural-studies/anthropology/sample-cultural-studies-paper.pdf"
     },
     {
       "tier": 4,
-      "cats": [],
-      "title": "DeepSeek V4 Delay Shows Shift to China Chips, CCTV Account Says",
-      "body": "DeepSeek’s delayed release of its V4 model points to a strategic shift toward deeper integration with China’s domestic chip ecosystem, according to Yuyuantantian, a social media account affiliated with the government-controlled China Central Television.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 522,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i2XL7tuBUVqo/v0/1200x-1.jpg",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/deepseek-v4-delay-shows-shift-to-china-chips-cctv-account-says"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "I was in the room with Trump and heard the low thudding sound of gunfire",
-      "body": "The BBC's Gary O'Donoghue describes the moment he and others dived for cover as shots rang out at the venue.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 548,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8e11/live/92ee8830-416e-11f1-b55d-0f258dce1735.jpg",
-      "link": "https://www.bbc.com/news/articles/c62j23wzeqeo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "How Nieves González’s Painting of Lily Allen Made Her Famous",
-      "body": "Nieves González, a 29-year-old painter, once worked in relative obscurity in Andalusia. Her picture of the British singer Lily Allen changed that.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 570,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/26/multimedia/26int-spain-aritst-profile-promo-tghf/26int-spain-aritst-profile-promo-tghf-mediumSquareAt3X.jpg",
-      "link": "https://www.nytimes.com/2026/04/26/world/europe/nieves-gonzalez-lily-allen-artist-west-end-girl-spain.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Aggressive “hulk” lizards are wiping out millions of years of evolution",
-      "body": "For ages, wall lizards coexisted in three distinct color types, each with its own strategy for survival. Now, a powerful green variant is taking over. These dominant “Hulk” lizards are outcompeting the others, causing yellow and orange morphs to vanish. It’s a dramatic reminder that evolution can flip the script much f",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 617,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260424233212.htm"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Beijing Warns EU After China Firms Included in Russia Sanctions",
-      "body": "China said it will take necessary measures after the European Union added Chinese entities to its latest Russia sanctions package, warning that all consequences would be borne by the EU.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 665,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iKSZsNO58p8w/v1/1200x-1.jpg",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-26/beijing-warns-eu-after-china-firms-included-in-russia-sanctions"
-    },
-    {
-      "tier": 5,
       "cats": [
-        "viral"
+        "new"
       ],
-      "title": "Netanyahu orders army to 'vigorously attack' Hezbollah in Lebanon",
-      "body": "The Israeli PM's directive comes as six people were killed by strikes in Lebanon despite a ceasefire being extended by three weeks.",
+      "title": "sample emotional intelligence paper",
+      "body": "Document from Human Studies. Full PDF available for download and analysis.",
       "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 777,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cd6d/live/d70bb7a0-4104-11f1-b55d-0f258dce1735.jpg",
-      "link": "https://www.bbc.com/news/articles/c5yv1nvd4gjo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Mexico says 2 CIA agents killed in crash weren't authorized to participate in local raid",
-      "body": "The role of the two CIA agents, who were returning from destroying a clandestine drug lab in the northern Mexican state of Chihuahua, remains unclear.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 844,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.cbsnews.com/news/mexico-cia-agents-killed-crash-local-raid/"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Trump abruptly cancels peace talks with Iran in Pakistan: \"We have all the cards\"",
-      "body": "President Trump said the U.S. has all the cards in the war with Iran after he told his envoys, Steve Witkoff and Jared Kushner, not to take a trip to Pakistan to break a diplomatic stalemate over negotiations to end the war. Imtiaz Tyab reports.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 870,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.cbsnews.com/video/trump-abruptly-cancels-peace-talks-iran-pakistan-cards/"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Latest between Israel, Hezbollah in Lebanon",
-      "body": "The ceasefire with Iran was still in place on Saturday, but shots were still fired in the Middle East. Charlie D'Agata reports on Israel and Lebanon.",
-      "sources": [
-        "CBS News"
-      ],
-      "type": "story",
-      "minutesAgo": 882,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.cbsnews.com/video/latest-between-israel-hezbollah-lebanon/"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "In a rare interview, a leader of the world's largest right-wing group talks to NPR",
-      "body": "The second-in-command of the RSS, a Hindu nationalist organization in India, rarely speaks to the Western press. Here's what he said about his group's controversial history.",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 946,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7038x4692+0+0/resize/7038x4692!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb8%2Fff%2F612a5c7a4e16b826ac0a79eee724%2Fgettyimages-2238298862.jpg",
-      "link": "https://www.npr.org/2026/04/25/nx-s1-5795781/india-rss-rashtriya-swayamsevak-sangh-interview-hindu-nationalist"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Trump cancels US envoys' trip to Pakistan for talks on Iran war",
-      "body": "Iran had earlier said there were no plans for a direct meeting with a US delegation led by Steve Witkoff and Jared Kushner.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 957,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e627/live/9720af10-4140-11f1-b164-67ef9684bbf6.jpg",
-      "link": "https://www.bbc.com/news/articles/c4g6nyvl29po?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Crushed at the Polls, Hungary’s Former Ruling Party Licks Its Wounds",
-      "body": "Outgoing prime minister, Viktor Orban, who helped found the Fidesz party, said he would leave his Parliament seat but hoped to remain as head of his party.",
-      "sources": [
-        "NYT World"
-      ],
-      "type": "image",
-      "minutesAgo": 980,
-      "location": "wire",
-      "imageUrl": "https://static01.nyt.com/images/2026/04/25/multimedia/25hungary-orban-bqhf/25hungary-orban-bqhf-mediumSquareAt3X.jpg",
-      "link": "https://www.nytimes.com/2026/04/25/world/europe/viktor-orban-fidesz.html"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Militants and separatists launch coordinated attacks across Mali",
-      "body": "<p>Al-Qaida-linked group JNIM claims responsibility for strikes on airport in capital, Bamako and four other cities</p><p>Islamic militants and separatists attacked several locations in Mali’s capital and other cities on Saturday in one of the largest coordinated attacks in the country in recent years.</p><p>The al-Qai",
-      "sources": [
-        "Guardian"
-      ],
-      "type": "image",
-      "minutesAgo": 1029,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/082ceb589732191afe763335e5f85e6ab8d5be20/272_0_4165_3333/master/4165.jpg?width=140&quality=85&auto=format&fit=max&s=08ca1dd2a7b437d35e2143812df7d6a3",
-      "link": "https://www.theguardian.com/world/2026/apr/25/militants-and-separatists-launch-coordinated-attacks-across-mali"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Orbán steps down from Hungarian parliament after landslide defeat",
-      "body": "The outgoing prime minister will not take up his seat after leading his party back into opposition.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1089,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c5c7/live/a81e7d00-40d8-11f1-b316-3766e147ab87.jpg",
-      "link": "https://www.bbc.com/news/articles/cd9v1wll8qqo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [
-        "viral"
-      ],
-      "title": "Mexico says US agents killed in crash weren't permitted to operate there",
-      "body": "The two Americans who reportedly worked for the CIA died in a car crash after a Mexican-led operation to destroy a drug lab.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1190,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/aab8/live/9afb0050-40c2-11f1-9af5-0bf991029b02.jpg",
-      "link": "https://www.bbc.com/news/articles/cx2491we011o?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Rights groups critical as Venezuela prisoner release scheme 'coming to an end'",
-      "body": "More than 500 political prisoners are thought to still be in jail, despite the releases since the amnesty law was brought in.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1194,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4b26/live/fc256be0-40c2-11f1-ac78-2112837ce2aa.jpg",
-      "link": "https://www.bbc.com/news/articles/c0kr62z7z6lo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Palestinians in West Bank and some in Gaza vote in local elections",
-      "body": "Local elections have been held in the occupied West Bank and in one Gazan city, though Hamas and other groups are not taking part.",
-      "sources": [
-        "BBC"
-      ],
-      "type": "image",
-      "minutesAgo": 1229,
-      "location": "wire",
-      "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0fc6/live/17495f90-4072-11f1-83f8-e39ccdeebf3b.jpg",
-      "link": "https://www.bbc.com/news/articles/cn4vej3x0wxo?at_medium=RSS&amp;at_campaign=rss"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Harvard scientists link gut bacteria to depression through hidden inflammation trigger",
-      "body": "A gut bacterium may be quietly fueling depression through an unexpected chemical twist. Researchers found that when Morganella morganii interacts with a common pollutant, it produces a molecule that triggers inflammation—something strongly linked to depression. This finding helps explain how gut microbes can influence ",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 1312,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260425091216.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Mali hit by wave of coordinated attacks from armed groups",
-      "body": "Gunfire and explosions have rocked Mali's capital Bamako and other key cities in one of the most significant coordinated attacks in years, as armed groups, including jihadist insurgents and separatist rebels exploit worsening insecurity in the Sahel region.",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 1354,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4032x3024+0+0/resize/4032x3024!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa7%2Fa1%2Fd5d9b9df41d1b2816984576217bf%2Fap26115387296781.jpg",
-      "link": "https://www.npr.org/2026/04/25/nx-s1-5799439/mali-hit-by-wave-of-coordinated-attacks-from-armed-groups"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "This exotic particle could finally explain why matter has mass",
-      "body": "A major physics experiment has uncovered evidence for a strange new form of matter, where a fleeting particle gets trapped inside a nucleus. This exotic state may reveal how mass is generated, suggesting that particles can weigh less when surrounded by dense nuclear matter. The findings support long-standing theories a",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 1364,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260424233214.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Gravitational waves may have created dark matter in the early universe",
-      "body": "In the chaotic first moments after the Big Bang, ripples in spacetime may have done more than just echo through the cosmos—they could have helped create dark matter itself. New research suggests that faint, ancient gravitational waves might have transformed into particles that eventually became the invisible substance ",
-      "sources": [
-        "Sci News"
-      ],
-      "type": "story",
-      "minutesAgo": 1395,
-      "location": "wire",
-      "imageUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260424233217.htm"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "What counts as the woods? Judge axes Nova Scotia’s ban that defied ‘commonsense definitions’",
-      "body": "<p>The court sided with a Canadian hiker who deliberately challenged the order imposed to curb spread of wildfires</p><p>As wildfires raged across Nova Scotia last summer, the <a href=\"https://www.theguardian.com/world/canada\">Canadian</a> province made a simple plea to residents: stay away from the woods.</p><p>As the",
-      "sources": [
-        "Guardian"
-      ],
-      "type": "image",
-      "minutesAgo": 1410,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/6c3c8a2e594b8e6ceaf7fd148e6d38a75956c270/380_0_4718_3773/master/4718.jpg?width=140&quality=85&auto=format&fit=max&s=c15a3dfb022d4b92b2a47a6f73471e08",
-      "link": "https://www.theguardian.com/world/2026/apr/25/canada-nova-scotia-wildfire-woods-ban"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Private-Sector Sleuthing Becomes Big Business for US Tech Startup",
-      "body": "Trump’s economic crackdown on China’s US interests is creating opportunities for a Utah-based intelligence firm",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 1411,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iUzewphjoTns/v1/1200x-1.jpg",
-      "link": "https://www.bloomberg.com/news/features/2026-04-25/private-sector-sleuthing-becomes-big-business-for-us-tech-startup"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "‘Astonishing’ discovery could help save children from deadly disfiguring condition",
-      "body": "<p>A previously unknown species of bacteria found in patients with noma could be key to creating treatments for the neglected tropical disease</p><p>The “astonishing” discovery of a new bacterium could open the door to better ways to prevent, detect and treat a fatal and disfiguring childhood disease, researchers hope.",
-      "sources": [
-        "Guardian"
-      ],
-      "type": "image",
-      "minutesAgo": 1710,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/e8156517a54fa1b3b8e7629e6c28b0792f291a7a/248_0_2504_2004/master/2504.jpg?width=140&quality=85&auto=format&fit=max&s=579e2320140c1f419daf8ba90d40fecc",
-      "link": "https://www.theguardian.com/global-development/2026/apr/25/discovery-children-fatal-disfiguring-disease-noma-unknown-bacteria"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Understanding the Most Viral Chart in Artificial Intelligence | Odd Lots",
-      "body": "METR, which stands for Model Evaluation and Threat Researc, is focused on understanding the degree to which AI models can engage in autonomous, complex tasks. METR see this is as a particularly important benchmark, given the risk that AI could one day be engaged in recursive self improvement, taking humans out of the l",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 1740,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ixX_JDnpYZXA/v3/1200x-1.jpg",
-      "link": "https://www.bloomberg.com/news/videos/2026-04-25/understanding-the-most-viral-chart-in-ai-video"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Iran's foreign minister leaves Pakistan, then Trump cancels U.S. delegation's travel",
-      "body": "After arriving on Friday, Iran's Abbas Araghchi has left Islamabad, prompting President Trump to announce that his envoys Steve Witkoff and Jared Kushner will no longer travel there Saturday for peace talks",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 1856,
-      "location": "wire",
-      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x667+0+0/resize/1024x667!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F59%2F81%2F2aefffa943098ef4ebd300415fdb%2Fgettyimages-2272187995.jpg",
-      "link": "https://www.npr.org/2026/04/25/nx-s1-5799372/iran-middle-east-updates"
-    },
-    {
-      "tier": 4,
-      "cats": [],
-      "title": "Graticule’s Levinson ‘Open’ to Iran Resolution Ahead of Rally",
-      "body": "Investor Adam Levinson said he remains bullish despite recent market volatility, and is buying the dip ahead of an expected rally on a resolution in the Iran conflict.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 1956,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iEEQDnNEOJ8s/v0/1200x-1.jpg",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-25/graticule-s-levinson-open-to-iran-resolution-ahead-of-rally"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Giant prehistoric insects didn’t need high oxygen after all, study finds",
-      "body": "Ancient Earth once buzzed with enormous dragonfly-like insects, and scientists long thought high oxygen levels made their size possible. A new study overturns that idea, revealing insect flight muscles weren’t constrained by oxygen after all. Their breathing system has plenty of room to expand, meaning oxygen alone can",
-      "sources": [
-        "Sci News"
+        "Q Drive Library",
+        "WorldFeed Network"
       ],
       "type": "document",
-      "minutesAgo": 1973,
-      "location": "wire",
+      "minutesAgo": 1026,
+      "location": "Human Studies",
       "imageUrl": "",
-      "link": "https://www.sciencedaily.com/releases/2026/04/260424233208.htm"
+      "link": "/pdf/sample-emotional-intelligence-paper.pdf",
+      "pdfPath": "/q/human-enrichment/psychological-profiles/emotional-intelligence/sample-emotional-intelligence-paper.pdf"
     },
     {
       "tier": 4,
-      "cats": [],
-      "title": "PBOC Warns of Finance ‘Involution,’ Reaffirms Risk Control Focus",
-      "body": "China’s central bank and foreign‑exchange regulator reiterated the need to curb excessive &mdash; or “involution‑style” &mdash; competition within the country’s finance industry, framing it as a governance and discipline concern.",
-      "sources": [
-        "Bloomberg Tech"
-      ],
-      "type": "image",
-      "minutesAgo": 1974,
-      "location": "wire",
-      "imageUrl": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iV1lELXU1h9c/v0/1200x-1.jpg",
-      "link": "https://www.bloomberg.com/news/articles/2026-04-25/pboc-warns-of-finance-involution-reaffirms-risk-control-focus"
-    },
-    {
-      "tier": 5,
       "cats": [
-        "viral"
+        "new"
       ],
-      "title": "Altman apologizes after OpenAI failed to alert police before fatal Canada shooting",
-      "body": "<p>OpenAI said the company had identified an account using abuse-detection efforts, but determined at the time it didn’t meet threshold for legal referral</p><p>The head of OpenAI has written a letter apologizing that his company didn’t alert law enforcement about the online behavior of a person who shot and killed eig",
+      "title": "0704.0108v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
       "sources": [
-        "Guardian"
+        "Q Drive Library",
+        "WorldFeed Network"
       ],
-      "type": "image",
-      "minutesAgo": 2118,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/84e2422ff0338b70902f2c0aa6c24a6605329822/479_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=57e96ffc92096faa977f541805b4601c",
-      "link": "https://www.theguardian.com/us-news/2026/apr/25/altman-apologizes-after-openai-failed-to-alert-police-before-fatal-canada-shooting"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "US military kills two more people in strike on alleged drug boat in Pacific",
-      "body": "<p>Small boat destroyed in video posted on social media as US campaign has killed at least 178 people since September</p><p>The US military <a href=\"https://x.com/Southcom/status/2047843084956750278\">announced</a> on Friday that it killed two people in an attack on a boat in the eastern Pacific, part of a series of dea",
-      "sources": [
-        "Guardian"
-      ],
-      "type": "video",
-      "minutesAgo": 2128,
-      "location": "wire",
-      "imageUrl": "https://i.guim.co.uk/img/media/e7a45331e955e87b2925d3667c2446a9db64293c/225_0_1048_839/master/1048.jpg?width=140&quality=85&auto=format&fit=max&s=418bd7d8ff169804cc5eb9f7e05632de",
-      "link": "https://www.theguardian.com/us-news/2026/apr/24/us-military-strike-boat-pacific"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Vessels seized by the U.S. this week were part of a global 'shadow fleet'",
-      "body": "NPR's Juana Summers speaks with Elisabeth Braw, senior fellow at the Atlantic Council, about shadow vessels, after the U.S. military's seizure of two Iranian-linked oil tankers.",
-      "sources": [
-        "NPR"
-      ],
-      "type": "image",
-      "minutesAgo": 2452,
-      "location": "wire",
-      "imageUrl": "https://media.npr.org/include/images/tracking/npr-rss-pixel.png?story=nx-s1-5795895",
-      "link": "https://www.npr.org/2026/04/24/nx-s1-5795895/vessels-seized-by-the-u-s-this-week-were-part-of-a-global-shadow-fleet"
-    },
-    {
-      "tier": 5,
-      "cats": [],
-      "title": "Police identify the body of 1 missing USF student, second still missing as roommate is charged",
-      "body": "<img src=\"https://dims.apnews.com/dims4/default/781ff75/2147483647/strip/true/crop/1080x720+0+0/resize/980x653!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F45%2F50%2F4a58df0216b70c9a919fa55fa914%2F3f98405cc68f43c7a0466c5414bb4cde\" width=\"100%\"><small style=\"color: #999;\">The Hillsborough County Sheriff&#x27;s Off",
-      "sources": [
-        "AP Top"
-      ],
-      "type": "story",
-      "minutesAgo": 2558,
-      "location": "wire",
+      "type": "document",
+      "minutesAgo": 982,
+      "location": "Mathematics",
       "imageUrl": "",
-      "link": ""
+      "link": "/pdf/0704.0108v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0704.0108v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0704.0229v4",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 819,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0704.0229v4.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0704.0229v4.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0704.0468v2",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 1375,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0704.0468v2.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0704.0468v2.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0704.1678v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 695,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0704.1678v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0704.1678v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0704.2386v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 444,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0704.2386v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0704.2386v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0705.0965v2",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 1061,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0705.0965v2.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0705.0965v2.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0705.2503v4",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 622,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0705.2503v4.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0705.2503v4.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0705.3751v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 209,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0705.3751v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0705.3751v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0706.2155v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 1218,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0706.2155v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0706.2155v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0706.2725v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 569,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0706.2725v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0706.2725v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0706.2893v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 273,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0706.2893v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0706.2893v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0707.0282v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 1342,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0707.0282v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0707.0282v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0707.1176v2",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 164,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0707.1176v2.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0707.1176v2.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0707.1364v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 911,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0707.1364v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0707.1364v1.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0707.2562v2",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 201,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0707.2562v2.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0707.2562v2.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0707.4448v2",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 673,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0707.4448v2.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0707.4448v2.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0707.4565v3",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 362,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0707.4565v3.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0707.4565v3.pdf"
+    },
+    {
+      "tier": 4,
+      "cats": [
+        "new"
+      ],
+      "title": "0708.1723v1",
+      "body": "Document from Mathematics. Full PDF available for download and analysis.",
+      "sources": [
+        "Q Drive Library",
+        "WorldFeed Network"
+      ],
+      "type": "document",
+      "minutesAgo": 997,
+      "location": "Mathematics",
+      "imageUrl": "",
+      "link": "/pdf/0708.1723v1.pdf",
+      "pdfPath": "/q/math-library/Computer_Science_Advanced/cs_CC/0708.1723v1.pdf"
     }
   ]
 }
