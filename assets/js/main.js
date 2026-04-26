@@ -101,7 +101,6 @@
             <a ${linkAttr} class="post-link-wrapper">
                 <div class="post-head">
                     ${starsHtml(p.tier)}
-                    <span class="tier-label tier-${p.tier}">${tierLabel[p.tier]}</span>
                     ${catsHtml(p)}
                     <span class="post-meta">${escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
                 </div>

@@ -26,7 +26,7 @@ body {
     color: var(--fg);
     min-height: 100vh;
     line-height: 1.55;
-    font-size: 18px;
+    font-size: 20px;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
@@ -231,7 +231,7 @@ a:hover { color: var(--hi); }
     border: 1px solid var(--border);
     border-radius: 100px;
     color: var(--fg);
-    font-size: 15.4px;
+    font-size: 17px;
     font-family: inherit;
     outline: none;
     transition: all .25s ease;
@@ -260,7 +260,7 @@ a:hover { color: var(--hi); }
     background: var(--bg-1);
     color: var(--fg-mid);
     border-radius: 100px;
-    font-size: 14.3px;
+    font-size: 15px;
     font-weight: 500;
     cursor: pointer;
     white-space: nowrap;
@@ -368,16 +368,16 @@ a:hover { color: var(--hi); }
 }
 
 .post-title {
-    font-size: 17.6px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 1.32;
     color: var(--fg);
     margin-bottom: 10px;
     letter-spacing: -0.3px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .post-body {
-    font-size: 15.4px;
+    font-size: 18px;
     color: var(--fg-mid);
     line-height: 1.6;
     margin-bottom: 12px;
