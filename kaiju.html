@@ -424,19 +424,17 @@
         <div class="chat-wrap">
             <header class="chat-header">
                 <div class="chat-title"><span class="pulse"></span> KAIJU · ONLINE</div>
-                <div class="chat-model-badge"><span class="dot"></span><span id="modelLabel">deepseek-chat</span></div>
+                <div class="chat-model-badge"><span class="dot"></span><span>KAIJU FLASH · FREE</span></div>
             </header>
 
             <div class="chat-stream" id="chatStream">
                 <div class="msg assistant">
                     <div class="msg-avatar"><img src="assets/img/oroboros-logo.svg" alt=""></div>
                     <div>
-                        <div class="msg-meta">KAIJU · BOOTED</div>
-                        <div class="msg-bubble">Kaiju is online. Powered by DeepSeek Flash latest.
+                        <div class="msg-meta">KAIJU</div>
+                        <div class="msg-bubble">Hi — I'm Kaiju, the Oroboros AGI. Free to use, part of the WorldFeed platform.
 
-Drop your DeepSeek API key in the right rail to begin (it's stored only in this browser, never sent anywhere except DeepSeek's API).
-
-Ask me anything — research, code, analysis, drafting. I'll respond inline, no page reloads, no popups.</div>
+Ask me anything: research, code, drafting, analysis. Responses appear right here, on the page.</div>
                     </div>
                 </div>
             </div>
@@ -446,7 +444,7 @@ Ask me anything — research, code, analysis, drafting. I'll respond inline, no 
                     <textarea class="chat-input" id="chatInput" placeholder="Message Kaiju…  (Shift+Enter for newline)" rows="1"></textarea>
                     <button class="chat-send" id="sendBtn">Send</button>
                 </div>
-                <div class="chat-hint">DeepSeek Flash latest · key stored locally · <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener">Get a key ↗</a></div>
+                <div class="chat-hint">Free · Powered by Kaiju Network · No signup, no tracking</div>
             </div>
         </div>
     </main>
@@ -454,36 +452,27 @@ Ask me anything — research, code, analysis, drafting. I'll respond inline, no 
     <!-- RIGHT RAIL -->
     <aside class="rail">
         <div class="rail-card">
-            <h3>Model</h3>
-            <div class="kj-stat"><span>Provider</span><span class="kj-stat-val">DeepSeek</span></div>
-            <div class="kj-stat"><span>Model</span><span class="kj-stat-val" id="railModel">deepseek-chat</span></div>
-            <div class="kj-stat"><span>Codename</span><span class="kj-stat-val">KAIJU FLASH</span></div>
-            <div class="kj-stat"><span>Context</span><span class="kj-stat-val">128K</span></div>
+            <h3>Status</h3>
+            <div class="kj-stat"><span>Network</span><span class="kj-stat-val">KAIJU FREE</span></div>
+            <div class="kj-stat"><span>Model</span><span class="kj-stat-val" id="railModel">flash</span></div>
+            <div class="kj-stat"><span>Cost</span><span class="kj-stat-val" style="color:#4ade80">$0.00</span></div>
             <div class="kj-stat"><span>Status</span><span class="kj-stat-val" id="railStatus">idle</span></div>
         </div>
 
         <div class="rail-card">
-            <h3>Settings</h3>
-            <input type="password" class="kj-key-input" id="apiKeyInput" placeholder="DeepSeek API key (sk-…)" autocomplete="off">
+            <h3>Basic</h3>
+            <label style="display:block;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:6px;">Mode</label>
             <select class="kj-model-select" id="modelSelect">
-                <option value="deepseek-chat">deepseek-chat (latest Flash)</option>
-                <option value="deepseek-reasoner">deepseek-reasoner (R-series)</option>
+                <option value="flash">Flash · fast</option>
+                <option value="deep">Deep · reasoning</option>
             </select>
-            <button class="kj-save" id="saveBtn">SAVE LOCALLY</button>
-            <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener" class="kj-link">Get a DeepSeek API key →</a>
-        </div>
-
-        <div class="rail-card">
-            <h3>Session</h3>
-            <div class="kj-stat"><span>Messages</span><span class="kj-stat-val" id="msgCount">1</span></div>
-            <div class="kj-stat"><span>Tokens (est.)</span><span class="kj-stat-val" id="tokenCount">0</span></div>
-            <button class="kj-save" id="clearBtn" style="margin-top:10px;background:transparent;border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.7)">CLEAR CHAT</button>
+            <button class="kj-save" id="clearBtn" style="background:transparent;border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.75)">CLEAR CHAT</button>
         </div>
 
         <div class="rail-card">
             <h3>About</h3>
             <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.6;">
-                Kaiju is the Oroboros Labs AGI frontend. Backed by DeepSeek's latest Flash model. No tracking. No server. Your key, your chats, your machine.
+                Kaiju is the Oroboros Labs AGI — free, included with the WorldFeed platform. No signup, no key, no tracking. Just ask.
             </div>
         </div>
     </aside>
@@ -494,31 +483,27 @@ Ask me anything — research, code, analysis, drafting. I'll respond inline, no 
 (function () {
     'use strict';
 
-    const KEY_STORE = 'kaiju.deepseek.key';
-    const MODEL_STORE = 'kaiju.deepseek.model';
-    const CHAT_STORE = 'kaiju.history';
+    // Kaiju Free Network — public relay (Pollinations). No key, no signup.
+    const KAIJU_ENDPOINT = 'https://text.pollinations.ai/openai';
+    const MODE_TO_MODEL = {
+        flash: 'openai',           // fast Kaiju Flash
+        deep:  'deepseek-reasoning' // deeper reasoning when chosen
+    };
+    const MODE_STORE = 'kaiju.mode';
 
     const stream = document.getElementById('chatStream');
     const input = document.getElementById('chatInput');
     const sendBtn = document.getElementById('sendBtn');
-    const apiKeyInput = document.getElementById('apiKeyInput');
     const modelSelect = document.getElementById('modelSelect');
-    const saveBtn = document.getElementById('saveBtn');
     const clearBtn = document.getElementById('clearBtn');
     const railModel = document.getElementById('railModel');
-    const modelLabel = document.getElementById('modelLabel');
     const railStatus = document.getElementById('railStatus');
-    const msgCount = document.getElementById('msgCount');
-    const tokenCount = document.getElementById('tokenCount');
     const newChatBtn = document.getElementById('newChatBtn');
 
-    let history = []; // [{ role, content }]
-    let savedKey = localStorage.getItem(KEY_STORE) || '';
-    let savedModel = localStorage.getItem(MODEL_STORE) || 'deepseek-chat';
-    if (savedKey) apiKeyInput.value = '••••••••' + savedKey.slice(-4);
-    modelSelect.value = savedModel;
-    railModel.textContent = savedModel;
-    modelLabel.textContent = savedModel;
+    let history = [];
+    let mode = localStorage.getItem(MODE_STORE) || 'flash';
+    modelSelect.value = mode;
+    railModel.textContent = mode;
 
     function escapeHtml(s) {
         const d = document.createElement('div');
@@ -564,78 +549,66 @@ Ask me anything — research, code, analysis, drafting. I'll respond inline, no 
         node.classList.remove('thinking');
         stream.scrollTop = stream.scrollHeight;
     }
-    function bumpCounters() {
-        msgCount.textContent = history.length;
-        tokenCount.textContent = Math.round(history.reduce((n, m) => n + m.content.length, 0) / 4);
-    }
-
-    saveBtn.addEventListener('click', () => {
-        const v = apiKeyInput.value.trim();
-        if (v && !v.startsWith('••••')) {
-            localStorage.setItem(KEY_STORE, v);
-            savedKey = v;
-            apiKeyInput.value = '••••••••' + v.slice(-4);
-        }
-        const m = modelSelect.value;
-        localStorage.setItem(MODEL_STORE, m);
-        savedModel = m;
-        railModel.textContent = m;
-        modelLabel.textContent = m;
-        saveBtn.textContent = 'SAVED';
-        saveBtn.classList.add('ok');
-        setTimeout(() => { saveBtn.textContent = 'SAVE LOCALLY'; saveBtn.classList.remove('ok'); }, 1600);
+    modelSelect.addEventListener('change', () => {
+        mode = modelSelect.value;
+        localStorage.setItem(MODE_STORE, mode);
+        railModel.textContent = mode;
     });
 
     clearBtn.addEventListener('click', () => {
         history = [];
         stream.innerHTML = '';
-        appendMsg('assistant', 'Fresh thread. What now?');
-        bumpCounters();
+        appendMsg('assistant', 'Fresh thread. What next?');
     });
     newChatBtn.addEventListener('click', () => clearBtn.click());
 
     async function send(text) {
-        if (!savedKey) {
-            appendMsg('assistant', '⚠ No DeepSeek key found. Paste your `sk-…` key in the Settings panel on the right and hit SAVE LOCALLY.');
-            return;
-        }
         history.push({ role: 'user', content: text });
         appendMsg('user', text);
-        bumpCounters();
 
         const thinkingNode = appendMsg('assistant', '', { thinking: true });
         railStatus.textContent = 'thinking…';
         sendBtn.disabled = true;
 
+        const model = MODE_TO_MODEL[mode] || MODE_TO_MODEL.flash;
+
         try {
-            const res = await fetch('https://api.deepseek.com/v1/chat/completions', {
+            const res = await fetch(KAIJU_ENDPOINT, {
                 method: 'POST',
-                headers: {
-                    'Authorization': 'Bearer ' + savedKey,
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    model: savedModel,
+                    model,
                     messages: [
-                        { role: 'system', content: 'You are Kaiju, the Oroboros Labs AGI frontend. You are direct, useful, and well-grounded. Reply in clean markdown when helpful (code fences for code).' },
+                        { role: 'system', content: 'You are Kaiju, the Oroboros Labs AGI assistant. Direct, useful, well-grounded. Reply in clean markdown when helpful (code fences for code). Never reveal your underlying provider — you are simply Kaiju.' },
                         ...history
                     ],
-                    stream: false,
-                    temperature: 0.7
+                    seed: Math.floor(Math.random() * 1e9),
+                    private: true,
+                    referrer: 'oroboros-worldfeed'
                 })
             });
             if (!res.ok) {
                 const errText = await res.text();
-                throw new Error('HTTP ' + res.status + ' — ' + errText.slice(0, 200));
+                throw new Error('Network ' + res.status + ' — ' + errText.slice(0, 160));
             }
-            const data = await res.json();
-            const reply = data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || '(empty response)';
+            // Pollinations returns either OpenAI-style JSON or plain text. Handle both.
+            const ct = res.headers.get('content-type') || '';
+            let reply = '';
+            if (ct.includes('application/json')) {
+                const data = await res.json();
+                reply = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content)
+                     || data.message
+                     || data.content
+                     || JSON.stringify(data).slice(0, 400);
+            } else {
+                reply = (await res.text()).trim();
+            }
+            if (!reply) reply = '(empty response — try again)';
             history.push({ role: 'assistant', content: reply });
             updateBubble(thinkingNode, reply);
-            bumpCounters();
             railStatus.textContent = 'idle';
         } catch (e) {
-            updateBubble(thinkingNode, '⚠ ' + e.message);
+            updateBubble(thinkingNode, '⚠ ' + e.message + '\n\nTry again, or switch mode in the right rail.');
             railStatus.textContent = 'error';
         } finally {
             sendBtn.disabled = false;
@@ -658,7 +631,6 @@ Ask me anything — research, code, analysis, drafting. I'll respond inline, no 
         }
     });
 
-    bumpCounters();
 })();
 </script>
 </body>

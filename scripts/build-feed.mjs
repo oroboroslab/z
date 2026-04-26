@@ -48,6 +48,7 @@ function parseRSS(xml, src) {
     const link  = pickLink(b);
     const pub   = pick(b, 'pubDate') || pick(b, 'published') || pick(b, 'updated') || pick(b, 'dc:date');
     const img   = extractImage(b);
+    const vid   = extractVideo(b);
     if (!title) continue;
     items.push({
       title: title.slice(0, 220),
@@ -56,7 +57,8 @@ function parseRSS(xml, src) {
       pub,
       source: src.name,
       tier: src.tier,
-      imageUrl: img
+      imageUrl: img,
+      videoUrl: vid
     });
   }
   return items;
@@ -75,7 +77,8 @@ function pickLink(block) {
 }
 function extractImage(block) {
   const patterns = [
-    /<media:content[^>]*url=["']([^"']+)["']/i,
+    /<media:content[^>]*medium=["']image["'][^>]*url=["']([^"']+)["']/i,
+    /<media:content[^>]*url=["']([^"']+\.(?:jpg|jpeg|png|webp|avif)[^"']*)["']/i,
     /<media:thumbnail[^>]*url=["']([^"']+)["']/i,
     /<enclosure[^>]*url=["']([^"']+)["'][^>]*type=["']image\//i,
     /<enclosure[^>]*type=["']image\/[^"']+["'][^>]*url=["']([^"']+)["']/i,
@@ -87,6 +90,39 @@ function extractImage(block) {
   for (const p of patterns) {
     const m = block.match(p);
     if (m && m[1]) return m[1].replace(/&amp;/g, '&');
+  }
+  return '';
+}
+
+function extractVideo(block) {
+  // Look for explicit video media first
+  const explicit = [
+    /<media:content[^>]*medium=["']video["'][^>]*url=["']([^"']+)["']/i,
+    /<media:content[^>]*url=["']([^"']+)["'][^>]*medium=["']video["']/i,
+    /<enclosure[^>]*url=["']([^"']+)["'][^>]*type=["']video\//i,
+    /<enclosure[^>]*type=["']video\/[^"']+["'][^>]*url=["']([^"']+)["']/i
+  ];
+  for (const p of explicit) {
+    const m = block.match(p);
+    if (m && m[1]) return m[1].replace(/&amp;/g, '&');
+  }
+  // Then look for YouTube / Vimeo / TikTok / X URLs in any content
+  const services = [
+    /(https?:\/\/(?:www\.)?youtube\.com\/watch\?[^"'\s<>]*v=[a-zA-Z0-9_-]{11}[^"'\s<>]*)/i,
+    /(https?:\/\/(?:www\.)?youtube\.com\/(?:embed|shorts)\/[a-zA-Z0-9_-]{11})/i,
+    /(https?:\/\/youtu\.be\/[a-zA-Z0-9_-]{11})/i,
+    /(https?:\/\/(?:www\.|player\.)?vimeo\.com\/(?:video\/)?\d+)/i,
+    /(https?:\/\/(?:www\.)?tiktok\.com\/[^"'\s<>]+\/video\/\d+)/i,
+    /(https?:\/\/(?:twitter\.com|x\.com)\/[^/\s"']+\/status\/\d+)/i
+  ];
+  for (const p of services) {
+    const m = block.match(p);
+    if (m && m[1]) return m[1].replace(/&amp;/g, '&');
+  }
+  // iframe src to a known video host
+  const iframe = block.match(/<iframe[^>]*src=["']([^"']+)["']/i);
+  if (iframe && /youtube\.com\/embed|player\.vimeo\.com|tiktok\.com\/embed|platform\.twitter\.com\/embed/i.test(iframe[1])) {
+    return iframe[1].replace(/&amp;/g, '&');
   }
   return '';
 }
@@ -110,6 +146,7 @@ function categorize(item, minutesAgo) {
 }
 
 function classifyType(item) {
+  if (item.videoUrl) return 'video';
   if (/\b(video|footage|watch|broadcast)\b/i.test(item.title + ' ' + item.body)) return 'video';
   if (item.imageUrl) return 'image';
   if (/\b(report|study|paper|filing|document|dataset|preprint)\b/i.test(item.title)) return 'document';
@@ -153,6 +190,7 @@ async function main() {
       minutesAgo,
       location: 'wire',
       imageUrl: it.imageUrl || '',
+      videoUrl: it.videoUrl || '',
       link: it.link || ''
     };
   });
