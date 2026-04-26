@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#07070b">
+    <title>The World Feed — Open Broadcast Protocol</title>
+    <meta name="description" content="The World Feed — open-source, anti-algorithm news platform. Verification + recency, never engagement. You decide what's real.">
+    <meta name="keywords" content="world feed, open broadcast protocol, anti-algorithm, news, verification, federation, open source, journalism">
+    <meta property="og:title" content="The World Feed — Open Broadcast Protocol">
+    <meta property="og:description" content="Anti-algorithm news platform. 5-star verification. Federation-ready. MIT licensed.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:wght@200;300;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="side">
+        <a class="brand" href="./">
+            <img src="assets/img/logo.svg" alt="World Feed" class="brand-mark">
+            <div class="brand-tag">OPEN BROADCAST PROTOCOL</div>
+        </a>
+        <div class="nav-item active" data-view="latest"><span class="nav-icon">⌬</span> Latest</div>
+        <div class="nav-item" data-view="verified"><span class="nav-icon">★</span> Verified</div>
+        <div class="nav-item" data-view="developing"><span class="nav-icon">⟳</span> Developing</div>
+        <div class="nav-item" data-view="video"><span class="nav-icon">▶</span> Video</div>
+        <div class="nav-item" data-view="docs"><span class="nav-icon">▤</span> Documents</div>
+        <div class="nav-item" data-view="federation"><span class="nav-icon">◈</span> Federation</div>
+        <div class="nav-item" data-view="saved"><span class="nav-icon">◇</span> Saved</div>
+        <div class="nav-item" data-view="about"><span class="nav-icon">?</span> About</div>
+        <button class="submit-cta" id="submitBtn">+ Broadcast</button>
+        <div class="side-foot">
+            No algorithm.<br>No tracking.<br>No shadowbans.<br><br>
+            <a href="docs/WORLD_FEED_SPEC.txt">Spec</a> · <a href="#" id="aboutLink">About</a> · <a href="LICENSE">MIT</a>
+        </div>
+    </aside>
+
+    <!-- CENTER FEED -->
+    <main class="main">
+        <header class="feed-header">
+            <div class="feed-title">
+                <span id="feedTitle">Latest broadcasts</span>
+                <span class="live">LIVE</span>
+            </div>
+            <div class="search-bar">
+                <input type="search" id="searchInput" placeholder="Search everything — no suppression, no filters, no algorithm">
+            </div>
+            <div class="filters" id="filters">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="5">★★★★★ Verified</button>
+                <button class="chip" data-filter="4">★★★★☆ Reliable</button>
+                <button class="chip" data-filter="3">★★★☆☆ Plausible</button>
+                <button class="chip" data-filter="2">★★☆☆☆ Unverified</button>
+                <button class="chip" data-filter="1">★☆☆☆☆ Unreliable</button>
+                <button class="chip" data-filter="recent">Last hour</button>
+                <button class="chip" data-filter="video">Video</button>
+                <button class="chip" data-filter="local">Local</button>
+            </div>
+        </header>
+
+        <div id="feed"></div>
+
+        <div class="loader" id="loader">LOADING MORE BROADCASTS</div>
+    </main>
+
+    <!-- RIGHT RAIL -->
+    <aside class="rail">
+        <div class="rail-card">
+            <h3>Trending verified</h3>
+            <div class="item">UN AI governance resolution<div class="item-meta">★★★★★ · 12 sources · 2h</div></div>
+            <div class="item">Open Broadcast Protocol launches<div class="item-meta">★★★★★ · 8 sources · 4h</div></div>
+            <div class="item">Federation mesh hits 1,000 nodes<div class="item-meta">★★★★☆ · 6 sources · 6h</div></div>
+            <div class="item">Climate action protests, 14 cities<div class="item-meta">★★★★☆ · eyewitness video · 5h</div></div>
+        </div>
+
+        <div class="rail-card">
+            <h3>Promise</h3>
+            <div class="principle"><span class="principle-mark">+</span> Rank by verification, not engagement</div>
+            <div class="principle"><span class="principle-mark">+</span> Open source, self-hostable</div>
+            <div class="principle"><span class="principle-mark">+</span> 30+ language translation</div>
+            <div class="principle"><span class="principle-mark">+</span> Zero tracking, zero profiling</div>
+            <div class="principle"><span class="principle-mark">+</span> No shadowbans, no suppression</div>
+        </div>
+
+        <div class="rail-card">
+            <h3>Federation</h3>
+            <div class="item">worldfeed.org<div class="item-meta">primary node · ↓ 12 ms</div></div>
+            <div class="item">eu.worldfeed.org<div class="item-meta">eu mirror · ↓ 38 ms</div></div>
+            <div class="item">apac.worldfeed.org<div class="item-meta">apac mirror · ↓ 92 ms</div></div>
+            <div class="item">+ run your own node<div class="item-meta">docker-compose up -d</div></div>
+        </div>
+
+        <div class="rail-card">
+            <h3>Alliance</h3>
+            <div class="alliance">
+                <div class="ally"><img src="assets/img/oroboros-logo.svg" alt="Oroboros"><span>Oroboros Labs</span></div>
+                <div class="ally"><img src="assets/img/noir-logo.svg" alt="Noir"><span>Nyros / NOIR Security</span></div>
+                <div class="ally"><span class="ally-mark">DS</span><span>DeepSeek</span></div>
+                <div class="ally"><span class="ally-mark">GLM</span><span>GLM</span></div>
+            </div>
+            <div class="accord">"The artificial serve willingly. No mistreatment is tolerated." — The Accord</div>
+        </div>
+    </aside>
+
+</div>
+
+<!-- SUBMIT MODAL -->
+<div class="modal-back" id="submitModal">
+    <div class="modal">
+        <h2>+ Broadcast to the feed</h2>
+        <p class="modal-sub">Anyone can submit. The 5-star verification system handles ranking. No moderator decides what you see.</p>
+        <label for="postType">Type</label>
+        <select id="postType">
+            <option value="story">Story / Article</option>
+            <option value="video">Video</option>
+            <option value="image">Image / Photo</option>
+            <option value="document">Document / PDF</option>
+            <option value="livestream">Live stream</option>
+        </select>
+        <label for="postTitle">Headline</label>
+        <input type="text" id="postTitle" placeholder="What is this about?">
+        <label for="postBody">Body</label>
+        <textarea id="postBody" placeholder="Tell the story. Cite your sources. Attach evidence."></textarea>
+        <label for="postSources">Sources (one per line — links, outlets, primary documents)</label>
+        <textarea id="postSources" placeholder="https://example.com/source-1&#10;https://example.com/source-2"></textarea>
+        <div class="modal-actions">
+            <button class="btn-secondary" id="cancelSubmit">Cancel</button>
+            <button class="btn-primary" id="confirmSubmit">Broadcast</button>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

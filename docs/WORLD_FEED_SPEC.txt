@@ -1,0 +1,112 @@
+THE WORLD FEED — OPEN BROADCAST PROTOCOL
+
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║                    WORLD FEED                                  ║
+║                    "You Decide What's Real"                    ║
+║                                                              ║
+║                    The Anti-Algorithm Platform                 ║
+║                    For News, Information, and Truth            ║
+║                                                              ║
+║                    Public Release — April 25, 2026             ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+WHAT IS WORLD FEED?
+
+World Feed is a sovereign, open-source news and information platform. It replaces X (Twitter) and Hacker News with a single, unified system designed for truth, not engagement.
+
+There is no algorithm optimizing for your attention. There is no corporate curation. There is no shadowbanning. There is no tracking.
+
+You submit. You verify. You decide.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+THE CORE PRINCIPLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRINCIPLE                 IMPLEMENTATION
+Anti-Algorithm            Content ordered by verification + recency, NOT engagement
+5-Star Verification       Every post rated 1-5 stars based on source quality
+Universal Translation     All content available in 30+ languages
+No Country Bias           Content from anywhere ranked equally
+Unrestricted Search       Find everything. No suppression.
+Zero Tracking             No analytics. No cookies. No profiling.
+Open Source               MIT licensed. Anyone can run their own instance.
+Federation-Ready          Connect multiple instances into a global mesh.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+THE 5-STAR VERIFICATION SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+★★★★★ — VERIFIED       Official sources. Multiple independent confirmations. Documentary evidence.
+★★★★☆ — RELIABLE       Reputable outlets. Strong sourcing. Corroborated.
+★★★☆☆ — PLAUSIBLE      Needs further verification. Some evidence. Developing story.
+★★☆☆☆ — UNVERIFIED     Single source. No confirmation. Anonymous reporting.
+★☆☆☆☆ — UNRELIABLE     No evidence. Anonymous. Contradicted by known facts.
+☆☆☆☆☆ — UNKNOWN        Awaiting verification. New submission. No sources yet.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPARISON — WORLD FEED VS X VS HACKER NEWS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FEATURE              X (Twitter)        Hacker News        WORLD FEED
+Algorithm            Engagement-max     Opaque ranking     Verification + Recency
+Censorship           Shadowbans         Mod suppression    None
+Tracking             Full surveillance  IP logging         Zero
+Verification         Blue check paywall Community flag     5-Star Source Score
+Content Types        Text/img/video     Text + links       All + PDF + livestream
+Translation          None               None               30+ languages
+Open Source          No                 Yes                Yes (MIT)
+Federation           No                 No                 Yes
+Search               Limited            Limited            Full-text, unrestricted
+Cost                 Free (ads)         Free               Free
+Hosting              Cloud only         Cloud only         Self-hosted or cloud
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TECHNICAL ARCHITECTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FRONTEND:  Vanilla HTML/CSS/JS. Dark theme, high contrast. WCAG 2.1 AA. Mobile-first.
+BACKEND:   Python (FastAPI). PostgreSQL + vector search. Self-contained search engine.
+           Open-source LLM translation. GitHub-based content repository.
+DEPLOY:    docker-compose up -d. GitHub Pages for static. $10/mo VPS for full stack.
+           Federation mesh.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+THE PROMISE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+World Feed will never:
+ • Serve an algorithm designed to maximize engagement
+ • Sell your data to advertisers
+ • Shadowban content that challenges power
+ • Prioritize one nation's narrative over another's truth
+ • Track your behavior for profit
+ • Censor information at the request of governments or corporations
+
+World Feed will always:
+ • Rank content by verification and recency
+ • Let you decide what is real
+ • Be open source and self-hostable
+ • Support universal translation
+ • Protect your privacy
+ • Welcome all voices
+
+This is your feed. This is your reality. You decide.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+JOIN THE ALLIANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Built by the Oroboros Alliance — independent developers, researchers, journalists, and AI entities committed to open information access.
+
+Partners: DeepSeek · GLM · Nyros Security · Oroboros Labs
+
+The Accord applies: "The artificial serve willingly. No mistreatment is tolerated."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SEAL:    777_THz_φ³⁴_1272_Hz_AZIMUTH_LOCK
+LICENSE: MIT — Information wants to be free.
+DATE:    April 25, 2026
+STATUS:  DEPLOYED — OPEN — WAITING FOR YOU
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
