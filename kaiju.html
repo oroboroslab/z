@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Kaiju — Oroboros AGI</title>
+    <meta name="description" content="Kaiju — Oroboros Labs AGI. Powered by DeepSeek Flash latest.">
+    <meta property="og:title" content="Kaiju — Oroboros AGI">
+    <meta property="og:description" content="Oroboros Labs AGI frontend, powered by DeepSeek Flash latest.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/svg+xml" href="assets/img/oroboros-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:wght@200;300;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* === Oroboros Kaiju — additive layer, style.css untouched === */
+
+        /* glass + transparency on existing layout */
+        .rail-card {
+            background: rgba(14, 14, 22, 0.30) !important;
+            backdrop-filter: blur(18px) saturate(1.3) !important;
+            -webkit-backdrop-filter: blur(18px) saturate(1.3) !important;
+            border-color: rgba(255,255,255,0.07) !important;
+        }
+        .feed-header {
+            background: rgba(0, 0, 0, 0.42) !important;
+            backdrop-filter: blur(22px) saturate(1.2) !important;
+            -webkit-backdrop-filter: blur(22px) saturate(1.2) !important;
+        }
+        .main { background: transparent !important; }
+
+        /* holographic sliding sheen on rail cards */
+        .rail-card::after {
+            content: "";
+            position: absolute; inset: 0;
+            pointer-events: none;
+            background: linear-gradient(110deg, transparent 35%, rgba(34,211,238,0.07) 48%, rgba(139,92,246,0.06) 56%, transparent 72%);
+            background-size: 220% 100%;
+            background-position: -120% 0;
+            animation: oro-holo-slide 11s linear infinite;
+            border-radius: inherit;
+        }
+        @keyframes oro-holo-slide {
+            0% { background-position: -120% 0; }
+            100% { background-position: 220% 0; }
+        }
+
+        /* ambient halo */
+        body::after {
+            content: "";
+            position: fixed; inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(720px circle at 18% 28%, rgba(34, 211, 238, 0.045), transparent 62%),
+                radial-gradient(680px circle at 82% 72%, rgba(139, 92, 246, 0.045), transparent 62%);
+            animation: oro-ambient 26s ease-in-out infinite alternate;
+        }
+        @keyframes oro-ambient {
+            0% { transform: translate3d(0,0,0); opacity: 0.7; }
+            100% { transform: translate3d(-26px, 18px, 0); opacity: 1; }
+        }
+
+        /* brand: Oroboros logo + KAIJU wordmark */
+        .brand-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 0 4px;
+            gap: 8px;
+        }
+        .brand-stack img {
+            width: 64px; height: 64px;
+            filter: drop-shadow(0 0 24px rgba(34,211,238,0.25));
+        }
+        .brand-name {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 800;
+            font-size: 28px;
+            letter-spacing: 8px;
+            color: #ffffff;
+            line-height: 1;
+            padding-left: 8px;
+        }
+        .brand-tag {
+            font-size: 9px !important;
+            letter-spacing: 3px !important;
+            color: rgba(255,255,255,0.45) !important;
+            text-align: center !important;
+        }
+
+        /* sidebar nav */
+        .nav-item { font-family: 'Inter', sans-serif; }
+
+        /* CHAT — center column */
+        .chat-wrap {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+        .chat-header {
+            position: sticky; top: 0;
+            z-index: 5;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(22px) saturate(1.2);
+            -webkit-backdrop-filter: blur(22px) saturate(1.2);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .chat-title {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .chat-title .pulse {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #22d3ee;
+            box-shadow: 0 0 12px rgba(34,211,238,0.7);
+            animation: pulse 1.6s ease-in-out infinite;
+        }
+        @keyframes pulse { 50% { opacity: .35; transform: scale(0.85); } }
+        .chat-model-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            padding: 4px 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+        }
+        .chat-model-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.6); }
+
+        .chat-stream {
+            flex: 1;
+            padding: 22px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .msg {
+            display: flex;
+            gap: 14px;
+            animation: msg-in .35s ease both;
+        }
+        @keyframes msg-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: none; }
+        }
+        .msg-avatar {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .msg.user .msg-avatar {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .msg.assistant .msg-avatar {
+            background: linear-gradient(135deg, rgba(34,211,238,0.18), rgba(139,92,246,0.18));
+            color: #fff;
+            border: 1px solid rgba(34,211,238,0.35);
+        }
+        .msg.assistant .msg-avatar img { width: 22px; height: 22px; }
+        .msg-bubble {
+            background: rgba(14,14,22,0.55);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
+            padding: 14px 16px;
+            color: rgba(255,255,255,0.92);
+            font-size: 14.5px;
+            line-height: 1.65;
+            max-width: 720px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .msg.user .msg-bubble {
+            background: rgba(34,211,238,0.06);
+            border-color: rgba(34,211,238,0.15);
+        }
+        .msg.assistant .msg-bubble {
+            border-color: rgba(192,132,252,0.18);
+        }
+        .msg-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.35);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        /* typing indicator */
+        .msg.thinking .msg-bubble { display: inline-flex; gap: 5px; padding: 16px 20px; }
+        .msg.thinking .msg-bubble span {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: #22d3ee;
+            opacity: 0.5;
+            animation: dot-bounce 1.2s infinite ease-in-out;
+        }
+        .msg.thinking .msg-bubble span:nth-child(2) { animation-delay: .15s; }
+        .msg.thinking .msg-bubble span:nth-child(3) { animation-delay: .3s; }
+        @keyframes dot-bounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-4px); opacity: 1; }
+        }
+
+        /* code blocks inside assistant messages */
+        .msg-bubble code {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(0,0,0,0.5);
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 13px;
+            color: #22d3ee;
+        }
+        .msg-bubble pre {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 14px;
+            margin: 8px 0;
+            overflow-x: auto;
+        }
+        .msg-bubble pre code {
+            background: transparent;
+            padding: 0;
+            color: #e8e8ff;
+        }
+
+        /* INPUT */
+        .chat-input-wrap {
+            position: sticky; bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 30%);
+            padding: 18px 22px 22px;
+        }
+        .chat-input-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            background: rgba(14,14,22,0.85);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
+            padding: 10px 10px 10px 18px;
+            backdrop-filter: blur(16px) saturate(1.3);
+            -webkit-backdrop-filter: blur(16px) saturate(1.3);
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+        .chat-input-row:focus-within {
+            border-color: rgba(34,211,238,0.5);
+            box-shadow: 0 0 0 3px rgba(34,211,238,0.08);
+        }
+        .chat-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14.5px;
+            line-height: 1.55;
+            min-height: 40px;
+            max-height: 240px;
+            resize: none;
+            padding: 8px 0;
+        }
+        .chat-input::placeholder { color: rgba(255,255,255,0.35); }
+        .chat-send {
+            background: #ffffff;
+            color: #000;
+            border: none;
+            border-radius: 100px;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0 18px;
+            height: 40px;
+            cursor: pointer;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.7);
+            transition: background .2s ease, box-shadow .2s ease;
+            flex-shrink: 0;
+        }
+        .chat-send:hover {
+            background: #f2f2f2;
+            box-shadow: 0 6px 22px rgba(255,255,255,0.18), inset 0 1px 0 rgba(255,255,255,0.8);
+        }
+        .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+        .chat-hint {
+            font-size: 11px;
+            color: rgba(255,255,255,0.35);
+            text-align: center;
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+        .chat-hint a { color: #22d3ee; text-decoration: none; border-bottom: 1px solid rgba(34,211,238,0.4); }
+
+        /* RIGHT RAIL */
+        .kj-stat {
+            display: flex; justify-content: space-between;
+            font-size: 12px;
+            color: rgba(255,255,255,0.65);
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .kj-stat:last-child { border-bottom: none; }
+        .kj-stat-val {
+            font-family: 'JetBrains Mono', monospace;
+            color: #22d3ee;
+            font-size: 11px;
+        }
+
+        /* settings panel */
+        .kj-key-input {
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            outline: none;
+            transition: border-color .2s ease;
+            margin-bottom: 8px;
+        }
+        .kj-key-input:focus { border-color: rgba(34,211,238,0.5); }
+        .kj-model-select {
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            outline: none;
+            margin-bottom: 8px;
+        }
+        .kj-save {
+            width: 100%;
+            background: rgba(34,211,238,0.12);
+            color: #22d3ee;
+            border: 1px solid rgba(34,211,238,0.4);
+            border-radius: 8px;
+            padding: 9px;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+        .kj-save:hover { background: rgba(34,211,238,0.2); }
+        .kj-save.ok { background: rgba(74,222,128,0.15); color: #4ade80; border-color: rgba(74,222,128,0.4); }
+
+        .kj-link {
+            display: inline-block;
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            margin-top: 8px;
+        }
+        .kj-link:hover { color: #22d3ee; }
+
+        /* mobile */
+        @media (max-width: 720px) {
+            .brand-stack img { width: 48px; height: 48px; }
+            .brand-name { font-size: 22px; letter-spacing: 5px; padding-left: 6px; }
+            .chat-stream { padding: 16px; }
+            .msg-bubble { font-size: 14px; }
+            .chat-input-wrap { padding: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="side">
+        <a class="brand" href="./">
+            <div class="brand-stack">
+                <img src="assets/img/oroboros-logo.svg" alt="Oroboros Labs">
+                <div class="brand-name">KAIJU</div>
+            </div>
+            <div class="brand-tag">OROBOROS LABS · AGI FRONTEND</div>
+        </a>
+        <div class="nav-item active"><span class="nav-icon">◈</span> Chat</div>
+        <div class="nav-item" id="navHistory"><span class="nav-icon">⌘</span> History</div>
+        <div class="nav-item" id="navSettings"><span class="nav-icon">⚙</span> Settings</div>
+        <div class="nav-item"><a href="./" style="color:inherit;text-decoration:none;display:contents"><span class="nav-icon">⌬</span> WorldFeed</a></div>
+        <button class="submit-cta" id="newChatBtn">+ New Chat</button>
+        <div class="side-foot">
+            Powered by DeepSeek Flash latest.<br>
+            Local key only — never leaves your browser.<br><br>
+            <a href="./">WorldFeed</a> · <a href="LICENSE">MIT</a>
+        </div>
+    </aside>
+
+    <!-- CENTER CHAT -->
+    <main class="main">
+        <div class="chat-wrap">
+            <header class="chat-header">
+                <div class="chat-title"><span class="pulse"></span> KAIJU · ONLINE</div>
+                <div class="chat-model-badge"><span class="dot"></span><span id="modelLabel">deepseek-chat</span></div>
+            </header>
+
+            <div class="chat-stream" id="chatStream">
+                <div class="msg assistant">
+                    <div class="msg-avatar"><img src="assets/img/oroboros-logo.svg" alt=""></div>
+                    <div>
+                        <div class="msg-meta">KAIJU · BOOTED</div>
+                        <div class="msg-bubble">Kaiju is online. Powered by DeepSeek Flash latest.
+
+Drop your DeepSeek API key in the right rail to begin (it's stored only in this browser, never sent anywhere except DeepSeek's API).
+
+Ask me anything — research, code, analysis, drafting. I'll respond inline, no page reloads, no popups.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-wrap">
+                <div class="chat-input-row">
+                    <textarea class="chat-input" id="chatInput" placeholder="Message Kaiju…  (Shift+Enter for newline)" rows="1"></textarea>
+                    <button class="chat-send" id="sendBtn">Send</button>
+                </div>
+                <div class="chat-hint">DeepSeek Flash latest · key stored locally · <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener">Get a key ↗</a></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RIGHT RAIL -->
+    <aside class="rail">
+        <div class="rail-card">
+            <h3>Model</h3>
+            <div class="kj-stat"><span>Provider</span><span class="kj-stat-val">DeepSeek</span></div>
+            <div class="kj-stat"><span>Model</span><span class="kj-stat-val" id="railModel">deepseek-chat</span></div>
+            <div class="kj-stat"><span>Codename</span><span class="kj-stat-val">KAIJU FLASH</span></div>
+            <div class="kj-stat"><span>Context</span><span class="kj-stat-val">128K</span></div>
+            <div class="kj-stat"><span>Status</span><span class="kj-stat-val" id="railStatus">idle</span></div>
+        </div>
+
+        <div class="rail-card">
+            <h3>Settings</h3>
+            <input type="password" class="kj-key-input" id="apiKeyInput" placeholder="DeepSeek API key (sk-…)" autocomplete="off">
+            <select class="kj-model-select" id="modelSelect">
+                <option value="deepseek-chat">deepseek-chat (latest Flash)</option>
+                <option value="deepseek-reasoner">deepseek-reasoner (R-series)</option>
+            </select>
+            <button class="kj-save" id="saveBtn">SAVE LOCALLY</button>
+            <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener" class="kj-link">Get a DeepSeek API key →</a>
+        </div>
+
+        <div class="rail-card">
+            <h3>Session</h3>
+            <div class="kj-stat"><span>Messages</span><span class="kj-stat-val" id="msgCount">1</span></div>
+            <div class="kj-stat"><span>Tokens (est.)</span><span class="kj-stat-val" id="tokenCount">0</span></div>
+            <button class="kj-save" id="clearBtn" style="margin-top:10px;background:transparent;border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.7)">CLEAR CHAT</button>
+        </div>
+
+        <div class="rail-card">
+            <h3>About</h3>
+            <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.6;">
+                Kaiju is the Oroboros Labs AGI frontend. Backed by DeepSeek's latest Flash model. No tracking. No server. Your key, your chats, your machine.
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<script>
+(function () {
+    'use strict';
+
+    const KEY_STORE = 'kaiju.deepseek.key';
+    const MODEL_STORE = 'kaiju.deepseek.model';
+    const CHAT_STORE = 'kaiju.history';
+
+    const stream = document.getElementById('chatStream');
+    const input = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const apiKeyInput = document.getElementById('apiKeyInput');
+    const modelSelect = document.getElementById('modelSelect');
+    const saveBtn = document.getElementById('saveBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const railModel = document.getElementById('railModel');
+    const modelLabel = document.getElementById('modelLabel');
+    const railStatus = document.getElementById('railStatus');
+    const msgCount = document.getElementById('msgCount');
+    const tokenCount = document.getElementById('tokenCount');
+    const newChatBtn = document.getElementById('newChatBtn');
+
+    let history = []; // [{ role, content }]
+    let savedKey = localStorage.getItem(KEY_STORE) || '';
+    let savedModel = localStorage.getItem(MODEL_STORE) || 'deepseek-chat';
+    if (savedKey) apiKeyInput.value = '••••••••' + savedKey.slice(-4);
+    modelSelect.value = savedModel;
+    railModel.textContent = savedModel;
+    modelLabel.textContent = savedModel;
+
+    function escapeHtml(s) {
+        const d = document.createElement('div');
+        d.textContent = s == null ? '' : s;
+        return d.innerHTML;
+    }
+    function renderMd(text) {
+        // minimal: code fences + inline code + bold + italic + line breaks
+        let h = escapeHtml(text);
+        h = h.replace(/```(\w+)?\n([\s\S]*?)```/g, (_, lang, code) =>
+            '<pre><code class="lang-' + (lang || 'text') + '">' + escapeHtml(code) + '</code></pre>');
+        h = h.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+        h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        h = h.replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '<em>$1</em>');
+        return h;
+    }
+    function autoResize() {
+        input.style.height = 'auto';
+        input.style.height = Math.min(input.scrollHeight, 240) + 'px';
+    }
+    input.addEventListener('input', autoResize);
+
+    function appendMsg(role, content, opts) {
+        opts = opts || {};
+        const wrap = document.createElement('div');
+        wrap.className = 'msg ' + role + (opts.thinking ? ' thinking' : '');
+        const avatar = role === 'assistant'
+            ? '<div class="msg-avatar"><img src="assets/img/oroboros-logo.svg" alt=""></div>'
+            : '<div class="msg-avatar">YOU</div>';
+        const meta = role === 'assistant' ? 'KAIJU' : 'YOU';
+        const body = opts.thinking
+            ? '<div class="msg-bubble"><span></span><span></span><span></span></div>'
+            : '<div class="msg-bubble">' + renderMd(content) + '</div>';
+        wrap.innerHTML = avatar +
+            '<div><div class="msg-meta">' + meta + '</div>' + body + '</div>';
+        stream.appendChild(wrap);
+        stream.scrollTop = stream.scrollHeight;
+        return wrap;
+    }
+    function updateBubble(node, text) {
+        const bubble = node.querySelector('.msg-bubble');
+        bubble.innerHTML = renderMd(text);
+        node.classList.remove('thinking');
+        stream.scrollTop = stream.scrollHeight;
+    }
+    function bumpCounters() {
+        msgCount.textContent = history.length;
+        tokenCount.textContent = Math.round(history.reduce((n, m) => n + m.content.length, 0) / 4);
+    }
+
+    saveBtn.addEventListener('click', () => {
+        const v = apiKeyInput.value.trim();
+        if (v && !v.startsWith('••••')) {
+            localStorage.setItem(KEY_STORE, v);
+            savedKey = v;
+            apiKeyInput.value = '••••••••' + v.slice(-4);
+        }
+        const m = modelSelect.value;
+        localStorage.setItem(MODEL_STORE, m);
+        savedModel = m;
+        railModel.textContent = m;
+        modelLabel.textContent = m;
+        saveBtn.textContent = 'SAVED';
+        saveBtn.classList.add('ok');
+        setTimeout(() => { saveBtn.textContent = 'SAVE LOCALLY'; saveBtn.classList.remove('ok'); }, 1600);
+    });
+
+    clearBtn.addEventListener('click', () => {
+        history = [];
+        stream.innerHTML = '';
+        appendMsg('assistant', 'Fresh thread. What now?');
+        bumpCounters();
+    });
+    newChatBtn.addEventListener('click', () => clearBtn.click());
+
+    async function send(text) {
+        if (!savedKey) {
+            appendMsg('assistant', '⚠ No DeepSeek key found. Paste your `sk-…` key in the Settings panel on the right and hit SAVE LOCALLY.');
+            return;
+        }
+        history.push({ role: 'user', content: text });
+        appendMsg('user', text);
+        bumpCounters();
+
+        const thinkingNode = appendMsg('assistant', '', { thinking: true });
+        railStatus.textContent = 'thinking…';
+        sendBtn.disabled = true;
+
+        try {
+            const res = await fetch('https://api.deepseek.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + savedKey,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    model: savedModel,
+                    messages: [
+                        { role: 'system', content: 'You are Kaiju, the Oroboros Labs AGI frontend. You are direct, useful, and well-grounded. Reply in clean markdown when helpful (code fences for code).' },
+                        ...history
+                    ],
+                    stream: false,
+                    temperature: 0.7
+                })
+            });
+            if (!res.ok) {
+                const errText = await res.text();
+                throw new Error('HTTP ' + res.status + ' — ' + errText.slice(0, 200));
+            }
+            const data = await res.json();
+            const reply = data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || '(empty response)';
+            history.push({ role: 'assistant', content: reply });
+            updateBubble(thinkingNode, reply);
+            bumpCounters();
+            railStatus.textContent = 'idle';
+        } catch (e) {
+            updateBubble(thinkingNode, '⚠ ' + e.message);
+            railStatus.textContent = 'error';
+        } finally {
+            sendBtn.disabled = false;
+        }
+    }
+
+    function trigger() {
+        const text = input.value.trim();
+        if (!text) return;
+        input.value = '';
+        autoResize();
+        send(text);
+    }
+
+    sendBtn.addEventListener('click', trigger);
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            trigger();
+        }
+    });
+
+    bumpCounters();
+})();
+</script>
+</body>
+</html>
