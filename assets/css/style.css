@@ -106,7 +106,7 @@ a:hover { color: var(--hi); }
     color: var(--fg);
     border-radius: 14px;
     margin: 3px 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -140,7 +140,7 @@ a:hover { color: var(--hi); }
     border: none;
     border-radius: 100px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     letter-spacing: 0.5px;
     font-family: inherit;
@@ -503,7 +503,7 @@ a:hover { color: var(--hi); }
 .rail-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
 .rail-card:hover::before { opacity: 1; }
 .rail-card h3 {
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 3px;
     color: var(--fg-dim);
     text-transform: uppercase;
@@ -512,7 +512,7 @@ a:hover { color: var(--hi); }
 }
 .rail-card .item {
     padding: 10px 0;
-    font-size: 13px;
+    font-size: 15px;
     border-bottom: 1px solid var(--border);
     cursor: pointer;
     transition: padding .25s, color .25s;
@@ -520,7 +520,7 @@ a:hover { color: var(--hi); }
 .rail-card .item:last-child { border-bottom: none; }
 .rail-card .item:hover { color: var(--hi); }
 .rail-card .item-meta {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--fg-dim);
     margin-top: 3px;
     letter-spacing: 0.5px;
@@ -531,13 +531,13 @@ a:hover { color: var(--hi); }
     grid-template-columns: 16px 1fr;
     gap: 8px;
     padding: 7px 0;
-    font-size: 13px;
+    font-size: 15px;
     color: var(--fg-mid);
 }
 .principle-mark { color: var(--hi); font-weight: 700; }
 
 .alliance { display: flex; flex-direction: column; gap: 10px; }
-.ally { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-size: 13px; }
+.ally { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-size: 15px; }
 .ally img {
     width: 30px; height: 30px; flex-shrink: 0;
     filter: grayscale(1) brightness(1.4) contrast(0.95);
@@ -547,13 +547,13 @@ a:hover { color: var(--hi); }
     width: 30px; height: 30px; flex-shrink: 0;
     display: inline-flex; align-items: center; justify-content: center;
     border: 1px solid var(--border-strong); border-radius: 8px;
-    font-size: 10px; font-weight: 700; color: var(--fg); letter-spacing: 0.5px;
+    font-size: 12px; font-weight: 700; color: var(--fg); letter-spacing: 0.5px;
     background: var(--bg-2);
 }
 .accord {
     margin-top: 16px; padding-top: 14px;
     border-top: 1px solid var(--border);
-    font-size: 11px; font-style: italic; color: var(--fg-dim); line-height: 1.55;
+    font-size: 13px; font-style: italic; color: var(--fg-dim); line-height: 1.55;
     letter-spacing: 0.3px;
 }
 
