@@ -104,7 +104,7 @@
         // age user posts based on stored postedAt timestamp
         const now = Date.now();
         const aged = userStories.map(s => ({ ...s, minutesAgo: Math.max(0, Math.round((now - (s.postedAt || now)) / 60000)) }));
-        return rankFeed([...aged, ...(liveItems || [])]);
+        return rankFeed(applyExpiry([...aged, ...(liveItems || [])]));
     }
 
     function starsHtml(t) {
@@ -196,6 +196,12 @@
         </article>`;
     }
 
+    // Expiry: only tier ≥4 stories persist beyond 24 hours
+    const TIER_EXPIRY_MINUTES = 1440;
+    function applyExpiry(items) {
+        return items.filter(p => p.tier >= 4 || p.minutesAgo <= TIER_EXPIRY_MINUTES);
+    }
+
     // Anti-algorithm sort: verification first (desc), then recency (desc)
     function rankFeed(items) {
         return items.slice().sort((a, b) => {
@@ -217,7 +223,7 @@
     let activeQuery = '';
 
     function visiblePosts() {
-        return allPosts.filter(p => {
+        return applyExpiry(allPosts).filter(p => {
             if (activeFilter === 'all') return true;
             if (activeFilter === 'recent') return p.minutesAgo <= 60;
             if (activeFilter === 'video') return p.type === 'video' || p.type === 'livestream';
