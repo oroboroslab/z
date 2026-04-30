@@ -15,7 +15,7 @@ const SOURCES = [
   { name: 'NASA',          url: 'https://www.nasa.gov/news-release/feed/',                    tier: 5, kind: 'text' },
   { name: 'Sci News',      url: 'https://www.sciencedaily.com/rss/top/science.xml',           tier: 5, kind: 'text' },
   { name: 'Bloomberg Tech',url: 'https://feeds.bloomberg.com/technology/news.rss',            tier: 4, kind: 'text' },
-  // Video — YouTube channel RSS for the majors
+  // Video — YouTube channel RSS for the majors (ALL channels 1M+ subscribers)
   { name: 'BBC News (video)',     url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UC16niRr50-MSBwiO3YDb3RA', tier: 5, kind: 'video' },
   { name: 'CNN (video)',          url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCupvZG-5ko_eiXAupbDfxWw', tier: 4, kind: 'video' },
   { name: 'Al Jazeera (video)',   url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCNye-wNBqNL5ZzHSJj3l8Bg', tier: 5, kind: 'video' },
@@ -25,6 +25,7 @@ const SOURCES = [
   { name: 'NBC News (video)',     url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCeY0bbntWzzVIaj2z3QigXg', tier: 4, kind: 'video' },
   { name: 'Sky News (video)',     url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCoMdktPbSTixAyNGwb-UYkQ', tier: 4, kind: 'video' }
 ];
+// Only sources with verified 1M+ subscriber channels are included for video.
 
 const KEYWORDS_VIRAL = /\b(breaking|exclusive|massive|crisis|protest|attack|shooting|killed|war|record|historic|wins?|elected|resigns?|launches?|crashes?|leaks?)\b/i;
 

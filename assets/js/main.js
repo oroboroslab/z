@@ -429,6 +429,13 @@
     document.getElementById('confirmSubmit').addEventListener('click', async () => {
         if (!isLoggedIn()) { loginModal && loginModal.classList.add('show'); return; }
         const acc = getAccount();
+        // Rate limit: max 4 posts per hour per user
+        const oneHourAgo = Date.now() - 3600000;
+        const recentPosts = userStories.filter(s => s.author === acc.username && s.postedAt > oneHourAgo);
+        if (recentPosts.length >= 4) {
+            alert('Rate limit: max 4 posts per hour. Please wait before submitting again.');
+            return;
+        }
         const title = document.getElementById('postTitle').value.trim();
         const body  = document.getElementById('postBody').value.trim();
         const type  = document.getElementById('postType').value;
@@ -558,30 +565,6 @@
             .catch(() => { /* keep embedded SEED */ });
     }
     loadLiveFeed(true);
-
-    // === Precognitive Trinity — fetch original stories from the Information Station ===
-    function loadPrecogStories() {
-        fetch('http://localhost:11483/z-feed?t=' + Date.now(), { cache: 'no-store' })
-            .then(r => r.ok ? r.json() : null)
-            .then(j => {
-                if (!j || !Array.isArray(j.items)) return;
-                const precogItems = j.items.filter(i => i.authored_by && i.authored_by.includes('Precog'));
-                if (precogItems.length === 0) return;
-                // Insert Precog stories at the top of allPosts, dedup by id
-                const existingIds = new Set(allPosts.map(p => p.id));
-                const newOnes = precogItems.filter(p => !existingIds.has(p.id));
-                if (newOnes.length) {
-                    allPosts = [...newOnes, ...allPosts];
-                    paint(true);
-                    updateHero();
-                    updateTrending();
-                    console.log('Z precog · ' + newOnes.length + ' original stories loaded');
-                }
-            })
-            .catch(() => {});
-    }
-    loadPrecogStories();
-    setInterval(loadPrecogStories, 15 * 60 * 1000); // check every 15 min
 
     // Refresh on the hour every hour
     function scheduleHourlyRefresh() {
