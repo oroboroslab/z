@@ -509,11 +509,31 @@
     // Initial paint with embedded fallback SEED
     paint(true);
     updateHero();
+    setInterval(updateHero, 4 * 60 * 60 * 1000);
 
-    // === Feed validation: basic null check, force everything through ===
+    // === Feed validation: major news outlets only ===
+    const MAJOR_SOURCES = [
+        'reuters', 'ap ', 'associated press', 'bbc', 'cnn', 'nbc', 'cbs', 'abc news',
+        'fox news', 'npr', 'pbs', 'wsj', 'wall street journal', 'new york times',
+        'washington post', 'the guardian', 'bloomberg', 'financial times',
+        'al jazeera', 'nasa', 'nature', 'science', 'newscientist',
+        'politico', 'reuters', 'times of israel', 'the national',
+        'el tiempo', 'usgs', 'volcanodiscovery', 'world athletics',
+        'ieee spectrum', 'mit news', 'mit tech review', 'space.com',
+        'sciencedaily', 'phys.org', 'science daily'
+    ];
+    function isMajorSource(src) {
+        const s = src.toLowerCase();
+        return MAJOR_SOURCES.some(m => s.includes(m));
+    }
     function validateFeedItems(items) {
         if (!Array.isArray(items)) return [];
-        return items.filter(item => item && item.title);
+        return items.filter(item => {
+            if (!item || !item.title) return false;
+            if (item.tier >= 4) return true;  // always keep verified/reliable
+            if (!item.sources || !item.sources.length) return false;
+            return item.sources.some(isMajorSource);
+        });
     }
 
     // === Live feed loader: data/feed.json (rebuilt hourly by GitHub Action) ===
@@ -532,6 +552,7 @@
                 allPosts = mergeFeeds(valid);
                 paint(true);
                 updateHero();
+                updateTrending();
                 if (isInitial) console.log('Z live · ' + valid.length + ' items · updated ' + j.updatedAt);
             })
             .catch(() => { /* keep embedded SEED */ });
@@ -575,7 +596,7 @@
         });
     }
     updateTrending();
-    setInterval(updateTrending, 2 * 60 * 60 * 1000);
+    setInterval(updateTrending, 4 * 60 * 60 * 1000);
 
     // === Tor Video Feed: populate from live video items ===
     function updateTorVideo() {
@@ -605,6 +626,7 @@
         });
     }
     updateTorVideo();
+    setInterval(updateTorVideo, 20 * 60 * 1000);
     // Re-populate whenever feed repaints
     const origPaint = paint;
     paint = function(reset) {
