@@ -1,5 +1,5 @@
-// World Feed — Open Broadcast Protocol
-// Free-scrolling, anti-algorithm feed. Ranked by verification + recency.
+// Z — Anti-Algo News & Information
+// Free-scrolling, anti-algorithm feed. Ranked by verification + recency. You decide.
 
 (function () {
     'use strict';
@@ -78,7 +78,7 @@
     }
 
     // === user submissions persistence (survive live-feed refresh) ===
-    const USER_KEY = 'worldfeed-user-stories';
+    const USER_KEY = 'z-user-stories';
     function loadUserStories() {
         try { return JSON.parse(localStorage.getItem(USER_KEY) || '[]'); }
         catch (_) { return []; }
@@ -90,7 +90,7 @@
     let userStories = loadUserStories();
 
     // === simple client-side account (no backend yet — replace when IP/server lands) ===
-    const ACCOUNT_KEY = 'worldfeed-account';
+    const ACCOUNT_KEY = 'z-account';
     function getAccount() {
         try { return JSON.parse(localStorage.getItem(ACCOUNT_KEY) || 'null'); }
         catch (_) { return null; }
@@ -178,7 +178,7 @@
                 ${starsHtml(p.tier)}
                 ${catsHtml(p)}
                 ${userTag}
-                <span class="post-meta">${escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
+                <span class="post-meta">${p.location === 'wire' ? '<span class="feed-indicator">⟁ FEED</span>' : escapeHtml(p.location || '')} · ${fmtTime(p.minutesAgo)}</span>
             </div>
             ${titleHtml}
             ${video}
@@ -275,18 +275,18 @@
             n.classList.add('active');
             const view = n.dataset.view;
             const titleMap = {
-                latest: 'WorldFeed — latest broadcasts',
-                new: 'WorldFeed — new',
-                verified: 'WorldFeed — verified ★★★★★',
-                viral: 'WorldFeed — viral',
-                developing: 'WorldFeed — developing',
-                video: 'WorldFeed — video',
-                docs: 'WorldFeed — documents',
-                federation: 'WorldFeed — federation status',
-                saved: 'WorldFeed — saved',
-                about: 'WorldFeed — about'
+                latest: 'Z — latest broadcasts',
+                new: 'Z — new',
+                verified: 'Z — verified ★★★★★',
+                viral: 'Z — viral',
+                developing: 'Z — developing',
+                video: 'Z — video',
+                docs: 'Z — documents',
+                federation: 'Z — federation status',
+                saved: 'Z — saved',
+                about: 'Z — about'
             };
-            feedTitle.textContent = titleMap[view] || 'WorldFeed — latest broadcasts';
+            feedTitle.textContent = titleMap[view] || 'Z — latest broadcasts';
             const map = { latest: 'all', new: 'new', verified: '5', viral: 'viral', developing: '3', video: 'video', docs: 'docs', saved: 'saved', federation: 'federation', about: 'about' };
             const next = map[view] || 'all';
             if (next === 'docs') {
@@ -302,6 +302,7 @@
             // sync sort link active state
             filters.querySelectorAll('.sort-link').forEach(l => l.classList.toggle('active', l.dataset.filter === activeFilter));
             paint(true);
+            updateHero();
         });
     });
 
@@ -467,23 +468,141 @@
         if (document.getElementById('postVideo')) document.getElementById('postVideo').value = '';
         if (fileInput) fileInput.value = '';
         paint(true);
+        updateHero();
+    });
+
+    // === Z Hero: show top verified story ===
+    function updateHero() {
+        const hero = document.getElementById('zHero');
+        const bg = document.getElementById('zHeroBg');
+        const title = document.getElementById('zHeroTitle');
+        const meta = document.getElementById('zHeroMeta');
+        if (!hero || !bg || !title || !meta) return;
+        const top = allPosts.filter(p => p.tier >= 4).slice(0, 1)[0];
+        if (!top) { hero.style.display = 'none'; return; }
+        title.textContent = top.title || 'Z — Anti-Algo News';
+        const loc = top.location || 'global';
+        const time = fmtTime(top.minutesAgo);
+        const srcCount = top.sources ? top.sources.length : 0;
+        const srcs = top.sources ? top.sources.slice(0, 3).join(', ') : '';
+        meta.textContent = loc + ' · ' + time + ' · ' + srcCount + ' sources · ' + srcs;
+        if (top.imageUrl) {
+            bg.style.backgroundImage = "url('" + String(top.imageUrl).replace(/"/g, '%22') + "')";
+        }
+        hero.style.display = '';
+        hero.dataset.link = top.link || '';
+    }
+    // Click hero → open story
+    document.addEventListener('click', function(e) {
+        const hero = e.target.closest('.z-hero');
+        if (hero && hero.dataset.link) {
+            window.open(hero.dataset.link, '_blank');
+        }
     });
 
     // Initial paint with embedded fallback SEED
     paint(true);
+    updateHero();
+
+    // === Feed validation: basic null check, force everything through ===
+    function validateFeedItems(items) {
+        if (!Array.isArray(items)) return [];
+        return items.filter(item => item && item.title);
+    }
 
     // === Live feed loader: data/feed.json (rebuilt hourly by GitHub Action) ===
+    // Tor / dark-web news search integration point:
+    // Future: fetch from onion news aggregators via proxy → validate → merge into feed
     function loadLiveFeed(isInitial) {
         fetch('data/feed.json?t=' + Date.now(), { cache: 'no-store' })
             .then(r => r.ok ? r.json() : null)
             .then(j => {
-                if (!j || !Array.isArray(j.items) || j.items.length === 0) return;
-                allPosts = mergeFeeds(j.items);
+                if (!j || !Array.isArray(j.items)) return;
+                const valid = validateFeedItems(j.items);
+                if (valid.length === 0) {
+                    if (isInitial) console.warn('Z feed: all items invalid, keeping SEED');
+                    return;
+                }
+                allPosts = mergeFeeds(valid);
                 paint(true);
-                if (isInitial) console.log('WorldFeed live · ' + j.items.length + ' items · updated ' + j.updatedAt);
+                updateHero();
+                if (isInitial) console.log('Z live · ' + valid.length + ' items · updated ' + j.updatedAt);
             })
             .catch(() => { /* keep embedded SEED */ });
     }
     loadLiveFeed(true);
-    setInterval(() => loadLiveFeed(false), 10 * 60 * 1000); // refresh every 10 min
+
+    // Refresh on the hour every hour
+    function scheduleHourlyRefresh() {
+        const now = new Date();
+        const next = new Date(now);
+        next.setHours(now.getHours() + 1, 0, 30, 0);
+        const ms = next.getTime() - now.getTime();
+        setTimeout(() => {
+            loadLiveFeed(false);
+            scheduleHourlyRefresh();
+        }, ms);
+    }
+    scheduleHourlyRefresh();
+
+    // === Trending auto-rotation every 2 hours ===
+    function updateTrending() {
+        const cards = document.querySelectorAll('.rail-card .item');
+        if (!cards || cards.length < 4) return;
+        const topStories = allPosts
+            .filter(p => p.tier >= 4 && !p.isUser)
+            .sort((a, b) => b.minutesAgo - a.minutesAgo)
+            .slice(0, 6);
+        if (topStories.length < 4) return;
+        const trendingData = [
+            { title: topStories[0].title, meta: '★'.repeat(topStories[0].tier) + ' · ' + (topStories[0].sources?.length || 0) + ' sources · ' + fmtTime(topStories[0].minutesAgo) },
+            { title: topStories[1].title, meta: '★'.repeat(topStories[1].tier) + ' · ' + (topStories[1].sources?.length || 0) + ' sources · ' + fmtTime(topStories[1].minutesAgo) },
+            { title: topStories[2].title, meta: '★'.repeat(topStories[2].tier) + ' · ' + (topStories[2].sources?.length || 0) + ' sources · ' + fmtTime(topStories[2].minutesAgo) },
+            { title: topStories[3].title, meta: '★'.repeat(topStories[3].tier) + ' · ' + (topStories[3].sources?.length || 0) + ' sources · ' + fmtTime(topStories[3].minutesAgo) }
+        ];
+        cards.forEach((card, i) => {
+            if (i < trendingData.length) {
+                if (card.childNodes[0]) card.childNodes[0].textContent = trendingData[i].title;
+                const metaEl = card.querySelector('.item-meta');
+                if (metaEl) metaEl.textContent = trendingData[i].meta;
+            }
+        });
+    }
+    updateTrending();
+    setInterval(updateTrending, 2 * 60 * 60 * 1000);
+
+    // === Tor Video Feed: populate from live video items ===
+    function updateTorVideo() {
+        const t1 = document.getElementById('torVideo1');
+        const t2 = document.getElementById('torVideo2');
+        const t3 = document.getElementById('torVideo3');
+        if (!t1 || !t2 || !t3) return;
+        const videos = allPosts
+            .filter(p => (p.type === 'video' || p.type === 'livestream') && p.title)
+            .slice(0, 3);
+        if (videos.length === 0) {
+            const msg = 'No video feeds active<div class="item-meta">waiting for sources</div>';
+            t1.innerHTML = msg; t2.innerHTML = msg; t3.innerHTML = msg;
+            return;
+        }
+        const slots = [t1, t2, t3];
+        slots.forEach((el, i) => {
+            if (i < videos.length) {
+                const v = videos[i];
+                const src = v.sources && v.sources[0] ? v.sources[0] : 'tor';
+                const time = fmtTime(v.minutesAgo);
+                const label = v.tier >= 4 ? '★' : '▶';
+                el.innerHTML = v.title + '<div class="item-meta">' + label + ' · ' + src + ' · ' + time + '</div>';
+                el.style.cursor = 'pointer';
+                el.onclick = function() { if (v.link) window.open(v.link, '_blank'); };
+            }
+        });
+    }
+    updateTorVideo();
+    // Re-populate whenever feed repaints
+    const origPaint = paint;
+    paint = function(reset) {
+        origPaint(reset);
+        updateTorVideo();
+    };
 })();

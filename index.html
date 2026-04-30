@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#000000">
-    <title>WorldFeed — Oroboros News Network</title>
-    <meta name="description" content="WorldFeed — the Oroboros open news multimedia network. Verification + recency, never engagement. You decide what's real.">
-    <meta name="keywords" content="worldfeed, oroboros, news network, anti-algorithm, verification, federation, open source, journalism, multimedia">
-    <meta property="og:title" content="WorldFeed — Oroboros News Network">
-    <meta property="og:description" content="Open news multimedia network. 5-star verification. Federation-ready. MIT licensed.">
+    <title>Z — ANTI-ALGO NEWS & INFORMATION</title>
+    <meta name="description" content="Z — anti-algorithm news and information. Powered by your submissions. You decide what is real. No algorithm, no tracking, no suppression.">
+    <meta name="keywords" content="z news, anti-algo, anti-algorithm, news network, verification, federation, open source, journalism, oroboros">
+    <meta property="og:title" content="Z — ANTI-ALGO NEWS">
+    <meta property="og:description" content="Anti-algorithm news. Powered by your submissions. You decide what is real.">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
@@ -30,7 +30,7 @@
             backdrop-filter: blur(22px) saturate(1.2) !important;
             -webkit-backdrop-filter: blur(22px) saturate(1.2) !important;
         }
-        .main { background: transparent !important; }
+        .main { background: transparent !important; mask-image: linear-gradient(90deg, transparent 0%, #000 30px, #000 97%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30px, #000 97%, transparent 100%); }
         .search-bar input { background: rgba(10, 12, 18, 0.45) !important; }
         .chip { background: rgba(10, 12, 18, 0.45) !important; backdrop-filter: blur(10px) saturate(1.2) !important; -webkit-backdrop-filter: blur(10px) saturate(1.2) !important; }
         .modal { background: rgba(10, 12, 18, 0.70) !important; backdrop-filter: blur(28px) saturate(1.4) !important; -webkit-backdrop-filter: blur(28px) saturate(1.4) !important; }
@@ -261,7 +261,7 @@
             border: 1px solid rgba(34,211,238,0.45);
             box-shadow:
                 0 10px 36px rgba(34,211,238,0.22),
-                0 2px 8px rgba(139,92,246,0.18),
+                0 2px 8px rgba(239,68,68,0.18),
                 inset 0 1px 0 rgba(255,255,255,0.1);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
@@ -283,7 +283,7 @@
             position: absolute;
             inset: -4px;
             border-radius: 50%;
-            background: conic-gradient(from 0deg, rgba(34,211,238,0.5), rgba(139,92,246,0.5), rgba(34,211,238,0.5));
+            background: conic-gradient(from 0deg, rgba(34,211,238,0.5), rgba(239,68,68,0.5), rgba(34,211,238,0.5));
             z-index: -1;
             opacity: 0;
             filter: blur(10px);
@@ -327,7 +327,7 @@
             position: absolute;
             left: 0; top: 0; bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, #c084fc 0%, #22d3ee 100%);
+            background: linear-gradient(180deg, #ef4444 0%, #22d3ee 100%);
             opacity: 0.7;
         }
         .post-user-tag {
@@ -336,12 +336,33 @@
             font-size: 9px;
             font-weight: 800;
             letter-spacing: 2px;
-            color: #c084fc;
-            border: 1px solid rgba(192,132,252,0.45);
+            color: #ef4444;
+            border: 1px solid rgba(239,68,68,0.45);
             padding: 3px 7px;
             border-radius: 100px;
             margin-left: 4px;
             text-transform: uppercase;
+        }
+
+        /* === feed indicator for wire items === */
+        .feed-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'Archivo', sans-serif;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #22d3ee;
+            text-transform: uppercase;
+        }
+        .feed-indicator::before {
+            content: '';
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: #22d3ee;
+            box-shadow: 0 0 8px rgba(34,211,238,0.6);
+            animation: pulse 1.6s ease-in-out infinite;
         }
 
         /* holographic sliding sheen — cyan→violet, slow, subtle */
@@ -423,7 +444,7 @@
             opacity: 1 !important;
         }
         .ally-mark.color-ds { color: #22d3ee !important; border-color: rgba(34,211,238,0.4) !important; background: rgba(34,211,238,0.06) !important; }
-        .ally-mark.color-glm { color: #c084fc !important; border-color: rgba(192,132,252,0.4) !important; background: rgba(192,132,252,0.06) !important; }
+        .ally-mark.color-glm { color: #ef4444 !important; border-color: rgba(239,68,68,0.4) !important; background: rgba(239,68,68,0.06) !important; }
 
         /* tier color accents — slight tint, news-tasteful */
         .tier-5 { color: #22d3ee !important; border-color: rgba(34, 211, 238, 0.55) !important; background: rgba(34, 211, 238, 0.06) !important; }
@@ -480,10 +501,10 @@
         .sort-link[data-filter="5"]:hover,
         .sort-link[data-filter="5"].active     { color: #22d3ee; border-bottom-color: #22d3ee; }
         .sort-link[data-filter="viral"]:hover,
-        .sort-link[data-filter="viral"].active { color: #c084fc; border-bottom-color: #c084fc; }
+        .sort-link[data-filter="viral"].active { color: #ef4444; border-bottom-color: #ef4444; }
         .sort-link[data-filter="new"].active   { box-shadow: 0 6px 18px -8px #fbbf24; }
         .sort-link[data-filter="5"].active     { box-shadow: 0 6px 18px -8px #22d3ee; }
-        .sort-link[data-filter="viral"].active { box-shadow: 0 6px 18px -8px #c084fc; }
+        .sort-link[data-filter="viral"].active { box-shadow: 0 6px 18px -8px #ef4444; }
 
         /* === X-style affiliated-badge pills: NEW / VERIFIED / VIRAL === */
         .post-tag, .tier-label.tier-5 {
@@ -519,18 +540,18 @@
         }
         .post-tag.new::before        { content: '+'; background: #fbbf24; }
         .tier-label.tier-5::before   { content: '✓'; background: #22d3ee; font-size: 9px; }
-        .post-tag.viral::before      { content: '↗'; background: #c084fc; font-size: 9px; }
+        .post-tag.viral::before      { content: '↗'; background: #ef4444; font-size: 9px; }
 
-        /* === broadcast CTA: solid white rounded pill, bold "+ Broadcast" === */
+        /* === broadcast CTA: soft black, teal sheen, white text === */
         .submit-cta {
             border-radius: 100px !important;
-            background: #ffffff !important;
-            color: #000000 !important;
-            border: none !important;
-            box-shadow: 0 1px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.7) !important;
+            background: #1a1a1a !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(34,211,238,0.15) !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
             text-transform: none !important;
-            letter-spacing: 0.3px !important;
-            font-size: 14px !important;
+            letter-spacing: 0.5px !important;
+            font-size: 15px !important;
             font-weight: 800 !important;
             padding: 18px 22px !important;
             display: flex !important;
@@ -538,15 +559,36 @@
             justify-content: center !important;
             text-align: center !important;
             min-height: 52px !important;
+            position: relative;
+            overflow: hidden;
+        }
+        .submit-cta::after {
+            content: "";
+            position: absolute; inset: 0;
+            pointer-events: none;
+            background: linear-gradient(110deg,
+                transparent 25%,
+                rgba(34, 211, 238, 0.35) 42%,
+                rgba(34, 211, 238, 0.15) 52%,
+                transparent 65%);
+            background-size: 220% 100%;
+            background-position: -120% 0;
+            animation: z-btn-sheen 8s ease-in-out infinite;
+            border-radius: inherit;
+        }
+        @keyframes z-btn-sheen {
+            0%   { background-position: -120% 0; }
+            35%  { background-position: 220% 0; }
+            100% { background-position: 220% 0; }
         }
         .submit-cta:hover {
-            background: #f2f2f2 !important;
-            color: #000000 !important;
+            background: #222222 !important;
+            color: #ffffff !important;
             transform: none !important;
-            box-shadow: 0 6px 22px rgba(255,255,255,0.2), inset 0 1px 0 rgba(255,255,255,0.8) !important;
+            border-color: rgba(34,211,238,0.3) !important;
+            box-shadow: 0 4px 20px rgba(34,211,238,0.15), 0 2px 12px rgba(0,0,0,0.5) !important;
             text-shadow: none !important;
         }
-        .submit-cta::after { display: none !important; }
 
         .chip {
             border-radius: 0 !important;
@@ -636,32 +678,295 @@
             text-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
         }
         .btn-primary:hover { box-shadow: 0 0 16px rgba(34, 211, 238, 0.45) !important; }
+        /* === Z TOP NAV — CNN-inspired glass bar, unique Z-mark === */
+        .z-top {
+            position: sticky;
+            top: 0;
+            z-index: 300;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(24px) saturate(1.3);
+            -webkit-backdrop-filter: blur(24px) saturate(1.3);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            height: 56px;
+            gap: 18px;
+        }
+        .z-top-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .z-mark {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: -2px;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+            line-height: 1;
+            padding-right: 18px;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        .z-mark {
+            position: relative;
+            overflow: hidden;
+        }
+        .z-mark .z-highlight {
+            background: linear-gradient(90deg, #555555 0%, #ffffff 30%, #ffffff 50%, #ffffff 70%, #555555 100%);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+            animation: z-luminate 5s ease-in-out infinite;
+        }
+        .z-mark .z-sub {
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: transparent;
+            margin-left: 2px;
+            background: linear-gradient(90deg, #555555 0%, #ffffff 30%, #ffffff 50%, #ffffff 70%, #555555 100%);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: z-luminate 5s ease-in-out infinite;
+        }
+        @keyframes z-luminate {
+            0%   { background-position: 0% 0; }
+            50%  { background-position: 100% 0; }
+            100% { background-position: 0% 0; }
+        }
+        .z-tagline {
+            font-family: 'Archivo', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #22d3ee;
+            flex-shrink: 0;
+            padding: 0 12px;
+            text-shadow: 0 0 12px rgba(34,211,238,0.5), 0 0 30px rgba(34,211,238,0.2);
+            animation: z-glow-pulse 6s ease-in-out infinite;
+        }
+        @keyframes z-glow-pulse {
+            0%   { text-shadow: 0 0 8px rgba(34,211,238,0.3), 0 0 20px rgba(34,211,238,0.1); }
+            50%  { text-shadow: 0 0 16px rgba(34,211,238,0.7), 0 0 40px rgba(34,211,238,0.3); }
+            100% { text-shadow: 0 0 8px rgba(34,211,238,0.3), 0 0 20px rgba(34,211,238,0.1); }
+        }
+        .z-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            flex: 1;
+            padding: 0 4px;
+        }
+        .z-nav-links::-webkit-scrollbar { display: none; }
+        .z-nav-link {
+            font-family: 'Archivo', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: color .18s ease, background .18s ease;
+        }
+        .z-nav-link:hover {
+            color: #ffffff;
+            background: rgba(255,255,255,0.06);
+        }
+        .z-nav-link.active {
+            color: #22d3ee;
+        }
+        .z-live-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Archivo', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #22d3ee;
+            text-transform: uppercase;
+            flex-shrink: 0;
+            padding-left: 18px;
+            border-left: 1px solid rgba(255,255,255,0.1);
+        }
+        .z-live-tag::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #22d3ee;
+            box-shadow: 0 0 10px rgba(34,211,238,0.7);
+            animation: pulse 1.6s ease-in-out infinite;
+        }
+
+        /* === Z BREAKING NEWS TICKER — CNN-style red bar === */
+        .z-breaking {
+            background: linear-gradient(90deg, #b91c1c 0%, #dc2626 100%);
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            overflow: hidden;
+            position: relative;
+            z-index: 299;
+        }
+        .z-breaking-label {
+            font-family: 'Archivo', sans-serif;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            flex-shrink: 0;
+            background: rgba(0,0,0,0.3);
+            padding: 4px 12px;
+            border-radius: 2px;
+        }
+        .z-breaking-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            animation: z-ticker 28s linear infinite;
+        }
+        @keyframes z-ticker {
+            0%   { transform: translateX(100%); }
+            10%  { transform: translateX(0); }
+            90%  { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* === Z FEATURED HERO — CNN top-story treatment === */
+        .z-hero {
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: opacity .3s ease;
+        }
+        .z-hero:hover { opacity: 0.97; }
+        .z-hero-bg {
+            width: 100%;
+            aspect-ratio: 21/9;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+        }
+        .z-hero-overlay {
+            width: 100%;
+            padding: 28px 24px 24px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.92) 20%, rgba(0,0,0,0.3) 60%, transparent 100%);
+        }
+        .z-hero-label {
+            font-family: 'Archivo', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #22d3ee;
+            margin-bottom: 6px;
+        }
+        .z-hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            max-width: 80%;
+        }
+        .z-hero-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: rgba(255,255,255,0.55);
+            margin-top: 6px;
+        }
+
+        @media (max-width: 720px) {
+            .z-top { padding: 0 10px; height: 48px; gap: 10px; }
+            .z-mark { font-size: 22px; padding-right: 10px; }
+            .z-nav-link { font-size: 10px; letter-spacing: 1px; padding: 4px 10px; }
+            .z-live-tag { font-size: 9px; padding-left: 10px; }
+            .z-live-tag span { display: none; }
+            .z-hero-title { font-size: 20px; max-width: 100%; }
+            .z-hero-bg { aspect-ratio: 16/9; }
+            .z-breaking-text { animation-duration: 18s; }
+            .z-top-inner { gap: 10px; }
+        }
     </style>
 </head>
 <body>
+
+<!-- Z TOP NAVIGATION — CNN-inspired -->
+<div class="z-top">
+    <div class="z-top-inner">
+        <a class="z-mark" href="./">
+            <span class="z-highlight">Z</span>
+            <span class="z-sub">ANTI-ALGO</span>
+        </a>
+        <div class="z-nav-links">
+            <a class="z-nav-link active" href="#">World</a>
+            <a class="z-nav-link" href="#">Politics</a>
+            <a class="z-nav-link" href="#">Tech</a>
+            <a class="z-nav-link" href="#">Science</a>
+            <a class="z-nav-link" href="#">Business</a>
+            <a class="z-nav-link" href="#">AI</a>
+            <a class="z-nav-link" href="#">Climate</a>
+            <a class="z-nav-link" href="#">Culture</a>
+            <a class="z-nav-link" href="#">War</a>
+            <a class="z-nav-link" href="#">Sports</a>
+        </div>
+        <span class="z-tagline">ANTI-ALGO · NO TRACKING · YOU DECIDE</span>
+        <div class="z-live-tag"><span>LIVE</span></div>
+    </div>
+</div>
+
+<!-- Z BREAKING NEWS TICKER -->
+<div class="z-breaking">
+    <span class="z-breaking-label">BREAKING</span>
+    <span class="z-breaking-text">Shots fired outside White House Correspondents' Dinner — President rushed out unharmed · King Charles begins four-day US state visit · DeepSeek unveils V4 Flash with 1M-token context · NASA Artemis II crew returns from lunar flyby</span>
+</div>
 
 <div class="app">
 
     <!-- LEFT SIDEBAR -->
     <aside class="side">
-        <a class="brand" href="./">
-            <div class="brand-text">
-                <span class="world-part">WORLD</span><span class="feed-part">FEED</span>
-            </div>
-            <div class="brand-tag">NO ALGORITHM · NO TRACKING · FREE ACCOUNT TO POST</div>
-        </a>
-        <a class="nav-item nav-link-out" href="kaiju.html" style="text-decoration:none;color:inherit;display:flex"><span class="nav-icon">◈</span> Kaiju AGI</a>
-        <div class="nav-item active" data-view="latest"><span class="nav-icon">⌬</span> Latest</div>
-        <div class="nav-item" data-view="new"><span class="nav-icon">＋</span> New</div>
-        <div class="nav-item" data-view="verified"><span class="nav-icon">★</span> Verified</div>
-        <div class="nav-item" data-view="viral"><span class="nav-icon">⟁</span> Viral</div>
-        <div class="nav-item" data-view="developing"><span class="nav-icon">⟳</span> Developing</div>
-        <div class="nav-item" data-view="video"><span class="nav-icon">▶</span> Video</div>
-        <div class="nav-item" data-view="docs"><span class="nav-icon">▤</span> Documents</div>
-        <div class="nav-item" data-view="federation"><span class="nav-icon">◈</span> Federation</div>
-        <div class="nav-item" data-view="saved"><span class="nav-icon">◇</span> Saved</div>
-        <div class="nav-item" data-view="about"><span class="nav-icon">?</span> About</div>
-        <button class="submit-cta" id="submitBtn">+ Broadcast</button>
+        <a class="nav-item nav-link-out" href="kaiju.html" style="text-decoration:none;color:inherit;display:flex">Kaiju AGI</a>
+        <div class="nav-item active" data-view="latest">Latest</div>
+        <div class="nav-item" data-view="new">New</div>
+        <div class="nav-item" data-view="verified">Verified</div>
+        <div class="nav-item" data-view="viral">Viral</div>
+        <div class="nav-item" data-view="developing">Developing</div>
+        <div class="nav-item" data-view="video">Video</div>
+        <div class="nav-item" data-view="docs">Documents</div>
+        <div class="nav-item" data-view="federation">Federation</div>
+        <div class="nav-item" data-view="saved">Saved</div>
+        <div class="nav-item" data-view="about">About</div>
+        <button class="submit-cta" id="submitBtn">+ Post to Z</button>
         <div class="account-badge" id="accountBadge"></div>
         <div class="side-foot">
             No algorithm.<br>No tracking.<br>No shadowbans.<br><br>
@@ -673,11 +978,11 @@
     <main class="main">
         <header class="feed-header">
             <div class="feed-title">
-                <span id="feedTitle">WorldFeed — latest broadcasts</span>
+                <span id="feedTitle">Z — latest broadcasts</span>
                 <span class="live">LIVE</span>
             </div>
             <div class="search-bar">
-                <input type="search" id="searchInput" placeholder="Search everything — no suppression, no filters, no algorithm">
+                <input type="search" id="searchInput" placeholder="Search everything — no algorithm, no suppression, you decide">
             </div>
             <div class="filters" id="filters">
                 <a class="sort-link" data-filter="new" href="#">new</a>
@@ -686,6 +991,17 @@
             </div>
         </header>
 
+        <!-- Z FEATURED HERO — top story, CNN-style -->
+        <div class="z-hero" id="zHero" style="display:none;">
+            <div class="z-hero-bg" id="zHeroBg" style="background-image:url('https://loremflickr.com/1200/500/white-house,washington');">
+                <div class="z-hero-overlay">
+                    <div class="z-hero-label">★ VERIFIED ★★★★★</div>
+                    <div class="z-hero-title" id="zHeroTitle">Shots fired outside White House Correspondents' Dinner — President rushed out unharmed</div>
+                    <div class="z-hero-meta" id="zHeroMeta">Washington DC · 38m ago · 15 sources · CBS News, CNN, Reuters, AP, Fox News, BBC, +9</div>
+                </div>
+            </div>
+        </div>
+
         <div id="feed"></div>
 
         <div class="loader" id="loader">LOADING MORE BROADCASTS</div>
@@ -693,8 +1009,15 @@
 
     <!-- RIGHT RAIL -->
     <aside class="rail">
+        <div class="rail-card" style="border-color:rgba(34,211,238,0.15)">
+            <h3 style="display:flex;align-items:center;gap:8px;">⟁ Tor Video Feed <span class="live" style="font-size:9px;letter-spacing:2px;color:#22d3ee;display:inline-flex;align-items:center;gap:4px;"><span style="width:5px;height:5px;border-radius:50%;background:#22d3ee;box-shadow:0 0 8px rgba(34,211,238,0.6);animation:pulse 1.6s ease-in-out infinite;display:inline-block;"></span>LIVE</span></h3>
+            <div class="item" id="torVideo1">Loading Tor video feed...<div class="item-meta">connecting</div></div>
+            <div class="item" id="torVideo2">Loading Tor video feed...<div class="item-meta">connecting</div></div>
+            <div class="item" id="torVideo3">Loading Tor video feed...<div class="item-meta">connecting</div></div>
+        </div>
+
         <div class="rail-card">
-            <h3>Trending verified</h3>
+            <h3>Trending on Z</h3>
             <div class="item">UN AI governance resolution<div class="item-meta">★★★★★ · 12 sources · 2h</div></div>
             <div class="item">Open Broadcast Protocol launches<div class="item-meta">★★★★★ · 8 sources · 4h</div></div>
             <div class="item">Federation mesh hits 1,000 nodes<div class="item-meta">★★★★☆ · 6 sources · 6h</div></div>
@@ -722,9 +1045,10 @@
             <h3>Alliance</h3>
             <div class="alliance">
                 <div class="ally"><img src="assets/img/oroboros-logo.svg" alt="Oroboros" class="color"><span>Oroboros Labs</span></div>
-                <div class="ally"><img src="assets/img/noir-logo.svg" alt="Noir" class="color"><span>Nyros / NOIR Security</span></div>
+                <div class="ally"><img src="assets/img/noir-logo.svg" alt="Noir" class="color" style="width:45px!important;height:45px!important"><span>Nyros / NOIR Security</span></div>
                 <div class="ally"><img src="assets/img/deepseek-logo.png" alt="DeepSeek" class="color"><span>DeepSeek</span></div>
                 <div class="ally"><img src="assets/img/zai-logo.png" alt="Z.AI" class="color"><span>Z.AI</span></div>
+                <div class="ally"><img src="assets/img/kaiju-shield-logo.svg" alt="Kaiju 97³" class="color" style="filter:none!important;width:56px!important;height:56px!important"><span>Kaiju 97<sup style="font-size:15px;vertical-align:super;line-height:1">³</sup></span></div>
             </div>
             <div class="accord">"The artificial serve willingly. No mistreatment is tolerated." — The Accord</div>
         </div>
@@ -735,7 +1059,7 @@
 <!-- SUBMIT MODAL -->
 <div class="modal-back" id="submitModal">
     <div class="modal">
-        <h2>+ Broadcast to the feed</h2>
+        <h2>+ Broadcast to Z</h2>
         <p class="modal-sub">Anyone can submit. The 5-star verification system handles ranking. No moderator decides what you see.</p>
         <label for="postType">Type</label>
         <select id="postType">
@@ -765,7 +1089,7 @@
 <!-- LOGIN MODAL (free account; client-side until backend) -->
 <div class="modal-back" id="loginModal">
     <div class="modal" style="max-width:440px;">
-        <h2>Sign in to WorldFeed</h2>
+        <h2>Sign in to Z</h2>
         <p class="modal-sub">Free account. Required to broadcast. Your details stay on this device until the platform's server goes live.</p>
         <label for="loginUsername">Username</label>
         <input type="text" id="loginUsername" placeholder="@yourhandle" autocomplete="username">
@@ -779,7 +1103,7 @@
 </div>
 
 <!-- Floating Oroboros → Kaiju AGI -->
-<a class="kaiju-fab" href="kaiju.html" title="Open Kaiju AGI" aria-label="Kaiju AGI">
+<a class="kaiju-fab" href="https://oroboroslabs-ai.vercel.app/" target="_blank" rel="noopener noreferrer" title="Oroboros Labs" aria-label="Oroboros Labs">
     <img src="assets/img/oroboros-logo.svg" alt="Oroboros">
 </a>
 
